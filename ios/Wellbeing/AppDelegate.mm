@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+#import "RNBootSplash.h"
 
 #import <React/RCTBundleURLProvider.h>
 
@@ -14,6 +15,9 @@
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
+-(void)customizeRootView:(RCTRootView *)rootView {
+ [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView]; // ⬅️ initialize the splash screen
+}
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
   return [self bundleURL];

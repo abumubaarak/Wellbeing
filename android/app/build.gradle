@@ -125,7 +125,7 @@ android {
             applicationIdSuffix ".production"
             versionNameSuffix "-production"
             manifestPlaceholders = [
-                    appName:  "WellbeingProd",
+                    appName:  "Wellbeing",
                     appIcon: "@mipmap/ic_launcher",
                     appIconRound: "@mipmap/ic_launcher_round",
             ]

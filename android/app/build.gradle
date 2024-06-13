@@ -69,6 +69,18 @@ def enableProguardInReleaseBuilds = false
  */
 def jscFlavor = 'org.webkit:android-jsc:+'
 
+project.ext.defaultEnvFile = ".env.development"
+
+project.ext.envConfigFiles = [
+        productiondebug: ".env.production",
+        productionrelease: ".env.production",
+        stagingrelease: ".env.staging",
+        stagingdebug: ".env.staging",
+        developmentrelease: ".env.development",
+        developmentdebug: ".env.development"
+]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 android {
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -76,11 +88,11 @@ android {
 
     namespace "com.wellbeing"
     defaultConfig {
-        applicationId "com.wellbeing"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        resValue "string", "build_config_package", "com.wellbeing"
     }
     signingConfigs {
         debug {
@@ -100,6 +112,57 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    flavorDimensions += "standard"
+
+    productFlavors {
+        production {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId 'com.wellbeing'
+            dimension "standard"
+            applicationIdSuffix ".production"
+            versionNameSuffix "-production"
+            manifestPlaceholders = [
+                    appName:  "WellbeingProd",
+                    appIcon: "@mipmap/ic_launcher",
+                    appIconRound: "@mipmap/ic_launcher_round",
+            ]
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.wellbeing"
+
+
+        }
+        staging {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId 'com.wellbeing.staging'
+            dimension "standard"
+            applicationIdSuffix ".staging"
+            versionNameSuffix "-staging"
+            manifestPlaceholders = [
+                    appName:  "WellbeingStaging",
+                    appIcon: "@mipmap/ic_launcher_staging",
+                    appIconRound: "@mipmap/ic_launcher_staging_round",
+            ]
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.wellbeing"
+
+        }
+        development {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId 'com.wellbeing.development'
+            dimension "standard"
+            manifestPlaceholders = [
+                    appName:  "WellbeingDev",
+                    appIcon: "@mipmap/ic_launcher_dev",
+                    appIconRound: "@mipmap/ic_launcher_dev_round",
+            ]
+            applicationIdSuffix ".development"
+            versionNameSuffix "-development"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.wellbeing"
+
         }
     }
 }

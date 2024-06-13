@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1210"
-   version = "1.3">
+   LastUpgradeVersion = "1430"
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;rm &quot;${CONFIGURATION_BUILD_DIR}/${INFOPLIST_PATH}&quot;&#10;echo &quot;.env.staging&quot; &gt; /tmp/envfile&#10;">
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,9 +23,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Wellbeing.app"
-               BlueprintName = "Wellbeing"
+               BlueprintIdentifier = "FCA0C8492C1A36D5006769AA"
+               BuildableName = "Wellbeing-staging.app"
+               BlueprintName = "Wellbeing-staging"
                ReferencedContainer = "container:Wellbeing.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,19 +35,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "WellbeingTests.xctest"
-               BlueprintName = "WellbeingTests"
-               ReferencedContainer = "container:Wellbeing.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -54,9 +52,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Wellbeing.app"
-            BlueprintName = "Wellbeing"
+            BlueprintIdentifier = "FCA0C8492C1A36D5006769AA"
+            BuildableName = "Wellbeing-staging.app"
+            BlueprintName = "Wellbeing-staging"
             ReferencedContainer = "container:Wellbeing.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -71,9 +69,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Wellbeing.app"
-            BlueprintName = "Wellbeing"
+            BlueprintIdentifier = "FCA0C8492C1A36D5006769AA"
+            BuildableName = "Wellbeing-staging.app"
+            BlueprintName = "Wellbeing-staging"
             ReferencedContainer = "container:Wellbeing.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

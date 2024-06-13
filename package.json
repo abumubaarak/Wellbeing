@@ -5,14 +5,36 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+
+    "uAll": "./gradlew uninstallAll",
+    "gradlew:clean": "cd android && ./gradlew clean && cd ..",
     "lint": "eslint .",
     "start": "react-native start",
+
+    "a:d:d": "react-native run-android --mode=developmentDebug --appId com.wellbeing.development",
+    "a:s:d": "react-native run-android --mode=stagingDebug --appId com.wellbeing.staging",
+    "a:p:d": "react-native run-android --mode=productionDebug --appId com.wellbeing",
+  
+    "a:d:r": "react-native run-android --mode=developmentRelease --appId com.wellbeing.development",
+    "a:s:r": "react-native run-android --mode=stagingRelease --appId com.wellbeing.staging",
+    "a:p:r": "react-native run-android --mode=productionRelease --appId com.wellbeing",
+    
+
+    "i:d:d": "react-native run-ios --scheme Wellbeing-development --mode Debug",
+    "i:s:d": "react-native run-ios --scheme Wellbeing-staging --mode Debug",
+    "i:p:d": "react-native run-ios --scheme Wellbeing-production --mode Debug",
+
+    "i:d:r": "cd ios && xcodebuild -scheme Wellbeing-development build",
+    "i:s:r": "cd ios && xcodebuild -scheme Wellbeing-staging build",
+    "i:p:r": "cd ios && xcodebuild -scheme Wellbeing-production build",
+
     "test": "jest"
   },
   "dependencies": {
     "react": "18.2.0",
     "react-native": "0.74.2",
-    "react-native-bootsplash": "^5.5.3"
+    "react-native-bootsplash": "^5.5.3",
+    "react-native-config": "^1.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

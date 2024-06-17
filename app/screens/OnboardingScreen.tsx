@@ -1,17 +1,36 @@
-import React from 'react';
-import {Text, View} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import React, {useCallback} from 'react';
+import {
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from 'react-native-reanimated';
+import {
+  OnboardingCarousel,
+  OnboardingFooter,
+  OnboardingHeader,
+  Screen,
+} from '../components/';
 
 export const OnboardingScreen = () => {
-  const insets = useSafeAreaInsets();
+  const scrollIndex = useSharedValue<number>(25);
+
+  const onSnapToItem = useCallback(
+    (index: number) => {
+      scrollIndex.value = Math.round(index + 1) * 25;
+    },
+    [scrollIndex],
+  );
+
+  const widthStyle = useAnimatedStyle(() => {
+    return {
+      width: withTiming(`${scrollIndex.value}%`),
+    };
+  });
   return (
-    <View
-      style={{
-        backgroundColor: '#F8FBF2',
-        flex: 1,
-        paddingVertical: insets.top,
-      }}>
-      <Text>OnboardingScreen</Text>
-    </View>
+    <Screen>
+      <OnboardingHeader widthStyle={widthStyle} />
+      <OnboardingCarousel onSnapToItem={onSnapToItem} />
+      <OnboardingFooter />
+    </Screen>
   );
 };

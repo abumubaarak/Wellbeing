@@ -8,28 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* WellbeingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WellbeingTests.m */; };
+		26A509D30A764700B95F5F26 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB611A69B7D497D806C7B2F /* WorkSans-Medium.ttf */; };
 		5348316C59C7A38F23D20FAB /* libPods-Wellbeing-staging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 290436095B38DFFB9642C3F1 /* libPods-Wellbeing-staging.a */; };
+		64A83EBBEA38443B8D0E88AB /* MontserratAlternates-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1787B6F0FA284F879CCE9E79 /* MontserratAlternates-Bold.ttf */; };
+		7FB676878FA34932B69D4641 /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD6E315850894A4DAA611507 /* WorkSans-SemiBold.ttf */; };
 		9048F6163A67602643E03728 /* libPods-Wellbeing-production.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 132CC80AD6079113F379B7A2 /* libPods-Wellbeing-production.a */; };
 		ABA94DE8AE10F979194C7EF1 /* libPods-Wellbeing-development.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA324D05DD6B4162C29C523 /* libPods-Wellbeing-development.a */; };
+		B6AA244A36A441C19298402E /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D44D4D7088754D21BC7DA585 /* WorkSans-Regular.ttf */; };
+		C8C09144B7B44131A40B3BA6 /* MontserratAlternates-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19E1DCBE153740C28AFD066F /* MontserratAlternates-SemiBold.ttf */; };
 		E0ECA9FBA998168D9B0ED56E /* libPods-WellbeingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CDD7D83BC0383F86156EFB /* libPods-WellbeingTests.a */; };
+		FA9CAB57C28642D3AFDB97D5 /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779A86C42EE84475AA3FDE55 /* WorkSans-Light.ttf */; };
 		FCA0C8382C1A3656006769AA /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		FCA0C8392C1A3656006769AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		FCA0C83D2C1A3656006769AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		FCA0C83E2C1A3656006769AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		FCA0C83F2C1A3656006769AA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E4759D1069D6F10A4CE58CAE /* PrivacyInfo.xcprivacy */; };
 		FCA0C8402C1A3656006769AA /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E97B5F09C4317986C91A9 /* BootSplash.storyboard */; };
 		FCA0C84C2C1A36D5006769AA /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		FCA0C84D2C1A36D5006769AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		FCA0C8512C1A36D5006769AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		FCA0C8522C1A36D5006769AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		FCA0C8532C1A36D5006769AA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E4759D1069D6F10A4CE58CAE /* PrivacyInfo.xcprivacy */; };
 		FCA0C8542C1A36D5006769AA /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E97B5F09C4317986C91A9 /* BootSplash.storyboard */; };
 		FCA0C8602C1A36F7006769AA /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		FCA0C8612C1A36F7006769AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		FCA0C8652C1A36F7006769AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		FCA0C8662C1A36F7006769AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		FCA0C8672C1A36F7006769AA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E4759D1069D6F10A4CE58CAE /* PrivacyInfo.xcprivacy */; };
 		FCA0C8682C1A36F7006769AA /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E97B5F09C4317986C91A9 /* BootSplash.storyboard */; };
+		FCA0C8712C1C7AF8006769AA /* MontserratAlternates-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1787B6F0FA284F879CCE9E79 /* MontserratAlternates-Bold.ttf */; };
+		FCA0C8722C1C7AF8006769AA /* MontserratAlternates-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19E1DCBE153740C28AFD066F /* MontserratAlternates-SemiBold.ttf */; };
+		FCA0C8732C1C7AF8006769AA /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779A86C42EE84475AA3FDE55 /* WorkSans-Light.ttf */; };
+		FCA0C8742C1C7AF8006769AA /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB611A69B7D497D806C7B2F /* WorkSans-Medium.ttf */; };
+		FCA0C8752C1C7AF8006769AA /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D44D4D7088754D21BC7DA585 /* WorkSans-Regular.ttf */; };
+		FCA0C8762C1C7AF8006769AA /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD6E315850894A4DAA611507 /* WorkSans-SemiBold.ttf */; };
+		FCA0C8772C1C7E01006769AA /* MontserratAlternates-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1787B6F0FA284F879CCE9E79 /* MontserratAlternates-Bold.ttf */; };
+		FCA0C8782C1C7E01006769AA /* MontserratAlternates-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19E1DCBE153740C28AFD066F /* MontserratAlternates-SemiBold.ttf */; };
+		FCA0C8792C1C7E01006769AA /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779A86C42EE84475AA3FDE55 /* WorkSans-Light.ttf */; };
+		FCA0C87A2C1C7E01006769AA /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB611A69B7D497D806C7B2F /* WorkSans-Medium.ttf */; };
+		FCA0C87B2C1C7E01006769AA /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D44D4D7088754D21BC7DA585 /* WorkSans-Regular.ttf */; };
+		FCA0C87C2C1C7E01006769AA /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD6E315850894A4DAA611507 /* WorkSans-SemiBold.ttf */; };
+		FCA0C87D2C1C7E0A006769AA /* MontserratAlternates-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1787B6F0FA284F879CCE9E79 /* MontserratAlternates-Bold.ttf */; };
+		FCA0C87E2C1C7E0A006769AA /* MontserratAlternates-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19E1DCBE153740C28AFD066F /* MontserratAlternates-SemiBold.ttf */; };
+		FCA0C87F2C1C7E0A006769AA /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779A86C42EE84475AA3FDE55 /* WorkSans-Light.ttf */; };
+		FCA0C8802C1C7E0A006769AA /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB611A69B7D497D806C7B2F /* WorkSans-Medium.ttf */; };
+		FCA0C8812C1C7E0A006769AA /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D44D4D7088754D21BC7DA585 /* WorkSans-Regular.ttf */; };
+		FCA0C8822C1C7E0A006769AA /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD6E315850894A4DAA611507 /* WorkSans-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,16 +65,21 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Wellbeing/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Wellbeing/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = Wellbeing/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1787B6F0FA284F879CCE9E79 /* MontserratAlternates-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-Bold.ttf"; path = "../app/assets/fonts/MontserratAlternates-Bold.ttf"; sourceTree = "<group>"; };
+		19E1DCBE153740C28AFD066F /* MontserratAlternates-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-SemiBold.ttf"; path = "../app/assets/fonts/MontserratAlternates-SemiBold.ttf"; sourceTree = "<group>"; };
 		22CDD7D83BC0383F86156EFB /* libPods-WellbeingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WellbeingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		290436095B38DFFB9642C3F1 /* libPods-Wellbeing-staging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wellbeing-staging.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9EC86B620FFA6DE04252B2 /* Pods-Wellbeing-staging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wellbeing-staging.debug.xcconfig"; path = "Target Support Files/Pods-Wellbeing-staging/Pods-Wellbeing-staging.debug.xcconfig"; sourceTree = "<group>"; };
 		778F520A931B6D506FD8145D /* Pods-Wellbeing-development.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wellbeing-development.release.xcconfig"; path = "Target Support Files/Pods-Wellbeing-development/Pods-Wellbeing-development.release.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Wellbeing/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		779A86C42EE84475AA3FDE55 /* WorkSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Light.ttf"; path = "../app/assets/fonts/WorkSans-Light.ttf"; sourceTree = "<group>"; };
+		7AB611A69B7D497D806C7B2F /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Medium.ttf"; path = "../app/assets/fonts/WorkSans-Medium.ttf"; sourceTree = "<group>"; };
 		88CFA7F974AA801D1BED1826 /* Pods-Wellbeing-development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wellbeing-development.debug.xcconfig"; path = "Target Support Files/Pods-Wellbeing-development/Pods-Wellbeing-development.debug.xcconfig"; sourceTree = "<group>"; };
 		8DA9B967E5C990ACBC2AD6B2 /* Pods-Wellbeing-staging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wellbeing-staging.release.xcconfig"; path = "Target Support Files/Pods-Wellbeing-staging/Pods-Wellbeing-staging.release.xcconfig"; sourceTree = "<group>"; };
 		91B7041870AA24C24A6E5C06 /* Pods-Wellbeing-production.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wellbeing-production.debug.xcconfig"; path = "Target Support Files/Pods-Wellbeing-production/Pods-Wellbeing-production.debug.xcconfig"; sourceTree = "<group>"; };
 		9A4E97B5F09C4317986C91A9 /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = Wellbeing/BootSplash.storyboard; sourceTree = "<group>"; };
 		AAA324D05DD6B4162C29C523 /* libPods-Wellbeing-development.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wellbeing-development.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD6E315850894A4DAA611507 /* WorkSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-SemiBold.ttf"; path = "../app/assets/fonts/WorkSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		D44D4D7088754D21BC7DA585 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Regular.ttf"; path = "../app/assets/fonts/WorkSans-Regular.ttf"; sourceTree = "<group>"; };
 		DEF3D8BEDF344F1F8BAB48AD /* Pods-WellbeingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WellbeingTests.release.xcconfig"; path = "Target Support Files/Pods-WellbeingTests/Pods-WellbeingTests.release.xcconfig"; sourceTree = "<group>"; };
 		E4759D1069D6F10A4CE58CAE /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Wellbeing/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		E9EA04A5CA775CBD8AA8C839 /* Pods-Wellbeing-production.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wellbeing-production.release.xcconfig"; path = "Target Support Files/Pods-Wellbeing-production/Pods-Wellbeing-production.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,7 +152,6 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				E4759D1069D6F10A4CE58CAE /* PrivacyInfo.xcprivacy */,
@@ -166,6 +191,7 @@
 				FCA0C8482C1A3656006769AA /* WellbeingDevelopment-Info.plist */,
 				FCA0C85C2C1A36D5006769AA /* WellbeingStaging-Info.plist */,
 				FCA0C8702C1A36F7006769AA /* WellbeingProduction-Info.plist */,
+				9F708EBFC6324598B5C8B4EC /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -181,6 +207,19 @@
 				FCA0C86F2C1A36F7006769AA /* Wellbeing-production.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9F708EBFC6324598B5C8B4EC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1787B6F0FA284F879CCE9E79 /* MontserratAlternates-Bold.ttf */,
+				19E1DCBE153740C28AFD066F /* MontserratAlternates-SemiBold.ttf */,
+				779A86C42EE84475AA3FDE55 /* WorkSans-Light.ttf */,
+				7AB611A69B7D497D806C7B2F /* WorkSans-Medium.ttf */,
+				D44D4D7088754D21BC7DA585 /* WorkSans-Regular.ttf */,
+				BD6E315850894A4DAA611507 /* WorkSans-SemiBold.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -322,6 +361,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A83EBBEA38443B8D0E88AB /* MontserratAlternates-Bold.ttf in Resources */,
+				C8C09144B7B44131A40B3BA6 /* MontserratAlternates-SemiBold.ttf in Resources */,
+				FA9CAB57C28642D3AFDB97D5 /* WorkSans-Light.ttf in Resources */,
+				26A509D30A764700B95F5F26 /* WorkSans-Medium.ttf in Resources */,
+				B6AA244A36A441C19298402E /* WorkSans-Regular.ttf in Resources */,
+				7FB676878FA34932B69D4641 /* WorkSans-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +374,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCA0C83D2C1A3656006769AA /* LaunchScreen.storyboard in Resources */,
+				FCA0C8712C1C7AF8006769AA /* MontserratAlternates-Bold.ttf in Resources */,
+				FCA0C8722C1C7AF8006769AA /* MontserratAlternates-SemiBold.ttf in Resources */,
+				FCA0C8732C1C7AF8006769AA /* WorkSans-Light.ttf in Resources */,
+				FCA0C8742C1C7AF8006769AA /* WorkSans-Medium.ttf in Resources */,
+				FCA0C8752C1C7AF8006769AA /* WorkSans-Regular.ttf in Resources */,
+				FCA0C8762C1C7AF8006769AA /* WorkSans-SemiBold.ttf in Resources */,
 				FCA0C83E2C1A3656006769AA /* Images.xcassets in Resources */,
 				FCA0C83F2C1A3656006769AA /* PrivacyInfo.xcprivacy in Resources */,
 				FCA0C8402C1A3656006769AA /* BootSplash.storyboard in Resources */,
@@ -340,7 +390,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCA0C8512C1A36D5006769AA /* LaunchScreen.storyboard in Resources */,
+				FCA0C8772C1C7E01006769AA /* MontserratAlternates-Bold.ttf in Resources */,
+				FCA0C8782C1C7E01006769AA /* MontserratAlternates-SemiBold.ttf in Resources */,
+				FCA0C8792C1C7E01006769AA /* WorkSans-Light.ttf in Resources */,
+				FCA0C87A2C1C7E01006769AA /* WorkSans-Medium.ttf in Resources */,
+				FCA0C87B2C1C7E01006769AA /* WorkSans-Regular.ttf in Resources */,
+				FCA0C87C2C1C7E01006769AA /* WorkSans-SemiBold.ttf in Resources */,
 				FCA0C8522C1A36D5006769AA /* Images.xcassets in Resources */,
 				FCA0C8532C1A36D5006769AA /* PrivacyInfo.xcprivacy in Resources */,
 				FCA0C8542C1A36D5006769AA /* BootSplash.storyboard in Resources */,
@@ -351,7 +406,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCA0C8652C1A36F7006769AA /* LaunchScreen.storyboard in Resources */,
+				FCA0C87D2C1C7E0A006769AA /* MontserratAlternates-Bold.ttf in Resources */,
+				FCA0C87E2C1C7E0A006769AA /* MontserratAlternates-SemiBold.ttf in Resources */,
+				FCA0C87F2C1C7E0A006769AA /* WorkSans-Light.ttf in Resources */,
+				FCA0C8802C1C7E0A006769AA /* WorkSans-Medium.ttf in Resources */,
+				FCA0C8812C1C7E0A006769AA /* WorkSans-Regular.ttf in Resources */,
+				FCA0C8822C1C7E0A006769AA /* WorkSans-SemiBold.ttf in Resources */,
 				FCA0C8662C1A36F7006769AA /* Images.xcassets in Resources */,
 				FCA0C8672C1A36F7006769AA /* PrivacyInfo.xcprivacy in Resources */,
 				FCA0C8682C1A36F7006769AA /* BootSplash.storyboard in Resources */,
@@ -764,7 +824,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -836,7 +899,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

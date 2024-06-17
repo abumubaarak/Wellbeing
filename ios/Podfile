@@ -26,29 +26,25 @@ def share_pods
 end
 
 
-  target 'WellbeingTests' do
-    inherit! :complete
-    # Pods for testing
-  end
+target 'WellbeingTests' do
+  inherit! :complete
+ end
 target 'Wellbeing-development' do
   share_pods
-  # Pods for testing
-end
+ end
 target 'Wellbeing-staging' do
   share_pods
-  # Pods for testing
-end
+ end
 target 'Wellbeing-production' do
   share_pods
-  # Pods for testing
-end
+ end
 
   post_install do |installer|
     # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
     react_native_post_install(
       installer,
-      $config[:reactNativePath],
-      :mac_catalyst_enabled => false,
+#      $config[:reactNativePath],
+#      :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
   end

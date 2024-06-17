@@ -12,6 +12,15 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+    <key>UIAppFonts</key>
+        <array>
+            <string>MontserratAlternates-Bold.ttf</string>
+            <string>MontserratAlternates-SemiBold.ttf</string>
+            <string>WorkSans-Light.ttf</string>
+            <string>WorkSans-Medium.ttf</string>
+            <string>WorkSans-Regular.ttf</string>
+            <string>WorkSans-SemiBold.ttf</string>
+        </array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>

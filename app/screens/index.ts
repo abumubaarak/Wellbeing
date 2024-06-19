@@ -1,1 +1,2 @@
-export * from './OnboardingScreen';
+export * from './ChangeLanguage';
+export * from './Onboarding';

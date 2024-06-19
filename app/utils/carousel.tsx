@@ -1,5 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import {Brain, Doctor, Schedule, Telemedicine} from '../assets';
+import {Brain, Doctor, Schedule, Telemedicine} from '../assets/svgs';
 
 export const carouselData = [
   {

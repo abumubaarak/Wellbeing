@@ -9,7 +9,7 @@ export const ProgressBar = ({widthStyle}: ProgressBarProps) => {
   return (
     <Box backgroundColor="primary200" height={5} borderRadius={100}>
       <AnimatedBox
-        backgroundColor="primary400"
+        backgroundColor="primary500"
         borderRadius={100}
         height={'100%'}
         style={widthStyle}

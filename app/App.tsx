@@ -2,10 +2,13 @@ import {ThemeProvider} from '@shopify/restyle';
 import React, {useEffect} from 'react';
 import {StatusBar} from 'react-native';
 import BootSplash from 'react-native-bootsplash';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {enableFreeze} from 'react-native-screens';
+import './i18n';
 import {AppNavigator} from './navigators';
 import {theme} from './theme';
+import {colors} from './theme/colors';
 
 function App(): React.JSX.Element {
   enableFreeze(true);
@@ -17,10 +20,12 @@ function App(): React.JSX.Element {
 
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar barStyle="dark-content" backgroundColor="#F8FBF2" />
-      <SafeAreaProvider>
-        <AppNavigator />
-      </SafeAreaProvider>
+      <GestureHandlerRootView>
+        <StatusBar barStyle="dark-content" backgroundColor={colors.primary} />
+        <SafeAreaProvider>
+          <AppNavigator />
+        </SafeAreaProvider>
+      </GestureHandlerRootView>
     </ThemeProvider>
   );
 }

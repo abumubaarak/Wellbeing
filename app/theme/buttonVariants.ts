@@ -3,5 +3,5 @@ export const buttonVariants = {
     backgroundColor: 'primary300',
     color: 'black',
   },
-  default: {},
+  defaults: {},
 };

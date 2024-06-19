@@ -6,10 +6,14 @@ export const $container: ViewStyle = {
 };
 export const $labelHeading: TextStyle = {
   fontSize: moderateScale(42),
+  paddingHorizontal: moderateScale(25),
+  flexWrap: 'wrap',
 };
 export const $labelSummary: TextStyle = {
   fontSize: moderateScale(13),
   lineHeight: moderateScale(22),
+  flexWrap: 'wrap',
+  paddingHorizontal: moderateScale(25),
 };
 export const $labelContainer: ViewStyle = {
   paddingTop: verticalScale(20),

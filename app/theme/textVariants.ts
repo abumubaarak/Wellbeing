@@ -1,21 +1,27 @@
+import {isAndroid, moderateScale} from '../utils';
+
 export const textVariants = {
   header: {
     fontFamily: 'MontserratAlternates-SemiBold',
-    color: 'black',
   },
   regular: {
     fontFamily: 'WorkSans-Regular',
     color: 'grey',
+    fontSize: moderateScale(15),
+  },
+  regularBold: {
+    fontFamily: 'WorkSans-SemiBold',
   },
   buttonLabel: {
     fontFamily: 'WorkSans-SemiBold',
-    color: 'black',
   },
   special: {
     fontFamily: 'MontserratAlternates-SemiBold',
-    color: 'black',
   },
 
-  //not working as expected
-  default: {},
+  defaults: {
+    writingDirection: isAndroid ? 'rtl' : 'ltr',
+    color: 'black',
+    fontFamily: 'WorkSans-Regular',
+  },
 };

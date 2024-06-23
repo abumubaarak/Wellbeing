@@ -1,4 +1,4 @@
-import {isAndroid, moderateScale} from '../utils';
+import {isRTL, moderateScale} from '../utils';
 
 export const textVariants = {
   header: {
@@ -20,7 +20,7 @@ export const textVariants = {
   },
 
   defaults: {
-    writingDirection: isAndroid ? 'rtl' : 'ltr',
+    writingDirection: isRTL ? 'rtl' : 'ltr',
     color: 'black',
     fontFamily: 'WorkSans-Regular',
   },

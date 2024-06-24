@@ -5,6 +5,7 @@ import {
 } from '@gorhom/bottom-sheet';
 import {BottomSheetModalMethods} from '@gorhom/bottom-sheet/lib/typescript/types';
 import React, {useMemo} from 'react';
+import {useTranslation} from 'react-i18next';
 import {RectButton} from 'react-native-gesture-handler';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {Apple, GetStartedCircle, Google, LoginCircle} from '../../assets/svgs';
@@ -27,6 +28,7 @@ type AuthModalProps = {
 };
 export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
   const insets = useSafeAreaInsets();
+  const {t} = useTranslation();
   const snapPoints = useMemo(() => ['1', '41%'], []);
   return (
     <BottomSheetModal
@@ -45,10 +47,9 @@ export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
           style={{paddingHorizontal: horizontalScale(25)}}
           paddingVertical="m"
           variant="regular"
+          numberOfLines={3}
           textAlign="center">
-          {
-            'Experience convenient healthcare! Use our AI symptom checker, connect with top-rated\nphysicians and much more.'
-          }
+          {t('authMessage')}
         </Text>
         <Box justifyContent="center" style={$buttonGroup}>
           <Box style={[$buttonContainer, $border]} overflow="hidden">

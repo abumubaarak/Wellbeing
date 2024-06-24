@@ -1,9 +1,10 @@
 import {ViewStyle} from 'react-native';
 import {colors} from '../../theme/colors';
-import {moderateScale} from '../../utils';
+import {moderateScale, verticalScale} from '../../utils';
 
 export const $container: ViewStyle = {
   marginTop: moderateScale(8),
+  marginHorizontal: verticalScale(20),
   backgroundColor: colors.primary400,
   borderRadius: moderateScale(100),
 };

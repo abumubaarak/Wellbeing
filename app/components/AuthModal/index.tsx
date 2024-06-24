@@ -57,7 +57,7 @@ export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
               <Box flexDirection="row" alignItems="center">
                 <Google />
                 <Text pl="s" style={$label} variant="buttonLabel">
-                  Continue with Google
+                  {t('withGoogle')}
                 </Text>
               </Box>
             </RectButton>
@@ -67,7 +67,7 @@ export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
               <Box flexDirection="row" alignItems="center">
                 <Apple />
                 <Text pl="s" style={$label} variant="buttonLabel">
-                  Continue with Apple
+                  {t('withApple')}
                 </Text>
               </Box>
             </RectButton>

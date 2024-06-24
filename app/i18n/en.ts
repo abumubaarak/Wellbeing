@@ -28,6 +28,8 @@ const en = {
   lngTip: 'Tip: You can change this later in settings.',
   authMessage:
     'Experience convenient healthcare! Use our AI symptom checker, connect with top-rated\nphysicians and much more.',
+  withGoogle: 'Continue with Google',
+  withApple: 'Continue with Apple',
 };
 
 export default en;

@@ -17,7 +17,7 @@ export const Header = ({summaryKey, titleKey}: HeaderProps) => {
       <Text variant="header" fontSize={moderateScale(32)}>
         {t(summaryKey)}
       </Text>
-      <Text variant="regular" fontSize={moderateScale(13)} paddingTop="s">
+      <Text variant="regular" paddingTop="s">
         {t(titleKey)}
       </Text>
     </Box>

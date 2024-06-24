@@ -7,7 +7,8 @@ export const textVariants = {
   regular: {
     fontFamily: 'WorkSans-Regular',
     color: 'grey',
-    fontSize: moderateScale(15),
+    fontSize: moderateScale(14),
+    lineHeight: moderateScale(22),
   },
   regularBold: {
     fontFamily: 'WorkSans-SemiBold',

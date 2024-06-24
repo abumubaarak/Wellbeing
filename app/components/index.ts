@@ -1,3 +1,4 @@
+import {AuthModal} from './AuthModal';
 import {AnimatedBox, Box} from './Box';
 import {OnboardingCarousel} from './Carousel';
 import {Dismiss} from './Dismiss';
@@ -11,6 +12,7 @@ import {Text} from './Text';
 
 export {
   AnimatedBox,
+  AuthModal,
   Box,
   Dismiss,
   Header,

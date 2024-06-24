@@ -29,5 +29,9 @@ const es: Translations = {
   arabic: 'Arabic',
   selectLng: 'Seleccione el idioma',
   lngTip: 'Consejo: Puedes cambiar esto más adelante en la configuración.',
+  authMessage:
+    '¡Atención médica conveniente! Usa nuestro verificador de síntomas con IA, conéctate\ncon médicos de primera y más.',
+  withGoogle: 'Continuar con Google',
+  withApple: 'Continuar con Apple',
 };
 export default es;

@@ -6,7 +6,7 @@ export const $container: ViewStyle = {
   marginHorizontal: horizontalScale(25),
   paddingTop: verticalScale(10),
 };
-export const $getStartedContainer: ViewStyle = {
+export const $buttonContainer: ViewStyle = {
   borderRadius: moderateScale(100),
 };
 export const $button: ViewStyle = {
@@ -15,8 +15,9 @@ export const $button: ViewStyle = {
   justifyContent: 'center',
   alignItems: 'center',
 };
+
 export const $label: TextStyle = {
-  fontSize: moderateScale(16),
+  fontSize: moderateScale(15),
 };
 export const $labelLogin: TextStyle = {
   marginTop: verticalScale(20),

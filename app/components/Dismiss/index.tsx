@@ -5,9 +5,12 @@ import {Back, Cancel} from '../../assets/svgs';
 import {StackNavigation} from '../../navigators';
 import {isAndroid} from '../../utils';
 import {Box} from '../Box';
-import {$button, $container} from './style';
+import {$button, $container, $widthHeightStyle} from './style';
 
-export const Dismiss = () => {
+type DismissProps = {
+  wnh?: number;
+};
+export const Dismiss = ({wnh = 40}: DismissProps) => {
   const navigation = useNavigation<StackNavigation>();
 
   const onPress = useCallback(() => {
@@ -15,8 +18,11 @@ export const Dismiss = () => {
   }, [navigation]);
 
   return (
-    <Box style={$container}>
-      <RectButton hitSlop={50} onPress={onPress} style={$button}>
+    <Box style={[$container, $widthHeightStyle(wnh)]}>
+      <RectButton
+        hitSlop={50}
+        onPress={onPress}
+        style={[$button, $widthHeightStyle(wnh)]}>
         {!isAndroid ? <Cancel /> : <Back />}
       </RectButton>
     </Box>

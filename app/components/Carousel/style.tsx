@@ -10,11 +10,10 @@ export const $labelHeading: TextStyle = {
   flexWrap: 'wrap',
 };
 export const $labelSummary: TextStyle = {
-  fontSize: moderateScale(13),
-  lineHeight: moderateScale(22),
   flexWrap: 'wrap',
   paddingHorizontal: moderateScale(25),
 };
+
 export const $labelContainer: ViewStyle = {
   paddingTop: verticalScale(20),
 };

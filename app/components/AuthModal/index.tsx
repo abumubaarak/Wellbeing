@@ -4,14 +4,17 @@ import {
   BottomSheetView,
 } from '@gorhom/bottom-sheet';
 import {BottomSheetModalMethods} from '@gorhom/bottom-sheet/lib/typescript/types';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import React, {useMemo, useState} from 'react';
 import {useTranslation} from 'react-i18next';
+import {Config} from 'react-native-config';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {GetStartedCircle, LoginCircle} from '../../assets/svgs';
-import {appleSignIn} from '../../services';
+import {appleSignIn, googleSignIn} from '../../services';
 import {horizontalScale} from '../../utils';
 import {Box} from '../Box';
 import {Text} from '../Text';
+
 import {SocialButton} from './SocialButton';
 import {
   $bottomSheetContainer,
@@ -19,6 +22,11 @@ import {
   $container,
   $indicator,
 } from './style';
+
+GoogleSignin.configure({
+  scopes: ['profile', 'email'],
+  webClientId: Config.CLIENT_ID,
+});
 
 type AuthModalProps = {
   type: 'getStarted' | 'login';
@@ -33,6 +41,12 @@ export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
   const continueWithApple = () => {
     setLoading(true);
     appleSignIn()
+      .then(() => setLoading(false))
+      .catch(() => setLoading(false));
+  };
+  const continueWithGoogle = () => {
+    setLoading(true);
+    googleSignIn()
       .then(() => setLoading(false))
       .catch(() => setLoading(false));
   };
@@ -58,7 +72,7 @@ export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
           {t('authMessage')}
         </Text>
         <Box justifyContent="center" style={$buttonGroup}>
-          <SocialButton type="google" />
+          <SocialButton type="google" onPress={continueWithGoogle} />
           <SocialButton type="apple" onPress={continueWithApple} />
         </Box>
       </BottomSheetView>

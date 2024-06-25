@@ -30,6 +30,7 @@
     "@react-native-firebase/app": "^20.1.0",
     "@react-native-firebase/auth": "^20.1.0",
     "@react-native-firebase/firestore": "^20.1.0",
+    "@react-native-google-signin/google-signin": "^12.2.1",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
     "@shopify/restyle": "^2.4.4",

@@ -4,18 +4,16 @@ import {
   BottomSheetView,
 } from '@gorhom/bottom-sheet';
 import {BottomSheetModalMethods} from '@gorhom/bottom-sheet/lib/typescript/types';
-import React, {useMemo} from 'react';
+import React, {useMemo, useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {RectButton} from 'react-native-gesture-handler';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {Apple, GetStartedCircle, Google, LoginCircle} from '../../assets/svgs';
-import {colors} from '../../theme/colors';
+import {GetStartedCircle, LoginCircle} from '../../assets/svgs';
+import {appleSignIn} from '../../services';
 import {horizontalScale} from '../../utils';
 import {Box} from '../Box';
-import {$button, $buttonContainer, $label} from '../OnboardingFooter/style';
 import {Text} from '../Text';
+import {SocialButton} from './SocialButton';
 import {
-  $border,
   $bottomSheetContainer,
   $buttonGroup,
   $container,
@@ -30,6 +28,14 @@ export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
   const insets = useSafeAreaInsets();
   const {t} = useTranslation();
   const snapPoints = useMemo(() => ['1', '41%'], []);
+  const [_, setLoading] = useState<boolean>(false);
+
+  const continueWithApple = () => {
+    setLoading(true);
+    appleSignIn()
+      .then(() => setLoading(false))
+      .catch(() => setLoading(false));
+  };
   return (
     <BottomSheetModal
       ref={bottomSheetModalRef}
@@ -52,26 +58,8 @@ export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
           {t('authMessage')}
         </Text>
         <Box justifyContent="center" style={$buttonGroup}>
-          <Box style={[$buttonContainer, $border]} overflow="hidden">
-            <RectButton style={[$button, {backgroundColor: colors.white}]}>
-              <Box flexDirection="row" alignItems="center">
-                <Google />
-                <Text pl="s" style={$label} variant="buttonLabel">
-                  {t('withGoogle')}
-                </Text>
-              </Box>
-            </RectButton>
-          </Box>
-          <Box mt="xs" style={[$buttonContainer, $border]} overflow="hidden">
-            <RectButton style={[$button, {backgroundColor: colors.white}]}>
-              <Box flexDirection="row" alignItems="center">
-                <Apple />
-                <Text pl="s" style={$label} variant="buttonLabel">
-                  {t('withApple')}
-                </Text>
-              </Box>
-            </RectButton>
-          </Box>
+          <SocialButton type="google" />
+          <SocialButton type="apple" onPress={continueWithApple} />
         </Box>
       </BottomSheetView>
     </BottomSheetModal>

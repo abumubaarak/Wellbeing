@@ -12,15 +12,6 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-    <key>UIAppFonts</key>
-        <array>
-            <string>MontserratAlternates-Bold.ttf</string>
-            <string>MontserratAlternates-SemiBold.ttf</string>
-            <string>WorkSans-Light.ttf</string>
-            <string>WorkSans-Medium.ttf</string>
-            <string>WorkSans-Regular.ttf</string>
-            <string>WorkSans-SemiBold.ttf</string>
-        </array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
@@ -29,6 +20,17 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.85611912924-4a8vvkkp2fv5p6sbempud7dmmj67i2st</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -42,6 +44,15 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MontserratAlternates-Bold.ttf</string>
+		<string>MontserratAlternates-SemiBold.ttf</string>
+		<string>WorkSans-Light.ttf</string>
+		<string>WorkSans-Medium.ttf</string>
+		<string>WorkSans-Regular.ttf</string>
+		<string>WorkSans-SemiBold.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>BootSplash</string>
 	<key>UIRequiredDeviceCapabilities</key>

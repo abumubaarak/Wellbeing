@@ -1,6 +1,7 @@
 apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
+apply plugin: 'com.google.gms.google-services'
 
 /**
  * This is the configuration block to customize your React Native Android app.
@@ -122,8 +123,6 @@ android {
             minSdkVersion rootProject.ext.minSdkVersion
             applicationId 'com.wellbeing'
             dimension "standard"
-            applicationIdSuffix ".production"
-            versionNameSuffix "-production"
             manifestPlaceholders = [
                     appName:  "Wellbeing",
                     appIcon: "@mipmap/ic_launcher",
@@ -136,7 +135,7 @@ android {
         }
         staging {
             minSdkVersion rootProject.ext.minSdkVersion
-            applicationId 'com.wellbeing.staging'
+            applicationId 'com.wellbeing'
             dimension "standard"
             applicationIdSuffix ".staging"
             versionNameSuffix "-staging"
@@ -151,7 +150,7 @@ android {
         }
         development {
             minSdkVersion rootProject.ext.minSdkVersion
-            applicationId 'com.wellbeing.development'
+            applicationId 'com.wellbeing'
             dimension "standard"
             manifestPlaceholders = [
                     appName:  "WellbeingDev",

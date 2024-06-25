@@ -25,7 +25,9 @@ import {
 
 GoogleSignin.configure({
   scopes: ['profile', 'email'],
-  webClientId: Config.CLIENT_ID,
+  //WebclientID not android client id
+  webClientId: Config.WEB_CLIENT_ID,
+  iosClientId: Config.CLIENT_ID_IOS,
 });
 
 type AuthModalProps = {
@@ -48,7 +50,7 @@ export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
     setLoading(true);
     googleSignIn()
       .then(() => setLoading(false))
-      .catch(() => setLoading(false));
+      .catch(e => console.log(e));
   };
   return (
     <BottomSheetModal

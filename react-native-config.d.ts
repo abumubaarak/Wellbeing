@@ -1,7 +1,8 @@
 declare module 'react-native-config' {
   export interface NativeConfig {
     ENVIRONMENT?: 'production' | 'development' | 'staging';
-    CLIENT_ID: string;
+    WEB_CLIENT_ID: string;
+    CLIENT_ID_IOS: string;
   }
 
   export const Config: NativeConfig;

@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "85611912924",
+    "project_id": "wellbeing-dev-3a169",
+    "storage_bucket": "wellbeing-dev-3a169.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85611912924:android:45729e8853ab9700c21e19",
+        "android_client_info": {
+          "package_name": "com.wellbeing.development"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85611912924-0drb930h07plmcnv1ij7nmnj90moksj7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wellbeing.development",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "85611912924-i52493du1jbkljoqhmanb8ebreau637n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP-mOUxktP5oUDkMUrmmiOph17FUK9fjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85611912924-i52493du1jbkljoqhmanb8ebreau637n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "85611912924-4a8vvkkp2fv5p6sbempud7dmmj67i2st.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Wellbeing-development"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

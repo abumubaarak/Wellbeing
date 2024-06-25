@@ -10,7 +10,7 @@ import {useTranslation} from 'react-i18next';
 import {Config} from 'react-native-config';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {GetStartedCircle, LoginCircle} from '../../assets/svgs';
-import {appleSignIn, googleSignIn} from '../../services';
+import {appleSign, googleSignIn} from '../../services';
 import {horizontalScale} from '../../utils';
 import {Box} from '../Box';
 import {Text} from '../Text';
@@ -42,7 +42,7 @@ export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
 
   const continueWithApple = () => {
     setLoading(true);
-    appleSignIn()
+    appleSign()
       .then(() => setLoading(false))
       .catch(() => setLoading(false));
   };
@@ -50,7 +50,7 @@ export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
     setLoading(true);
     googleSignIn()
       .then(() => setLoading(false))
-      .catch(e => console.log(e));
+      .catch(() => setLoading(false));
   };
   return (
     <BottomSheetModal

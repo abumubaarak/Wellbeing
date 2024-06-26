@@ -12,6 +12,7 @@ import {colors} from './theme/colors';
 
 function App(): React.JSX.Element {
   enableFreeze(true);
+
   useEffect(() => {
     (async () => {})().finally(async () => {
       await BootSplash.hide();

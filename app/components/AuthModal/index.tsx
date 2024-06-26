@@ -38,19 +38,19 @@ export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
   const insets = useSafeAreaInsets();
   const {t} = useTranslation();
   const snapPoints = useMemo(() => ['1', '41%'], []);
-  const [_, setLoading] = useState<boolean>(false);
+  const [auth, setAuth] = useState<'google' | 'apple' | undefined>(undefined);
 
   const continueWithApple = () => {
-    setLoading(true);
+    setAuth('apple');
     appleSign()
-      .then(() => setLoading(false))
-      .catch(() => setLoading(false));
+      .then(() => setAuth(undefined))
+      .catch(() => setAuth(undefined));
   };
   const continueWithGoogle = () => {
-    setLoading(true);
+    setAuth('google');
     googleSignIn()
-      .then(() => setLoading(false))
-      .catch(() => setLoading(false));
+      .then(() => setAuth(undefined))
+      .catch(() => setAuth(undefined));
   };
   return (
     <BottomSheetModal
@@ -74,8 +74,16 @@ export const AuthModal = ({type, bottomSheetModalRef}: AuthModalProps) => {
           {t('authMessage')}
         </Text>
         <Box justifyContent="center" style={$buttonGroup}>
-          <SocialButton type="google" onPress={continueWithGoogle} />
-          <SocialButton type="apple" onPress={continueWithApple} />
+          <SocialButton
+            type="google"
+            onPress={continueWithGoogle}
+            isLoading={auth === 'google' ? true : false}
+          />
+          <SocialButton
+            type="apple"
+            onPress={continueWithApple}
+            isLoading={auth === 'apple' ? true : false}
+          />
         </Box>
       </BottomSheetView>
     </BottomSheetModal>

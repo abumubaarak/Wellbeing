@@ -3,6 +3,7 @@ import {AnimatedBox, Box} from './Box';
 import {OnboardingCarousel} from './Carousel';
 import {Dismiss} from './Dismiss';
 import {Header} from './Header';
+import {TabIcon} from './Icon';
 import {Language} from './Language';
 import {OnboardingFooter} from './OnboardingFooter';
 import {OnboardingHeader} from './OnboardingHeader';
@@ -22,5 +23,6 @@ export {
   OnboardingHeader,
   ProgressBar,
   Screen,
+  TabIcon,
   Text,
 };

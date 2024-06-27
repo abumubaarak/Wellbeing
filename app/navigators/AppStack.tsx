@@ -1,8 +1,9 @@
 import auth from '@react-native-firebase/auth';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect, useState} from 'react';
-import {ChangeLanguage, Home, OnboardingScreen} from '../screens/';
+import {ChangeLanguage, OnboardingScreen} from '../screens/';
 import {AppStackParamList} from './AppStackParamList';
+import {HomeNavigator} from './HomeNavigator';
 export const AppStack = () => {
   const Stack = createNativeStackNavigator<AppStackParamList>();
   const [user, setUser] = useState();
@@ -29,7 +30,7 @@ export const AppStack = () => {
       screenOptions={{headerShown: false}}>
       {user ? (
         <>
-          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="HomeTab" component={HomeNavigator} />
         </>
       ) : (
         <>

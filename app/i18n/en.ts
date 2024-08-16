@@ -30,6 +30,10 @@ const en = {
     'Experience convenient healthcare! Use our AI symptom checker, connect with top-rated\nphysicians and much more.',
   withGoogle: 'Continue with Google',
   withApple: 'Continue with Apple',
+  enableMic: 'Enable microphone',
+  allow: 'Allow',
+  enableMicSummary:
+    'To proceed, we require permission\nto access your microphone.',
 };
 
 export default en;

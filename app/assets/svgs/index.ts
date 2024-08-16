@@ -14,6 +14,7 @@ import Google from './google.svg';
 import Home from './home.svg';
 import HomeActive from './homeActive.svg';
 import LoginCircle from './loginCircle.svg';
+import MicCircle from './micCircle.svg';
 import Radio from './radio.svg';
 import RadioEmpty from './radio_circle.svg';
 import Arabic from './sa.svg';
@@ -42,6 +43,7 @@ export {
   Home,
   HomeActive,
   LoginCircle,
+  MicCircle,
   Radio,
   RadioEmpty,
   Schedule,

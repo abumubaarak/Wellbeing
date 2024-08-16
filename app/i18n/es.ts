@@ -33,5 +33,9 @@ const es: Translations = {
     '¡Atención médica conveniente! Usa nuestro verificador de síntomas con IA, conéctate\ncon médicos de primera y más.',
   withGoogle: 'Continuar con Google',
   withApple: 'Continuar con Apple',
+  enableMic: 'Habilitar micrófono',
+  allow: 'Permitir',
+  enableMicSummary:
+    'Para continuar, necesitamos permiso para acceder a su micrófono.',
 };
 export default es;

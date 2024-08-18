@@ -7,6 +7,7 @@ import {TabIcon} from './Icon';
 import {Language} from './Language';
 import {OnboardingFooter} from './OnboardingFooter';
 import {OnboardingHeader} from './OnboardingHeader';
+import {PermissionContent} from './Permission';
 import {ProgressBar} from './ProgressBar';
 import {Screen} from './Screen';
 import {Text} from './Text';
@@ -21,6 +22,7 @@ export {
   OnboardingCarousel,
   OnboardingFooter,
   OnboardingHeader,
+  PermissionContent,
   ProgressBar,
   Screen,
   TabIcon,

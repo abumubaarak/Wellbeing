@@ -3,7 +3,7 @@ import {Dismiss, Header, Language, Screen} from '../../components';
 
 export const ChangeLanguage = () => {
   return (
-    <Screen>
+    <Screen useAlignment>
       <Dismiss />
       <Header summaryKey="selectLng" titleKey="lngTip" />
       <Language />

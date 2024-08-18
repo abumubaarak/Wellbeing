@@ -3551,6 +3551,7 @@ __metadata:
     react-native-config: ^1.5.1
     react-native-gesture-handler: ^2.16.2
     react-native-mmkv: ^2.12.2
+    react-native-permissions: 4.0.1
     react-native-reanimated: ^3.12.0
     react-native-reanimated-carousel: ^3.5.1
     react-native-restart: ^0.0.27
@@ -9360,6 +9361,20 @@ __metadata:
     react: "*"
     react-native: ">=0.71.0"
   checksum: 8c79504a89fefd7f9c290a4a6bb24f1f9ef9e2a69d20d0f7d882b89f3943556e9c919c9d46583e44ab698f25213489277fccb6d4c856cce310267c5f907388f1
+  languageName: node
+  linkType: hard
+
+"react-native-permissions@npm:4.0.1":
+  version: 4.0.1
+  resolution: "react-native-permissions@npm:4.0.1"
+  peerDependencies:
+    react: ">=18.1.0"
+    react-native: ">=0.70.0"
+    react-native-windows: ">=0.70.0"
+  peerDependenciesMeta:
+    react-native-windows:
+      optional: true
+  checksum: d8124c032f1cfce114839ad18101d14c13ae74e9075f978f9f3ecdef490411ec9fe7b134744a5ebe58eb4d2307d00db4d2af6fa1985c564488dcae477b6255e7
   languageName: node
   linkType: hard
 

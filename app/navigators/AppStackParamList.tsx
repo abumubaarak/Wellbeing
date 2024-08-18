@@ -4,6 +4,7 @@ export type AppStackParamList = {
   Onboarding: undefined;
   ChangeLanguage: undefined;
   HomeTab: undefined;
-  AI: undefined;
+  Permission: undefined;
+  Symptoms: undefined;
 };
 export type StackNavigation = NavigationProp<AppStackParamList>;

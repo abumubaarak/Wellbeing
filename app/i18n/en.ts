@@ -33,7 +33,7 @@ const en = {
   enableMic: 'Enable microphone',
   allow: 'Allow',
   enableMicSummary:
-    'To proceed, we require permission\nto access your microphone.',
+    'Please enable microphone access so the AI can analyze your symptoms, and recommend\npotential conditions and medications.',
 };
 
 export default en;

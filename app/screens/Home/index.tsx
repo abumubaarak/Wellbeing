@@ -2,14 +2,25 @@ import React from 'react';
 
 import {useNavigation} from '@react-navigation/native';
 import {RectButton} from 'react-native-gesture-handler';
+import {check} from 'react-native-permissions';
 import {Brain} from '../../assets/svgs';
 import {Box, Screen} from '../../components';
 import {$button, $widthHeightStyle} from '../../components/Dismiss/style';
 import {StackNavigation} from '../../navigators';
-import {moderateScale} from '../../utils';
+import {MICROPHONE_PERMISSION, moderateScale} from '../../utils';
 
 export const Home = () => {
   const navigation = useNavigation<StackNavigation>();
+
+  const handleOnPress = async () => {
+    //handle other case later.Insha Allah
+    const result = await check(MICROPHONE_PERMISSION);
+    if (result === 'granted') {
+      navigation.navigate('Symptoms');
+    } else {
+      navigation.navigate('Permission');
+    }
+  };
 
   return (
     <Screen useAlignment>
@@ -21,7 +32,7 @@ export const Home = () => {
           justifyContent="center">
           <RectButton
             style={[$button, $widthHeightStyle(40)]}
-            onPress={() => navigation.navigate('AI')}>
+            onPress={handleOnPress}>
             <Brain width={25} height={25} />
           </RectButton>
         </Box>

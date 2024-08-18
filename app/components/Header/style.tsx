@@ -3,5 +3,4 @@ import {verticalScale} from '../../utils';
 
 export const $lower: ViewStyle = {
   marginTop: verticalScale(74),
-  marginHorizontal: verticalScale(20),
 };

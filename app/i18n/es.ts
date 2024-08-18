@@ -36,6 +36,6 @@ const es: Translations = {
   enableMic: 'Habilitar micrófono',
   allow: 'Permitir',
   enableMicSummary:
-    'Para continuar, necesitamos permiso para acceder a su micrófono.',
+    'Habilite el acceso al micrófono para que la IA pueda analizar sus síntomas y recomendar posibles afecciones y medicamentos.',
 };
 export default es;

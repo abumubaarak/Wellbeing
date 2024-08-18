@@ -1,7 +1,8 @@
 import auth from '@react-native-firebase/auth';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect, useState} from 'react';
-import {AI, ChangeLanguage, OnboardingScreen} from '../screens/';
+import {ChangeLanguage, OnboardingScreen, Permission} from '../screens/';
+import {Symptoms} from '../screens/AI';
 import {AppStackParamList} from './AppStackParamList';
 import {HomeNavigator} from './HomeNavigator';
 export const AppStack = () => {
@@ -31,11 +32,12 @@ export const AppStack = () => {
       {user ? (
         <>
           <Stack.Screen name="HomeTab" component={HomeNavigator} />
+          <Stack.Screen name="Symptoms" component={Symptoms} />
           <Stack.Group
             screenOptions={{
               presentation: 'fullScreenModal',
             }}>
-            <Stack.Screen name="AI" component={AI} />
+            <Stack.Screen name="Permission" component={Permission} />
           </Stack.Group>
         </>
       ) : (

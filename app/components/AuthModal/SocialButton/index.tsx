@@ -4,6 +4,7 @@ import {RectButton} from 'react-native-gesture-handler';
 import {Skottie} from 'react-native-skottie';
 import {Loader} from '../../../assets/lottie';
 import {Apple, Google} from '../../../assets/svgs';
+import {Translations} from '../../../i18n';
 import {colors} from '../../../theme/colors';
 import {Box} from '../../Box';
 import {$button, $buttonContainer, $label} from '../../OnboardingFooter/style';
@@ -17,7 +18,7 @@ type SocialButton = {
   isLoading?: boolean;
 };
 export const SocialButton = ({type, onPress, isLoading}: SocialButton) => {
-  const {t} = useTranslation();
+  const {t} = useTranslation<keyof Translations>();
   const title = type === 'google' ? t('withGoogle') : t('withApple');
   return (
     <Box mb="xs" style={[$buttonContainer, $border]} overflow="hidden">

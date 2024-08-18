@@ -9,12 +9,13 @@ import {
   $buttonContainer,
   $label,
 } from '../../components/OnboardingFooter/style';
+import {Translations} from '../../i18n';
 import {StackNavigation} from '../../navigators';
 import {MICROPHONE_PERMISSION} from '../../utils';
 //remove in-line style
 
 export const Permission = () => {
-  const {t} = useTranslation();
+  const {t} = useTranslation<keyof Translations>();
   const navigation = useNavigation<StackNavigation>();
 
   const microphonePermission = () => {

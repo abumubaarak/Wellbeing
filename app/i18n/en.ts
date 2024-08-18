@@ -34,6 +34,7 @@ const en = {
   allow: 'Allow',
   enableMicSummary:
     'Please enable microphone access so the AI can analyze your symptoms, and recommend\npotential conditions and medications.',
+  symptoms: 'Please, describe\nyour symptoms',
 };
 
 export default en;

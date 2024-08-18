@@ -1,13 +1,20 @@
 import React from 'react';
-import {Dismiss, Screen, Text} from '../../components';
+import {MicCircle} from '../../assets/svgs';
+import {Box, Dismiss, Line, PermissionHeader, Screen} from '../../components';
 
 export const Symptoms = () => {
   //const {t} = useTranslation();
 
   return (
-    <Screen useAlignment>
-      <Dismiss />
-      <Text>Symptoms</Text>
+    <Screen>
+      <Box paddingHorizontal="l">
+        <Dismiss />
+      </Box>
+      <PermissionHeader i18nKey="symptoms" />
+      <Box flex={1} alignItems="center" justifyContent="flex-end">
+        <Line />
+        <MicCircle width={80} height={80} />
+      </Box>
     </Screen>
   );
 };

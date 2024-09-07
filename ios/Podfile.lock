@@ -2431,6 +2431,8 @@ PODS:
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - React-Core
     - RNFBApp
+  - RNFS (2.20.0):
+    - React-Core
   - RNGestureHandler (2.16.2):
     - DoubleConversion
     - glog
@@ -2455,6 +2457,8 @@ PODS:
   - RNGoogleSignin (12.2.1):
     - GoogleSignIn (~> 7.1)
     - React-Core
+  - RNLiveAudioStream (1.1.1):
+    - React
   - RNPermissions (4.0.1):
     - React-Core
   - RNReanimated (3.12.0):
@@ -2500,6 +2504,11 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - RNSound (0.11.2):
+    - React-Core
+    - RNSound/Core (= 0.11.2)
+  - RNSound/Core (0.11.2):
+    - React-Core
   - RNSVG (15.3.0):
     - React-Core
   - SocketRocket (0.7.0)
@@ -2576,11 +2585,14 @@ DEPENDENCIES:
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
+  - RNFS (from `../node_modules/react-native-fs`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - "RNGoogleSignin (from `../node_modules/@react-native-google-signin/google-signin`)"
+  - RNLiveAudioStream (from `../node_modules/react-native-live-audio-stream`)
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNSound (from `../node_modules/react-native-sound`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -2746,16 +2758,22 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/auth"
   RNFBFirestore:
     :path: "../node_modules/@react-native-firebase/firestore"
+  RNFS:
+    :path: "../node_modules/react-native-fs"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNGoogleSignin:
     :path: "../node_modules/@react-native-google-signin/google-signin"
+  RNLiveAudioStream:
+    :path: "../node_modules/react-native-live-audio-stream"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSound:
+    :path: "../node_modules/react-native-sound"
   RNSVG:
     :path: "../node_modules/react-native-svg"
   Yoga:
@@ -2853,11 +2871,14 @@ SPEC CHECKSUMS:
   RNFBApp: 9acbe359ef3559d6f8ca5c350db471f2b352f98a
   RNFBAuth: 58a7a5591755a4f078cfa03e29a60be009a93931
   RNFBFirestore: a60f00920799fa7bb71a1ecb682e4e6918f6f2b0
+  RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
   RNGestureHandler: 20a4307fd21cbff339abfcfa68192f3f0a6a518b
   RNGoogleSignin: 08dc4ba7eac2096c7fecfe109f0950fa4683c803
+  RNLiveAudioStream: 02584d52711b6b9f268cb371a4b1bdd76ab3e079
   RNPermissions: 7697cc5e36424fbd472e42e628c456c2ed74315f
   RNReanimated: 967ae35616ef948658afa75d24595d4584051540
   RNScreens: 30249f9331c3b00ae7cb7922e11f58b3ed369c07
+  RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
   RNSVG: a48668fd382115bc89761ce291a81c4ca5f2fd2e
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef

@@ -13,6 +13,7 @@ import {PermissionHeader} from './PermissionContent/PermissionHeader';
 import {ProgressBar} from './ProgressBar';
 import {Screen} from './Screen';
 import {Text} from './Text';
+import {TypeWriter} from './TypeWriter';
 
 export {
   AnimatedBox,
@@ -31,4 +32,5 @@ export {
   Screen,
   TabIcon,
   Text,
+  TypeWriter,
 };

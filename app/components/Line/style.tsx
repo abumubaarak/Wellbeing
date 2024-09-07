@@ -1,5 +1,5 @@
 import {ViewStyle} from 'react-native';
 
 export const $box: ViewStyle = {
-  marginBottom: 120,
+  marginBottom: 80,
 };

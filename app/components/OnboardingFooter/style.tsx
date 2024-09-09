@@ -17,7 +17,8 @@ export const $button: ViewStyle = {
 };
 
 export const $label: TextStyle = {
-  fontSize: moderateScale(15),
+  fontSize: moderateScale(18),
+  letterSpacing: 1,
 };
 export const $labelLogin: TextStyle = {
   marginTop: verticalScale(20),

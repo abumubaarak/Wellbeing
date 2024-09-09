@@ -6,5 +6,7 @@ export type AppStackParamList = {
   HomeTab: undefined;
   Permission: undefined;
   Symptoms: undefined;
+  EditSymptoms: {symptoms: string};
+  Analyse: {symptoms: string};
 };
 export type StackNavigation = NavigationProp<AppStackParamList>;

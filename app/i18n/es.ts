@@ -38,5 +38,8 @@ const es: Translations = {
   enableMicSummary:
     'Habilite el acceso al micrófono para que la IA pueda analizar sus síntomas y recomendar posibles afecciones y medicamentos.',
   symptoms: 'Por favor, describe tus síntomas.',
+  analyse: 'Analizar',
+  analysing: 'Analizando sus síntomas',
+  done: 'Hecho',
 };
 export default es;

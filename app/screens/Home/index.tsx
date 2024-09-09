@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import {useNavigation} from '@react-navigation/native';
 import {RectButton} from 'react-native-gesture-handler';
+import {useMMKVString} from 'react-native-mmkv';
 import {check} from 'react-native-permissions';
 import {Brain} from '../../assets/svgs';
 import {Box, Screen} from '../../components';
@@ -11,6 +12,7 @@ import {MICROPHONE_PERMISSION, moderateScale} from '../../utils';
 
 export const Home = () => {
   const navigation = useNavigation<StackNavigation>();
+  const [_, setSymptomsPref] = useMMKVString('symptoms');
 
   const handleOnPress = async () => {
     //handle other case later.Insha Allah
@@ -21,6 +23,11 @@ export const Home = () => {
       navigation.navigate('Permission');
     }
   };
+
+  useEffect(() => {
+    setSymptomsPref('');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Screen useAlignment>

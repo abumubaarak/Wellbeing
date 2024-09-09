@@ -6,10 +6,11 @@ import CalendarActive from './calendarActive.svg';
 import Cancel from './cancel.svg';
 import Chat from './chat.svg';
 import ChatActive from './chatActive.svg';
+import CheckRound from './check-round.svg';
 import CheckMark from './check.svg';
 import Circle from './circle.svg';
 import Doctor from './doctor.svg';
-import EditTranscription from './editTranscription.svg';
+import Edit from './edit.svg';
 import Spanish from './es.svg';
 import GetStartedCircle from './getStartedCircle.svg';
 import Google from './google.svg';
@@ -42,9 +43,10 @@ export {
   Chat,
   ChatActive,
   CheckMark,
+  CheckRound,
   Circle,
   Doctor,
-  EditTranscription,
+  Edit,
   English,
   GetStartedCircle,
   Google,

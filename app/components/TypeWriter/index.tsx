@@ -9,10 +9,11 @@ const DEFAULT_MIN_DELAY = 8;
 type TypeWriterProps = {
   content: string;
   previousLength: number;
+  addEffect: boolean;
   vibration?: boolean;
 };
 export const TypeWriter = memo(
-  ({content, vibration, previousLength}: TypeWriterProps) => {
+  ({content, vibration, previousLength, addEffect}: TypeWriterProps) => {
     const [currentCharIndex, setCurrentCharIndex] = useState(previousLength);
     const timeoutId = useRef<any>(null);
     const delta = 1;
@@ -36,7 +37,9 @@ export const TypeWriter = memo(
       }
     };
     useEffect(() => {
-      setCurrentCharIndex(previousLength);
+      if (addEffect) {
+        setCurrentCharIndex(previousLength);
+      }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [content]);
     useEffect(() => {
@@ -53,7 +56,6 @@ export const TypeWriter = memo(
       <AnimatedText
         variant="regular"
         color="black"
-        textAlign="center"
         lineHeight={28}
         fontSize={moderateScale(19)}>
         {content.substring(0, currentCharIndex + 1)}

@@ -33,5 +33,13 @@ const es: Translations = {
     '¡Atención médica conveniente! Usa nuestro verificador de síntomas con IA, conéctate\ncon médicos de primera y más.',
   withGoogle: 'Continuar con Google',
   withApple: 'Continuar con Apple',
+  enableMic: 'Habilitar micrófono',
+  allow: 'Permitir',
+  enableMicSummary:
+    'Habilite el acceso al micrófono para que la IA pueda analizar sus síntomas y recomendar posibles afecciones y medicamentos.',
+  symptoms: 'Por favor, describe tus síntomas.',
+  analyse: 'Analizar',
+  analysing: 'Analizando sus síntomas',
+  done: 'Hecho',
 };
 export default es;

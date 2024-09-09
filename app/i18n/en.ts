@@ -30,6 +30,14 @@ const en = {
     'Experience convenient healthcare! Use our AI symptom checker, connect with top-rated\nphysicians and much more.',
   withGoogle: 'Continue with Google',
   withApple: 'Continue with Apple',
+  enableMic: 'Enable microphone',
+  allow: 'Allow',
+  enableMicSummary:
+    'Please enable microphone access so the AI can analyze your symptoms, and recommend\npotential conditions and medications.',
+  symptoms: 'Please, describe\nyour symptoms',
+  analyse: 'Analyse',
+  analysing: 'Analysing your symptoms',
+  done: 'Done',
 };
 
 export default en;

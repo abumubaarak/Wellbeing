@@ -2,6 +2,7 @@ import {BottomSheetModal} from '@gorhom/bottom-sheet';
 import React, {useCallback, useRef} from 'react';
 import {useTranslation} from 'react-i18next';
 import {BorderlessButton, RectButton} from 'react-native-gesture-handler';
+import {Translations} from '../../i18n';
 import {AuthModal} from '../AuthModal';
 import {Box} from '../Box';
 import {Text} from '../Text';
@@ -14,7 +15,7 @@ import {
 } from './style';
 
 export const OnboardingFooter = () => {
-  const {t} = useTranslation();
+  const {t} = useTranslation<keyof Translations>();
   const getStartedModalRef = useRef<BottomSheetModal>(null);
   const loginModalRef = useRef<BottomSheetModal>(null);
 

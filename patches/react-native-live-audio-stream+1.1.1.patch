@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-live-audio-stream/index.d.ts b/node_modules/react-native-live-audio-stream/index.d.ts
+index b846438..3badd5b 100644
+--- a/node_modules/react-native-live-audio-stream/index.d.ts
++++ b/node_modules/react-native-live-audio-stream/index.d.ts
+@@ -20,7 +20,6 @@ declare module "react-native-live-audio-stream" {
+      * - `6`
+      */
+     audioSource?: number
+-    wavFile: string
+     bufferSize?: number
+   }
+ 

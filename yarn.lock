@@ -3537,6 +3537,7 @@ __metadata:
     "@types/react": ^18.2.6
     "@types/react-test-renderer": ^18.0.0
     babel-jest: ^29.6.3
+    buffer: ^6.0.3
     eslint: ^8.19.0
     i18next: ^23.11.5
     intl-pluralrules: ^2.0.1
@@ -3545,18 +3546,24 @@ __metadata:
     postinstall-postinstall: ^2.1.0
     prettier: 2.8.8
     react: 18.2.0
+    react-hook-form: ^7.53.0
     react-i18next: ^14.1.2
     react-native: 0.74.2
     react-native-bootsplash: ^5.5.3
     react-native-config: ^1.5.1
+    react-native-fs: ^2.20.0
     react-native-gesture-handler: ^2.16.2
+    react-native-keyboard-aware-scroll-view: ^0.9.5
+    react-native-live-audio-stream: ^1.1.1
     react-native-mmkv: ^2.12.2
+    react-native-permissions: 4.0.1
     react-native-reanimated: ^3.12.0
     react-native-reanimated-carousel: ^3.5.1
     react-native-restart: ^0.0.27
     react-native-safe-area-context: ^4.10.4
     react-native-screens: ^3.31.1
     react-native-skottie: ^2.1.4
+    react-native-sound: ^0.11.2
     react-native-svg: ^15.3.0
     react-native-svg-transformer: ^1.4.0
     react-test-renderer: 18.2.0
@@ -4095,6 +4102,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"base-64@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "base-64@npm:0.1.0"
+  checksum: 5a42938f82372ab5392cbacc85a5a78115cbbd9dbef9f7540fa47d78763a3a8bd7d598475f0d92341f66285afd377509851a9bb5c67bbecb89686e9255d5b3eb
+  languageName: node
+  linkType: hard
+
 "base64-js@npm:^1.2.3, base64-js@npm:^1.3.1, base64-js@npm:^1.5.1":
   version: 1.5.1
   resolution: "base64-js@npm:1.5.1"
@@ -4210,6 +4224,16 @@ __metadata:
     base64-js: ^1.3.1
     ieee754: ^1.1.13
   checksum: e2cf8429e1c4c7b8cbd30834ac09bd61da46ce35f5c22a78e6c2f04497d6d25541b16881e30a019c6fd3154150650ccee27a308eff3e26229d788bbdeb08ab84
+  languageName: node
+  linkType: hard
+
+"buffer@npm:^6.0.3":
+  version: 6.0.3
+  resolution: "buffer@npm:6.0.3"
+  dependencies:
+    base64-js: ^1.3.1
+    ieee754: ^1.2.1
+  checksum: 5ad23293d9a731e4318e420025800b42bf0d264004c0286c8cc010af7a270c7a0f6522e84f54b9ad65cbd6db20b8badbfd8d2ebf4f80fa03dab093b89e68c3f9
   languageName: node
   linkType: hard
 
@@ -6398,7 +6422,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ieee754@npm:^1.1.13":
+"ieee754@npm:^1.1.13, ieee754@npm:^1.2.1":
   version: 1.2.1
   resolution: "ieee754@npm:1.2.1"
   checksum: 5144c0c9815e54ada181d80a0b810221a253562422e7c6c3a60b1901154184f49326ec239d618c416c1c5945a2e197107aee8d986a3dd836b53dffefd99b5e7e
@@ -9149,7 +9173,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -9266,6 +9290,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.53.0":
+  version: 7.53.0
+  resolution: "react-hook-form@npm:7.53.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18 || ^19
+  checksum: 84d67fb79bad03d0aa809b5e411d97fb081fc13cd2b6d063a988f81f6fbef8545463e05360afa9d8d58fff19f08fa919930dcdc98a9e68bf74048c9f63e10ad5
+  languageName: node
+  linkType: hard
+
 "react-i18next@npm:^14.1.2":
   version: 14.1.2
   resolution: "react-i18next@npm:14.1.2"
@@ -9337,6 +9370,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-fs@npm:^2.20.0":
+  version: 2.20.0
+  resolution: "react-native-fs@npm:2.20.0"
+  dependencies:
+    base-64: ^0.1.0
+    utf8: ^3.0.0
+  peerDependencies:
+    react-native: "*"
+    react-native-windows: "*"
+  peerDependenciesMeta:
+    react-native-windows:
+      optional: true
+  checksum: 0be9bb9a5c13b501d0a3006efc3aa5c0b5b211456ee04718297f4e522532f3527f1daa220bd67d3b82d819ed8fdab8f64b7d6e0d7b768c1fd1d8ec9122d94316
+  languageName: node
+  linkType: hard
+
 "react-native-gesture-handler@npm:^2.16.2":
   version: 2.16.2
   resolution: "react-native-gesture-handler@npm:2.16.2"
@@ -9353,6 +9402,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-iphone-x-helper@npm:^1.0.3":
+  version: 1.3.1
+  resolution: "react-native-iphone-x-helper@npm:1.3.1"
+  peerDependencies:
+    react-native: ">=0.42.0"
+  checksum: 024376646009a966e33e12fc2358751830818b0fb73b1c601a64eb5e490d2dc43eec23668991b985a8c412a84d087f20eb45bb9b593567c08b66e741b7bddda5
+  languageName: node
+  linkType: hard
+
+"react-native-keyboard-aware-scroll-view@npm:^0.9.5":
+  version: 0.9.5
+  resolution: "react-native-keyboard-aware-scroll-view@npm:0.9.5"
+  dependencies:
+    prop-types: ^15.6.2
+    react-native-iphone-x-helper: ^1.0.3
+  peerDependencies:
+    react-native: ">=0.48.4"
+  checksum: 5eec2aedb886213dfed4c8428a443b565dce80ba9fcf5897171e4c8829d4dd64c5011ac004d93f29adfc83ad6f88c2838d1a5b45255dc4a49bd1c0a169245800
+  languageName: node
+  linkType: hard
+
+"react-native-live-audio-stream@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "react-native-live-audio-stream@npm:1.1.1"
+  checksum: 1503fb1d9e2df58bf31bfa9ee3cf5167802a659ec64e3a6ca8ba2401b6388af158f9e04895699152e91eec66bcc949a3f35ae38fb63435ae28959b5be56bbd2e
+  languageName: node
+  linkType: hard
+
 "react-native-mmkv@npm:^2.12.2":
   version: 2.12.2
   resolution: "react-native-mmkv@npm:2.12.2"
@@ -9360,6 +9437,20 @@ __metadata:
     react: "*"
     react-native: ">=0.71.0"
   checksum: 8c79504a89fefd7f9c290a4a6bb24f1f9ef9e2a69d20d0f7d882b89f3943556e9c919c9d46583e44ab698f25213489277fccb6d4c856cce310267c5f907388f1
+  languageName: node
+  linkType: hard
+
+"react-native-permissions@npm:4.0.1":
+  version: 4.0.1
+  resolution: "react-native-permissions@npm:4.0.1"
+  peerDependencies:
+    react: ">=18.1.0"
+    react-native: ">=0.70.0"
+    react-native-windows: ">=0.70.0"
+  peerDependenciesMeta:
+    react-native-windows:
+      optional: true
+  checksum: d8124c032f1cfce114839ad18101d14c13ae74e9075f978f9f3ecdef490411ec9fe7b134744a5ebe58eb4d2307d00db4d2af6fa1985c564488dcae477b6255e7
   languageName: node
   linkType: hard
 
@@ -9442,6 +9533,15 @@ __metadata:
     react-native-reanimated:
       optional: true
   checksum: 2cb57b08e3f905ecd7db2896c9451c33ebd5d340c16a7eea23887c68b676b91a64834807121e5abbfc9ea5baf08ecf4e225453283e8d1e949b3039ce6b30527f
+  languageName: node
+  linkType: hard
+
+"react-native-sound@npm:^0.11.2":
+  version: 0.11.2
+  resolution: "react-native-sound@npm:0.11.2"
+  peerDependencies:
+    react-native: ">=0.8.0"
+  checksum: d019de415c5f7bc8af51bc50adff7b9c307cb990aad3ea193933f89df743bbcdbfaa33c4a12bb1143a223137cea39f8b69baf5e1c29f77cf80476616bccc6f91
   languageName: node
   linkType: hard
 
@@ -11138,6 +11238,13 @@ __metadata:
   peerDependencies:
     react: ">=16.8"
   checksum: 620969d85763b65aca5f9b601c31eb476a8f7602cfccfb3c0f9dc60ff3b863e04dd64360ada255e15606771513de33b25e4631607d702605b26630f61381b3d4
+  languageName: node
+  linkType: hard
+
+"utf8@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "utf8@npm:3.0.0"
+  checksum: cb89a69ad9ab393e3eae9b25305b3ff08bebca9adc839191a34f90777eb2942f86a96369d2839925fea58f8f722f7e27031d697f10f5f39690f8c5047303e62d
   languageName: node
   linkType: hard
 

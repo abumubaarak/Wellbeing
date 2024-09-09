@@ -8,7 +8,6 @@ import {
 
 export const $container: ViewStyle = {
   paddingVertical: verticalScale(15),
-  paddingHorizontal: verticalScale(20),
   overflow: 'hidden',
   borderRadius: moderateScale(100),
 };

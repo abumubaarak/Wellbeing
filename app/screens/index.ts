@@ -1,3 +1,4 @@
+export * from './Permission';
 export * from './Bookings';
 export * from './ChangeLanguage';
 export * from './Chat';

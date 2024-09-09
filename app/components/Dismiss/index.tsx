@@ -14,7 +14,7 @@ export const Dismiss = ({wnh = 40}: DismissProps) => {
   const navigation = useNavigation<StackNavigation>();
 
   const onPress = useCallback(() => {
-    navigation.goBack();
+    navigation?.goBack();
   }, [navigation]);
 
   return (

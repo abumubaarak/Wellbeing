@@ -18,6 +18,9 @@
 		E0ECA9FBA998168D9B0ED56E /* libPods-WellbeingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CDD7D83BC0383F86156EFB /* libPods-WellbeingTests.a */; };
 		E186194194A2826053F97522 /* Pods_Wellbeing_staging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C856024AE99A613D61EDCC /* Pods_Wellbeing_staging.framework */; };
 		FA9CAB57C28642D3AFDB97D5 /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779A86C42EE84475AA3FDE55 /* WorkSans-Light.ttf */; };
+		FC5ECE212CA28E2000DAA206 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC5ECE202CA28E2000DAA206 /* GoogleService-Info.plist */; };
+		FC5ECE222CA28E2000DAA206 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC5ECE202CA28E2000DAA206 /* GoogleService-Info.plist */; };
+		FC5ECE232CA28E2000DAA206 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC5ECE202CA28E2000DAA206 /* GoogleService-Info.plist */; };
 		FCA0C8382C1A3656006769AA /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		FCA0C8392C1A3656006769AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		FCA0C83E2C1A3656006769AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -51,8 +54,6 @@
 		FCA0C8802C1C7E0A006769AA /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB611A69B7D497D806C7B2F /* WorkSans-Medium.ttf */; };
 		FCA0C8812C1C7E0A006769AA /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D44D4D7088754D21BC7DA585 /* WorkSans-Regular.ttf */; };
 		FCA0C8822C1C7E0A006769AA /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD6E315850894A4DAA611507 /* WorkSans-SemiBold.ttf */; };
-		FCBAF8FB2C2AD392003F3740 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCBAF8FA2C2AD392003F3740 /* GoogleService-Info.plist */; };
-		FCBAF8FC2C2AD392003F3740 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCBAF8FA2C2AD392003F3740 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		E9EA04A5CA775CBD8AA8C839 /* Pods-Wellbeing-production.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wellbeing-production.release.xcconfig"; path = "Target Support Files/Pods-Wellbeing-production/Pods-Wellbeing-production.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EEC58FBC6F3935965A8D8319 /* Pods_Wellbeing_development.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wellbeing_development.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5ECE202CA28E2000DAA206 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCA0C8472C1A3656006769AA /* Wellbeing-development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wellbeing-development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA0C8482C1A3656006769AA /* WellbeingDevelopment-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WellbeingDevelopment-Info.plist"; path = "/Users/abumubarak/work/os/Wellbeing/ios/WellbeingDevelopment-Info.plist"; sourceTree = "<absolute>"; };
 		FCA0C85B2C1A36D5006769AA /* Wellbeing-staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wellbeing-staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +97,6 @@
 		FCBAF8F52C29E650003F3740 /* Wellbeing-development.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wellbeing-development.entitlements"; sourceTree = "<group>"; };
 		FCBAF8F62C29E665003F3740 /* Wellbeing-staging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Wellbeing-staging.entitlements"; path = "Wellbeing-staging/Wellbeing-staging.entitlements"; sourceTree = "<group>"; };
 		FCBAF8F72C29E66A003F3740 /* Wellbeing-production.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wellbeing-production.entitlements"; sourceTree = "<group>"; };
-		FCBAF8FA2C2AD392003F3740 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +163,7 @@
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				E4759D1069D6F10A4CE58CAE /* PrivacyInfo.xcprivacy */,
 				9A4E97B5F09C4317986C91A9 /* BootSplash.storyboard */,
-				FCBAF8FA2C2AD392003F3740 /* GoogleService-Info.plist */,
+				FC5ECE202CA28E2000DAA206 /* GoogleService-Info.plist */,
 			);
 			name = Wellbeing;
 			sourceTree = "<group>";
@@ -380,7 +381,6 @@
 				26A509D30A764700B95F5F26 /* WorkSans-Medium.ttf in Resources */,
 				B6AA244A36A441C19298402E /* WorkSans-Regular.ttf in Resources */,
 				7FB676878FA34932B69D4641 /* WorkSans-SemiBold.ttf in Resources */,
-				FCBAF8FB2C2AD392003F3740 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +395,7 @@
 				FCA0C8752C1C7AF8006769AA /* WorkSans-Regular.ttf in Resources */,
 				FCA0C8762C1C7AF8006769AA /* WorkSans-SemiBold.ttf in Resources */,
 				FCA0C83E2C1A3656006769AA /* Images.xcassets in Resources */,
-				FCBAF8FC2C2AD392003F3740 /* GoogleService-Info.plist in Resources */,
+				FC5ECE212CA28E2000DAA206 /* GoogleService-Info.plist in Resources */,
 				FCA0C83F2C1A3656006769AA /* PrivacyInfo.xcprivacy in Resources */,
 				FCA0C8402C1A3656006769AA /* BootSplash.storyboard in Resources */,
 			);
@@ -412,6 +412,7 @@
 				FCA0C87B2C1C7E01006769AA /* WorkSans-Regular.ttf in Resources */,
 				FCA0C87C2C1C7E01006769AA /* WorkSans-SemiBold.ttf in Resources */,
 				FCA0C8522C1A36D5006769AA /* Images.xcassets in Resources */,
+				FC5ECE222CA28E2000DAA206 /* GoogleService-Info.plist in Resources */,
 				FCA0C8532C1A36D5006769AA /* PrivacyInfo.xcprivacy in Resources */,
 				FCA0C8542C1A36D5006769AA /* BootSplash.storyboard in Resources */,
 			);
@@ -428,6 +429,7 @@
 				FCA0C8812C1C7E0A006769AA /* WorkSans-Regular.ttf in Resources */,
 				FCA0C8822C1C7E0A006769AA /* WorkSans-SemiBold.ttf in Resources */,
 				FCA0C8662C1A36F7006769AA /* Images.xcassets in Resources */,
+				FC5ECE232CA28E2000DAA206 /* GoogleService-Info.plist in Resources */,
 				FCA0C8672C1A36F7006769AA /* PrivacyInfo.xcprivacy in Resources */,
 				FCA0C8682C1A36F7006769AA /* BootSplash.storyboard in Resources */,
 			);
@@ -895,6 +897,7 @@
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				USE_HERMES = true;
 			};
 			name = Debug;

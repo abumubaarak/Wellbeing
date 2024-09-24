@@ -9,7 +9,8 @@
         android:roundIcon="${appIconRound}"
         android:icon="${appIcon}"
         android:allowBackup="false"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+         android:supportsRtl="true">
       <activity
         android:name=".MainActivity"
         android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"

@@ -4,8 +4,8 @@ import {Vibration} from 'react-native';
 import {isAndroid, moderateScale} from '../../utils';
 import {AnimatedText} from '../Text';
 
-const DEFAULT_MAX_DELAY = 100;
-const DEFAULT_MIN_DELAY = 8;
+const DEFAULT_MAX_DELAY = 10;
+const DEFAULT_MIN_DELAY = 10;
 type TypeWriterProps = {
   content: string;
   previousLength: number;

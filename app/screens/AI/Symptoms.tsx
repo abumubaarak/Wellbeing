@@ -1,8 +1,11 @@
 import {useIsFocused} from '@react-navigation/native';
-import {Buffer} from 'buffer';
 import React, {useEffect, useState} from 'react';
-import {Vibration} from 'react-native';
-import LiveAudioStream from 'react-native-live-audio-stream';
+import {
+  cleanup,
+  eventListener,
+  startTranscription,
+  stopTranscription,
+} from 'react-native-live-transcription';
 import {useMMKVString} from 'react-native-mmkv';
 import {useSharedValue} from 'react-native-reanimated';
 import {
@@ -14,20 +17,15 @@ import {
   SymptomsGradientBackground,
   TypeWriter,
 } from '../../components';
-import {AUDIO_CONFIG} from '../../utils';
-
-const ws = new WebSocket('https://d75d-197-211-58-119.ngrok-free.app/ws');
 
 export const Symptoms = () => {
   //const {t} = useTranslation();
   const options = useSharedValue(false);
   const [symptomsPref] = useMMKVString('symptoms');
   const [isRecording, setIsRecording] = useState<boolean>(false);
-  const recording = useSharedValue(false);
   const [previousLength, setPreviousLength] = useState<number>(0);
   const [symptoms, setSymptoms] = useState<string[]>([]);
   const [typingEffect, setTypingEffect] = useState<boolean>(true);
-  const [chunks, setChunks] = useState<Uint8Array[]>([]);
   const isFocus = useIsFocused();
 
   useEffect(() => {
@@ -37,40 +35,36 @@ export const Symptoms = () => {
     }
   }, [isFocus, symptomsPref]);
 
-  LiveAudioStream.init(AUDIO_CONFIG);
-
-  ws.onopen = () => {
-    //Do something here/IF not connected retry.
-  };
-  ws.onmessage = (e: WebSocketMessageEvent) => {
+  eventListener('onMessage', data => {
     if (symptoms.length === 0) {
       setPreviousLength(0);
     } else {
       setPreviousLength(symptoms.join('').length - 1);
     }
     setTypingEffect(true);
-    setSymptoms([...symptoms, e.data]);
-  };
-
-  LiveAudioStream.on('data', data => {
-    const bufferChunk = Buffer.from(data, 'base64');
-    setChunks([...chunks, bufferChunk]);
-    if (chunks.length >= 25) {
-      const joined_buffer = Buffer.concat(chunks);
-      ws.send(joined_buffer);
-      setChunks([]);
-    }
+    setSymptoms([...symptoms, data]);
   });
 
+  eventListener('silenceTimeout', data => {
+    setIsRecording(!data);
+    options.value = !data;
+    setSymptoms([]);
+  });
+
+  useEffect(() => {
+    return () => {
+      cleanup('onMessage');
+      cleanup('silenceTimeout');
+    };
+  }, []);
+
   const startRecording = async () => {
-    recording.value = !recording.value;
     setIsRecording(!isRecording);
-    options.value = !options.value;
+    options.value = !isRecording;
     if (isRecording) {
-      LiveAudioStream.stop();
+      stopTranscription();
     } else {
-      Vibration.vibrate([500]);
-      LiveAudioStream.start();
+      startTranscription();
     }
   };
 
@@ -85,6 +79,7 @@ export const Symptoms = () => {
       </Box>
       <SymptomsGradientBackground
         opacity={isRecording || symptoms.length > 0 ? 1 : 0}
+        dynamic={isRecording}
       />
       <PermissionHeader i18nKey="symptoms" />
 
@@ -97,11 +92,11 @@ export const Symptoms = () => {
           />
         </Box>
       )}
+
       <SymptomsFooter
         clearSymptoms={clearSymptoms}
         isRecording={isRecording}
         options={options}
-        recording={recording}
         startRecording={startRecording}
         symptoms={symptoms}
       />

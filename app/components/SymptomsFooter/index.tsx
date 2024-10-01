@@ -9,17 +9,15 @@ import {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
-import {Skottie} from 'react-native-skottie';
 import {CheckRound, Circle, Edit, Mic, Restart, Stop} from '../../assets/svgs';
 import {StackNavigation} from '../../navigators';
 import {AnimatedBox, Box} from '../Box';
-import {$circle, $circleButtonContainer, $skottie} from './style';
+import {$circle, $circleButtonContainer} from './style';
 
 type SymptomsFooter = {
   isRecording: boolean;
   symptoms: string[];
   options: SharedValue<boolean>;
-  recording: SharedValue<boolean>;
   clearSymptoms: () => void;
   startRecording: () => Promise<void>;
 };
@@ -28,7 +26,6 @@ export const SymptomsFooter = ({
   symptoms,
   clearSymptoms,
   options,
-  recording,
   startRecording,
 }: SymptomsFooter) => {
   const navigation = useNavigation<StackNavigation>();
@@ -64,21 +61,13 @@ export const SymptomsFooter = ({
 
   const recordingStyle = useAnimatedStyle(() => {
     return {
-      opacity: withSpring(recording.value ? 0 : 1),
-      transform: [{scale: withSpring(recording.value ? 0 : 1)}],
+      opacity: withSpring(options.value ? 0 : 1),
+      transform: [{scale: withSpring(options.value ? 0 : 1)}],
     };
   });
 
   return (
     <Box flex={1} alignItems="center" justifyContent="flex-end">
-      {isRecording && (
-        <Skottie
-          style={$skottie}
-          source={require('../../assets/lottie/wav.json')}
-          loop
-          autoPlay
-        />
-      )}
       <Box
         flexDirection="row"
         alignItems="center"

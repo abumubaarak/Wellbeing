@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-native-screens/common/cpp/react/renderer/components/rnscreens/RNSScreenComponentDescriptor.h b/node_modules/react-native-screens/common/cpp/react/renderer/components/rnscreens/RNSScreenComponentDescriptor.h
+index 37aac4e..6dc8a39 100644
+--- a/node_modules/react-native-screens/common/cpp/react/renderer/components/rnscreens/RNSScreenComponentDescriptor.h
++++ b/node_modules/react-native-screens/common/cpp/react/renderer/components/rnscreens/RNSScreenComponentDescriptor.h
+@@ -7,7 +7,7 @@
+ #include <react/renderer/components/rnscreens/Props.h>
+ #include <react/renderer/core/ConcreteComponentDescriptor.h>
+ #include "RNSScreenShadowNode.h"
+-#include "utils/RectUtil.h"
++#include <react/renderer/components/rnscreens/utils/RectUtil.h>
+ 
+ namespace facebook {
+ namespace react {

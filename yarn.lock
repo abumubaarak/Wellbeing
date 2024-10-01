@@ -4065,7 +4065,7 @@ __metadata:
     react-native-fs: ^2.20.0
     react-native-gesture-handler: ^2.16.2
     react-native-keyboard-aware-scroll-view: ^0.9.5
-    react-native-live-audio-stream: ^1.1.1
+    react-native-live-transcription: "git@github.com:abumubaarak/react-native-live-transcription.git"
     react-native-mmkv: ^3.0.2
     react-native-permissions: ^4.1.5
     react-native-reanimated: ^3.15.3
@@ -10005,10 +10005,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-live-audio-stream@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "react-native-live-audio-stream@npm:1.1.1"
-  checksum: 1503fb1d9e2df58bf31bfa9ee3cf5167802a659ec64e3a6ca8ba2401b6388af158f9e04895699152e91eec66bcc949a3f35ae38fb63435ae28959b5be56bbd2e
+"react-native-live-transcription@git@github.com:abumubaarak/react-native-live-transcription.git":
+  version: 0.1.0
+  resolution: "react-native-live-transcription@git@github.com:abumubaarak/react-native-live-transcription.git#commit=135f0ac1eab0d8ea8acf20ffb8d5786fd9179c54"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 98964a37757b57d5a5e3a4ab8cfb53635e8142dbf0d902ea05d10f5639e0e9692e3349cc521092af7e0a8ee60b506833fe742083f496185aa2c8a409a89ba67b
   languageName: node
   linkType: hard
 

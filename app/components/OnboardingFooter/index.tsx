@@ -1,18 +1,14 @@
 import {BottomSheetModal} from '@gorhom/bottom-sheet';
 import React, {useCallback, useRef} from 'react';
 import {useTranslation} from 'react-i18next';
-import {BorderlessButton, RectButton} from 'react-native-gesture-handler';
+import {BorderlessButton} from 'react-native-gesture-handler';
 import {Translations} from '../../i18n';
 import {AuthModal} from '../AuthModal';
 import {Box} from '../Box';
+import {Button} from '../Button';
 import {Text} from '../Text';
-import {
-  $button,
-  $buttonContainer,
-  $container,
-  $label,
-  $labelLogin,
-} from './style';
+import {$container, $labelLogin} from './style';
+import { $label } from '../Button/styles';
 
 export const OnboardingFooter = () => {
   const {t} = useTranslation<keyof Translations>();
@@ -29,13 +25,7 @@ export const OnboardingFooter = () => {
   return (
     <>
       <Box style={$container} flexGrow={0.05} overflow="hidden">
-        <Box style={$buttonContainer} overflow="hidden">
-          <RectButton style={$button} onPress={openGetStartedModal}>
-            <Text style={$label} variant="buttonLabel">
-              {t('getStarted')}
-            </Text>
-          </RectButton>
-        </Box>
+        <Button onPress={openGetStartedModal} label="getStarted" />
         <BorderlessButton rippleRadius={0} onPress={loginModal}>
           <Text variant="buttonLabel" style={[$label, $labelLogin]}>
             {t('login')}

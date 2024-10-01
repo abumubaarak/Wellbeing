@@ -16,13 +16,17 @@ export const textVariants = {
   buttonLabel: {
     fontFamily: 'WorkSans-SemiBold',
   },
-  special: {
+  mSemiBold: {
     fontFamily: 'MontserratAlternates-SemiBold',
+  },
+  mBold: {
+    fontFamily: 'MontserratAlternates-Bold',
   },
 
   defaults: {
     writingDirection: isRTL ? 'rtl' : 'ltr',
     color: 'black',
     fontFamily: 'WorkSans-Regular',
+    fontSize: moderateScale(14),
   },
 };

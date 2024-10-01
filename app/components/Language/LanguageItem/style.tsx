@@ -12,5 +12,5 @@ export const $container: ViewStyle = {
   borderRadius: moderateScale(100),
 };
 export const $line: ViewStyle = {
-  marginLeft: isAndroid ? 0 : horizontalScale(85),
+  marginLeft: isAndroid ? 0 : horizontalScale(65),
 };

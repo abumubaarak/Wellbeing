@@ -11,9 +11,11 @@ import CheckMark from './check.svg';
 import Circle from './circle.svg';
 import Doctor from './doctor.svg';
 import Edit from './edit.svg';
+import Error from './error_feedback.svg';
 import Spanish from './es.svg';
 import GetStartedCircle from './getStartedCircle.svg';
 import Google from './google.svg';
+import GradientLayer from './gradient-layer.svg';
 import GradientBackground from './gradientBackground.svg';
 import Home from './home.svg';
 import HomeActive from './homeActive.svg';
@@ -48,6 +50,7 @@ export {
   Doctor,
   Edit,
   English,
+  Error,
   GetStartedCircle,
   Google,
   GradientBackground,
@@ -66,4 +69,5 @@ export {
   Translate,
   User,
   UserActive,
+  GradientLayer,
 };

@@ -20,7 +20,10 @@ export const Screen = ({children, styles, useAlignment}: ScreenProps) => {
       style={[
         styles,
         useAlignment && $container,
-        {paddingTop: PADDING_TOP, paddingBottom: PADDING_BOTTOM},
+        {
+          paddingTop: PADDING_TOP,
+          paddingBottom: PADDING_BOTTOM,
+        },
       ]}>
       {children}
     </Box>

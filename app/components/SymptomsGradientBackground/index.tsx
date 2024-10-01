@@ -1,4 +1,3 @@
-/* eslint-disable curly */
 import React, {useEffect} from 'react';
 import {
   useAnimatedStyle,

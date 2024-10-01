@@ -38,6 +38,9 @@ const en = {
   analyse: 'Analyse',
   analysing: 'Analysing your symptoms',
   done: 'Done',
+  gotIt: 'Got it',
+  advice:
+    'This app does not replace doctors. Always consult with a qualified physician for any health concerns.',
 };
 
 export default en;

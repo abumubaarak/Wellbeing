@@ -40,5 +40,8 @@ const ar: Translations = {
   analyse: 'تحليل',
   analysing: 'تحليل الأعراض الخاصة بك',
   done: 'منتهي',
+  gotIt: 'أفهم',
+  advice:
+    'هذا التطبيق لا يحل محل الأطباء. استشر دائمًا طبيبًا مؤهلًا بشأن أي مخاوف صحية.',
 };
 export default ar;

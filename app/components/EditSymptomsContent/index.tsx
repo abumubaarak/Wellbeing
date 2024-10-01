@@ -1,18 +1,14 @@
 import React from 'react';
 import {Controller, useForm} from 'react-hook-form';
 import {KeyboardAvoidingView, TextInput} from 'react-native';
-import {RectButton} from 'react-native-gesture-handler';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {storage} from '../../data';
 import {isAndroid} from '../../utils';
 import {Box} from '../Box';
 
 import {useNavigation} from '@react-navigation/native';
-import {useTranslation} from 'react-i18next';
-import {Translations} from '../../i18n';
 import {StackNavigation} from '../../navigators';
-import {$button, $buttonContainer, $label} from '../OnboardingFooter/style';
-import {Text} from '../Text';
+import {Button} from '../Button';
 import {$container, $footer, $textInput} from './style';
 
 type EditSymptomsContentProps = {
@@ -22,7 +18,6 @@ export const EditSymptomsContent = ({symptoms}: EditSymptomsContentProps) => {
   const {control, getValues} = useForm({
     defaultValues: {symptoms},
   });
-  const {t} = useTranslation<keyof Translations>();
 
   const navigation = useNavigation<StackNavigation>();
 
@@ -55,13 +50,7 @@ export const EditSymptomsContent = ({symptoms}: EditSymptomsContentProps) => {
         />
       </KeyboardAwareScrollView>
       <Box style={$footer}>
-        <Box style={[$buttonContainer]} overflow="hidden">
-          <RectButton style={$button} onPress={Done}>
-            <Text style={$label} variant="buttonLabel">
-              {t('done')}
-            </Text>
-          </RectButton>
-        </Box>
+        <Button onPress={Done} label="done" />
       </Box>
     </KeyboardAvoidingView>
   );

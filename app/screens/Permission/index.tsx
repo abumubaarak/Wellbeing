@@ -1,21 +1,12 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {useTranslation} from 'react-i18next';
-import {RectButton} from 'react-native-gesture-handler';
 import {PermissionStatus, request} from 'react-native-permissions';
-import {Box, Dismiss, PermissionContent, Screen, Text} from '../../components';
-import {
-  $button,
-  $buttonContainer,
-  $label,
-} from '../../components/OnboardingFooter/style';
-import {Translations} from '../../i18n';
+import {Button, Dismiss, PermissionContent, Screen} from '../../components';
 import {StackNavigation} from '../../navigators';
 import {MICROPHONE_PERMISSION} from '../../utils';
 //remove in-line style
 
 export const Permission = () => {
-  const {t} = useTranslation<keyof Translations>();
   const navigation = useNavigation<StackNavigation>();
 
   const microphonePermission = () => {
@@ -30,13 +21,7 @@ export const Permission = () => {
     <Screen useAlignment>
       <Dismiss />
       <PermissionContent />
-      <Box style={[$buttonContainer]} overflow="hidden">
-        <RectButton style={$button} onPress={microphonePermission}>
-          <Text style={$label} variant="buttonLabel">
-            {t('allow')}
-          </Text>
-        </RectButton>
-      </Box>
+      <Button onPress={microphonePermission} label="allow" />
     </Screen>
   );
 };

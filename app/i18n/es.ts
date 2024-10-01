@@ -41,5 +41,8 @@ const es: Translations = {
   analyse: 'Analizar',
   analysing: 'Analizando sus síntomas',
   done: 'Hecho',
+  gotIt: 'Entiendo',
+  advice:
+    'Esta aplicación no reemplaza a los médicos. Siempre consulte con un médico calificado si tiene algún problema de salud.',
 };
 export default es;

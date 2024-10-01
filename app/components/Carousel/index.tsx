@@ -55,7 +55,7 @@ export const OnboardingCarousel = ({onSnapToItem}: OnboardingCarouselProps) => {
             <Text
               textAlign="center"
               numberOfLines={2}
-              variant="special"
+              variant="mSemiBold"
               style={$labelHeading}>
               {i18nRTL[index].title}
             </Text>

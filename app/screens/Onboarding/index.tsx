@@ -5,13 +5,13 @@ import {
   OnboardingHeader,
   Screen,
 } from '../../components';
-import {useProgress} from '../../hooks/';
+import {useProgress} from '../../hooks';
 
 export const OnboardingScreen = () => {
-  const {onSnapToItem, widthStyle} = useProgress();
+  const {onSnapToItem, scrollIndex} = useProgress();
   return (
     <Screen>
-      <OnboardingHeader widthStyle={widthStyle} />
+      <OnboardingHeader width={scrollIndex} />
       <OnboardingCarousel onSnapToItem={onSnapToItem} />
       <OnboardingFooter />
     </Screen>

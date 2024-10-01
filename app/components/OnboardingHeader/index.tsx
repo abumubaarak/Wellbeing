@@ -1,6 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {ViewStyle} from 'react-native';
 import {BorderlessButton} from 'react-native-gesture-handler';
 import {Translate} from '../../assets/svgs';
 import {StackNavigation} from '../../navigators';
@@ -9,17 +8,22 @@ import {ProgressBar} from '../ProgressBar';
 import {$container, $icon} from './style';
 
 type OnboardingHeader = {
-  widthStyle: ViewStyle;
+  width: number;
 };
 
-export const OnboardingHeader = ({widthStyle}: OnboardingHeader) => {
+export const OnboardingHeader = ({width}: OnboardingHeader) => {
   const navigation = useNavigation<StackNavigation>();
   const onPress = () => {
     navigation.navigate('ChangeLanguage');
   };
   return (
     <Box flexGrow={0.03} style={$container}>
-      <ProgressBar widthStyle={widthStyle} />
+      <ProgressBar
+        containerHeight={5}
+        widthSize={width}
+        backgroundColor={'primary500'}
+        containerBackgroundColor={'primary200'}
+      />
       <Box alignItems="flex-end" style={$icon}>
         <BorderlessButton hitSlop={50} onPress={onPress}>
           <Translate />

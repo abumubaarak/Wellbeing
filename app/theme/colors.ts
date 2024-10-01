@@ -9,4 +9,14 @@ export const colors = {
   white: '#ffffff',
   black: '#181D17',
   grey: '#8A98A1',
+  greyLight: '#C5C7C5',
+  error: '#D80027',
+  tomato: '#FF6347',
+  lightTomato: '#D4C590',
+  blue: '#4682B4',
+  lightBlue: '#9CCEB1',
+  orange: '#F28C28',
+  lightOrange: '#D9BD6C',
 };
+
+export type Colors = typeof colors;

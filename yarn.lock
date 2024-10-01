@@ -10007,11 +10007,11 @@ __metadata:
 
 "react-native-live-transcription@git@github.com:abumubaarak/react-native-live-transcription.git":
   version: 0.1.0
-  resolution: "react-native-live-transcription@git@github.com:abumubaarak/react-native-live-transcription.git#commit=74203d36c67f1d0dffa235c088c1cf1fcb551169"
+  resolution: "react-native-live-transcription@git@github.com:abumubaarak/react-native-live-transcription.git#commit=135f0ac1eab0d8ea8acf20ffb8d5786fd9179c54"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 1496d9099063a435b9f8f4ad36fbef190596051bc87d5811f6ea37e219ceb0ce34d810506b90915db000d6c14a7830e51bb27e593982e3a4f8aea136aed6d725
+  checksum: 98964a37757b57d5a5e3a4ab8cfb53635e8142dbf0d902ea05d10f5639e0e9692e3349cc521092af7e0a8ee60b506833fe742083f496185aa2c8a409a89ba67b
   languageName: node
   linkType: hard
 

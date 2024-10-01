@@ -56,7 +56,6 @@ export const Symptoms = () => {
       cleanup('onMessage');
       cleanup('silenceTimeout');
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const startRecording = async () => {

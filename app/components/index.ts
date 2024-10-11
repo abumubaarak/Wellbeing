@@ -21,17 +21,27 @@ import {SymptomsFooter} from './SymptomsFooter';
 import {SymptomsGradientBackground} from './SymptomsGradientBackground';
 import {Text} from './Text';
 import {TypeWriter} from './TypeWriter';
+import { InsightCard } from './InsightCard';
+import { Greetings } from './Greetings/Index';
+import { SpecialistCategory } from './Specialist/Index';
+import { Upcoming } from './Upcoming/Index';
+import { Recommended } from './Recommended/Index';
 
 export {
   AnimatedBox,
   AuthModal,
+  SpecialistCategory,
+  InsightCard,
   Box,
   CirclePie,
+  Upcoming,
+  Recommended,
   Dismiss,
   EditSymptomsContent,
   CircularLoader,
   Feedback,
   Header,
+  Greetings,
   Language,
   Button,
   Line,

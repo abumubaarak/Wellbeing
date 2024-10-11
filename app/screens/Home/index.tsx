@@ -1,28 +1,18 @@
 import React, {useEffect} from 'react';
 
-import {useNavigation} from '@react-navigation/native';
-import {RectButton} from 'react-native-gesture-handler';
+import {ScrollView} from 'react-native';
 import {useMMKVString} from 'react-native-mmkv';
-import {check} from 'react-native-permissions';
-import {Brain} from '../../assets/svgs';
-import {Box, Screen} from '../../components';
-import {$button, $widthHeightStyle} from '../../components/Dismiss/style';
-import {StackNavigation} from '../../navigators';
-import {MICROPHONE_PERMISSION, moderateScale} from '../../utils';
+import {
+  Greetings,
+  InsightCard,
+  Recommended,
+  Screen,
+  SpecialistCategory,
+  Upcoming,
+} from '../../components';
 
 export const Home = () => {
-  const navigation = useNavigation<StackNavigation>();
   const [_, setSymptomsPref] = useMMKVString('symptoms');
-
-  const handleOnPress = async () => {
-    //handle other case later.Insha Allah
-    const result = await check(MICROPHONE_PERMISSION);
-    if (result === 'granted') {
-      navigation.navigate('Symptoms');
-    } else {
-      navigation.navigate('Permission');
-    }
-  };
 
   useEffect(() => {
     setSymptomsPref('');
@@ -30,20 +20,14 @@ export const Home = () => {
   }, []);
 
   return (
-    <Screen useAlignment>
-      <Box alignItems="flex-end">
-        <Box
-          borderRadius={moderateScale(100)}
-          backgroundColor="primary400"
-          alignItems="center"
-          justifyContent="center">
-          <RectButton
-            style={[$button, $widthHeightStyle(40)]}
-            onPress={handleOnPress}>
-            <Brain width={25} height={25} />
-          </RectButton>
-        </Box>
-      </Box>
+    <Screen useAlignment useBottomPadding={false}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Greetings />
+        <InsightCard />
+        <SpecialistCategory />
+        <Upcoming />
+        <Recommended />
+      </ScrollView>
     </Screen>
   );
 };

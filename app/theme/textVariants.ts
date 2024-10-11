@@ -13,12 +13,17 @@ export const textVariants = {
   regularBold: {
     fontFamily: 'WorkSans-SemiBold',
   },
+  medium: {
+    fontFamily: 'WorkSans-Medium',
+    fontSize: moderateScale(13),
+  },
   buttonLabel: {
     fontFamily: 'WorkSans-SemiBold',
   },
   mSemiBold: {
     fontFamily: 'MontserratAlternates-SemiBold',
   },
+
   mBold: {
     fontFamily: 'MontserratAlternates-Bold',
   },

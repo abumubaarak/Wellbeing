@@ -1,5 +1,14 @@
 /* eslint-disable react/react-in-jsx-scope */
-import {Brain, Doctor, Schedule, Telemedicine} from '../assets/svgs';
+import {
+  Brain,
+  BrainNeuro,
+  Dentist,
+  Doctor,
+  HeartOrgan,
+  Schedule,
+  Stethoscope,
+  Telemedicine,
+} from '../assets/svgs';
 
 export const carouselData = [
   {
@@ -26,5 +35,25 @@ export const carouselData = [
     summary:
       'Skip the wait and get expert healthcare\nconsultations with a quick video visit.',
     icon: <Telemedicine />,
+  },
+];
+
+export const SPECIALISTS = [
+  {
+    name: 'Dentist',
+    icon: <Dentist />,
+  },
+  {
+    name: 'General',
+    icon: <Stethoscope />,
+  },
+
+  {
+    name: 'Neurologist',
+    icon: <BrainNeuro />,
+  },
+  {
+    name: 'Cardiology',
+    icon: <HeartOrgan />,
   },
 ];

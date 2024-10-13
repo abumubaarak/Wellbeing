@@ -1,7 +1,7 @@
 import {BottomSheetView} from '@gorhom/bottom-sheet';
 import React from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {ISPECIALISTS, moderateScale} from '../../utils';
+import {isAndroid, ISPECIALISTS, moderateScale} from '../../utils';
 import {$bottomSheetContainer} from '../AuthModal/style';
 import {Box} from '../Box';
 import {Button} from '../Button';
@@ -13,13 +13,13 @@ type SpecialistInfoProps = {
 };
 export const SpecialistInfo = ({selectedItem}: SpecialistInfoProps) => {
   const insets = useSafeAreaInsets();
-
+  const PADDING_BOTTOM = isAndroid ? 15 : insets.bottom;
   return (
     <BottomSheetView
       style={[
         $bottomSheetContainer,
         $container,
-        {paddingBottom: insets.bottom},
+        {paddingBottom: PADDING_BOTTOM},
       ]}>
       <Box flex={1} gap="l">
         <Box>

@@ -16,7 +16,7 @@ export const FindDoctor = () => {
   const width = Dimensions.get('screen').width;
   const [selectedItem, setSelectedItem] = useState<ISPECIALISTS>();
 
-  const bottomSheetModalRef = useRef();
+  const bottomSheetModalRef = useRef<BottomSheetModal>();
 
   const openModel = (index: any) => {
     setSelectedItem(SPECIALISTS_INFO[index]);

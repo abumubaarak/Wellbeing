@@ -6,6 +6,7 @@ import {Symptoms} from '../screens/AI';
 import {Analyse} from '../screens/Analyse';
 import {Analysis} from '../screens/Analysis';
 import {EditSymptoms} from '../screens/EditSymptoms';
+import {FindDoctor} from '../screens/FindDoctor/Index';
 import {AppStackParamList} from './AppStackParamList';
 import {HomeNavigator} from './HomeNavigator';
 export const AppStack = () => {
@@ -38,6 +39,7 @@ export const AppStack = () => {
           <Stack.Screen name="Symptoms" component={Symptoms} />
           <Stack.Screen name="Analyse" component={Analyse} />
           <Stack.Screen name="Analysis" component={Analysis} />
+          <Stack.Screen name="FindDoctor" component={FindDoctor} />
 
           <Stack.Group
             screenOptions={{

@@ -8,8 +8,8 @@ import {Config} from 'react-native-config';
 import {UUID, isAndroid} from '../utils';
 export async function googleSignIn() {
   await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
-  const {idToken} = await GoogleSignin.signIn();
-  const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+  const {data} = await GoogleSignin.signIn();
+  const googleCredential = auth.GoogleAuthProvider.credential(data?.idToken!);
   return auth()
     .signInWithCredential(googleCredential)
     .then(() => createUser('google'));

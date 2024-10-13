@@ -7,6 +7,7 @@ export type AppStackParamList = {
   HomeTab: undefined;
   Permission: undefined;
   Symptoms: undefined;
+  FindDoctor: undefined;
   EditSymptoms: {symptoms: string};
   Analyse: {symptoms: string};
   Analysis: {result: AnalyseResponse};

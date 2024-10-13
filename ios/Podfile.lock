@@ -1192,6 +1192,41 @@ PODS:
     - hermes-engine/Pre-built (= 0.75.3)
   - hermes-engine/Pre-built (0.75.3)
   - leveldb-library (1.22.5)
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
+  - lottie-ios (4.5.0)
+  - lottie-react-native (7.0.0):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - lottie-ios (= 4.5.0)
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - nanopb (2.30909.1):
     - nanopb/decode (= 2.30909.1)
     - nanopb/encode (= 2.30909.1)
@@ -2565,11 +2600,6 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-skia-skottie (2.1.4):
-    - React
-    - React-Core
-    - react-native-skia
-    - SSZipArchive
   - React-nativeconfig (0.75.3)
   - React-NativeModulesApple (0.75.3):
     - glog
@@ -2854,6 +2884,10 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - RNFastImage (8.6.3):
+    - React-Core
+    - SDWebImage (~> 5.11.1)
+    - SDWebImageWebPCoder (~> 0.8.4)
   - RNFBApp (20.5.0):
     - Firebase/CoreOnly (= 10.29.0)
     - React-Core
@@ -3090,8 +3124,13 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - SDWebImageWebPCoder (0.8.5):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.10)
   - SocketRocket (0.7.0)
-  - SSZipArchive (2.4.3)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -3105,6 +3144,7 @@ DEPENDENCIES:
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - GoogleUtilities
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
+  - lottie-react-native (from `../node_modules/lottie-react-native`)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCT-Folly/Fabric (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTDeprecation (from `../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation`)
@@ -3142,7 +3182,6 @@ DEPENDENCIES:
   - react-native-restart (from `../node_modules/react-native-restart`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-skia (from `../node_modules/@shopify/react-native-skia`)"
-  - react-native-skia-skottie (from `../node_modules/react-native-skottie`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -3171,6 +3210,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNAppleAuthentication (from `../node_modules/@invertase/react-native-apple-authentication`)"
   - RNBootSplash (from `../node_modules/react-native-bootsplash`)
+  - RNFastImage (from `../node_modules/react-native-fast-image`)
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
@@ -3208,11 +3248,14 @@ SPEC REPOS:
     - GTMAppAuth
     - GTMSessionFetcher
     - leveldb-library
+    - libwebp
+    - lottie-ios
     - nanopb
     - PromisesObjC
     - RecaptchaInterop
+    - SDWebImage
+    - SDWebImageWebPCoder
     - SocketRocket
-    - SSZipArchive
 
 EXTERNAL SOURCES:
   boost:
@@ -3230,6 +3273,8 @@ EXTERNAL SOURCES:
   hermes-engine:
     :podspec: "../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec"
     :tag: hermes-2024-08-15-RNv0.75.1-4b3bf912cc0f705b51b71ce1a5b8bd79b93a451b
+  lottie-react-native:
+    :path: "../node_modules/lottie-react-native"
   RCT-Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
   RCTDeprecation:
@@ -3300,8 +3345,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-skia:
     :path: "../node_modules/@shopify/react-native-skia"
-  react-native-skia-skottie:
-    :path: "../node_modules/react-native-skottie"
   React-nativeconfig:
     :path: "../node_modules/react-native/ReactCommon"
   React-NativeModulesApple:
@@ -3358,6 +3401,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@invertase/react-native-apple-authentication"
   RNBootSplash:
     :path: "../node_modules/react-native-bootsplash"
+  RNFastImage:
+    :path: "../node_modules/react-native-fast-image"
   RNFBApp:
     :path: "../node_modules/@react-native-firebase/app"
   RNFBAuth:
@@ -3413,6 +3458,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5aea5ba6bd522a239e236100971f10cb71b96ab6
   hermes-engine: 8d2103d6c0176779aea4e25df6bb1410f9946680
   leveldb-library: e8eadf9008a61f9e1dde3978c086d2b6d9b9dc28
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
+  lottie-ios: a881093fab623c467d3bce374367755c272bdd59
+  lottie-react-native: f2acc369ed34a7d3d08fa5194ba253ab646c75e1
   nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   RCT-Folly: 4464f4d875961fce86008d45f4ecf6cef6de0740
@@ -3450,7 +3498,6 @@ SPEC CHECKSUMS:
   react-native-restart: 7595693413fe3ca15893702f2c8306c62a708162
   react-native-safe-area-context: 4571abffff5db8a314b849a2c72aae5cba2e4c7a
   react-native-skia: 579b5506783a4e665acfe32dd879f556442aafb6
-  react-native-skia-skottie: bcb426d1bf7cd2771635efc11d30d5bd97fd7a11
   React-nativeconfig: cd572c97f64676dcc2a1c88fc644b693b98408bf
   React-NativeModulesApple: 249c7a23d8ad82f13778f4f525a8d19ccf4deb86
   React-perflogger: 3bbb82f18e9ac29a1a6931568e99d6305ef4403b
@@ -3480,6 +3527,7 @@ SPEC CHECKSUMS:
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   RNAppleAuthentication: e00c76acb03351f5544373c78fa7f359bef6d5d3
   RNBootSplash: ce6500d0e017b3db6905bb78dd2757d3272efda1
+  RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
   RNFBApp: 017499cd7ea340963bfac43b4fcb28d2b0b21a09
   RNFBAuth: 97633be48cc4e539d954270a218785d2e3f9fde7
   RNFBFirestore: 5250af3b06d1fe90b75c905d8b29d155e603d040
@@ -3491,8 +3539,9 @@ SPEC CHECKSUMS:
   RNScreens: 47d5b0b48402f5a2da5b2dd543deae3c9083a5ac
   RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
   RNSVG: 2046b471030c6ac19cb800d2428e33ca59df1929
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
-  SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Yoga: c8810b40c43fa71cc1492f358ad5cd5fc1b505da
 
 PODFILE CHECKSUM: 2a64f80171ff1077353f59d734e58d83404f5c19

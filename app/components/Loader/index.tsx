@@ -1,5 +1,5 @@
+import LottieView from 'lottie-react-native';
 import React from 'react-native';
-import {Skottie} from 'react-native-skottie';
 import {Loader} from '../../assets/lottie';
 import {$skottie} from './styles';
 
@@ -11,7 +11,7 @@ export const CircularLoader = ({isLoading}: CircularLoaderProps) => {
   return (
     <>
       {isLoading && (
-        <Skottie
+        <LottieView
           style={$skottie}
           resizeMode="cover"
           source={Loader}

@@ -1,3 +1,4 @@
+/* eslint-disable curly */
 import {I18nManager, Platform} from 'react-native';
 import {PERMISSIONS} from 'react-native-permissions';
 
@@ -8,4 +9,9 @@ export const MICROPHONE_PERMISSION = isAndroid
 export const isRTL = I18nManager.isRTL ? true : false;
 export const UUID = () => {
   return Math.floor(Math.random() * Date.now());
+};
+
+export const doctorReview = (review: number) => {
+  if (review === 0 || !review) return '0 Review';
+  if (review > 1) return `${review} Reviews`;
 };

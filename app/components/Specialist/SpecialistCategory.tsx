@@ -21,7 +21,7 @@ export const SpecialistCategory = () => {
   const navigation = useNavigation<StackNavigation>();
   const snapPoints = useMemo(() => ['1', '85%'], []);
 
-  const bottomSheetModalRef = useRef<BottomSheetModalMethods>();
+  const bottomSheetModalRef = useRef<BottomSheetModalMethods>(null);
   const [selectedItem, setSelectedItem] = useState<ISPECIALISTS>();
 
   const seeAll = () => {
@@ -64,7 +64,10 @@ export const SpecialistCategory = () => {
         handleIndicatorStyle={$indicator}
         backdropComponent={BottomSheetBackdrop}
         snapPoints={snapPoints}>
-        <SpecialistInfo selectedItem={selectedItem!} />
+        <SpecialistInfo
+          selectedItem={selectedItem!}
+          bottomSheetModalRef={bottomSheetModalRef}
+        />
       </BottomSheetModal>
     </Box>
   );

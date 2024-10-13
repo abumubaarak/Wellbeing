@@ -8,6 +8,7 @@ export type AppStackParamList = {
   Permission: undefined;
   Symptoms: undefined;
   FindDoctor: undefined;
+  SpecialistDoctor: {area: string};
   EditSymptoms: {symptoms: string};
   Analyse: {symptoms: string};
   Analysis: {result: AnalyseResponse};

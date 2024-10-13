@@ -25,6 +25,7 @@ import {SymptomsFooter} from './SymptomsFooter';
 import {SymptomsGradientBackground} from './SymptomsGradientBackground';
 import {Text} from './Text';
 import {TypeWriter} from './TypeWriter';
+import {DoctorList} from './DoctorList';
 import {Upcoming} from './Upcoming/Index';
 
 export {
@@ -32,6 +33,7 @@ export {
   AuthModal,
   Box,
   Button,
+  DoctorList,
   CirclePie,
   CircularLoader,
   Dismiss,

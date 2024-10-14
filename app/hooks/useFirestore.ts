@@ -1,8 +1,8 @@
 import firestore, {
   FirebaseFirestoreTypes,
 } from '@react-native-firebase/firestore';
-import {useState} from 'react';
-import {USERS} from '../services';
+import { useState } from 'react';
+import { USERS } from '../services';
 
 export const useFirestore = () => {
   const [data, setData] = useState<FirebaseFirestoreTypes.DocumentData[]>([]);

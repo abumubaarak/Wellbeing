@@ -3,6 +3,9 @@ import {AnimatedBox, Box} from './Box';
 import {Button} from './Button';
 import {OnboardingCarousel} from './Carousel';
 import {Dismiss} from './Dismiss';
+import {DoctorDetailsHeader} from './DoctorDetailsHeader';
+import {DoctorInfoCard} from './DoctorInfoCard';
+import {DoctorList} from './DoctorList';
 import {EditSymptomsContent} from './EditSymptomsContent';
 import {Feedback} from './Feedback';
 import {Greetings} from './Greetings/Index';
@@ -25,7 +28,6 @@ import {SymptomsFooter} from './SymptomsFooter';
 import {SymptomsGradientBackground} from './SymptomsGradientBackground';
 import {Text} from './Text';
 import {TypeWriter} from './TypeWriter';
-import {DoctorList} from './DoctorList';
 import {Upcoming} from './Upcoming/Index';
 
 export {
@@ -33,10 +35,12 @@ export {
   AuthModal,
   Box,
   Button,
-  DoctorList,
   CirclePie,
   CircularLoader,
   Dismiss,
+  DoctorDetailsHeader,
+  DoctorInfoCard,
+  DoctorList,
   EditSymptomsContent,
   Feedback,
   Greetings,

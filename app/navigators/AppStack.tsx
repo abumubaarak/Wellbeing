@@ -1,7 +1,7 @@
 import auth from '@react-native-firebase/auth';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect, useState} from 'react';
-import {ChangeLanguage, OnboardingScreen, Permission} from '../screens/';
+import {ChangeLanguage, DoctorDetails, OnboardingScreen, Permission, SpecialistDoctor} from '../screens/';
 import {Symptoms} from '../screens/AI';
 import {Analyse} from '../screens/Analyse';
 import {Analysis} from '../screens/Analysis';
@@ -40,6 +40,8 @@ export const AppStack = () => {
           <Stack.Screen name="Analyse" component={Analyse} />
           <Stack.Screen name="Analysis" component={Analysis} />
           <Stack.Screen name="FindDoctor" component={FindDoctor} />
+          <Stack.Screen name="SpecialistDoctor" component={SpecialistDoctor} />
+          <Stack.Screen name="DoctorDetails" component={DoctorDetails} />
 
           <Stack.Group
             screenOptions={{

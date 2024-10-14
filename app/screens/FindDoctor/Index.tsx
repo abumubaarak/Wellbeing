@@ -16,7 +16,7 @@ export const FindDoctor = () => {
   const width = Dimensions.get('screen').width;
   const [selectedItem, setSelectedItem] = useState<ISPECIALISTS>();
 
-  const bottomSheetModalRef = useRef<BottomSheetModal>();
+  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
 
   const openModel = (index: any) => {
     setSelectedItem(SPECIALISTS_INFO[index]);
@@ -50,7 +50,10 @@ export const FindDoctor = () => {
         handleIndicatorStyle={$indicator}
         backdropComponent={BottomSheetBackdrop}
         snapPoints={snapPoints}>
-        <SpecialistInfo selectedItem={selectedItem!} />
+        <SpecialistInfo
+          selectedItem={selectedItem!}
+          bottomSheetModalRef={bottomSheetModalRef}
+        />
       </BottomSheetModal>
     </>
   );

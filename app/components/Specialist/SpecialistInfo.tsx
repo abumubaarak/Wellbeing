@@ -1,6 +1,9 @@
 import {BottomSheetView} from '@gorhom/bottom-sheet';
+import {BottomSheetModalMethods} from '@gorhom/bottom-sheet/lib/typescript/types';
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {StackNavigation} from '../../navigators';
 import {isAndroid, ISPECIALISTS, moderateScale} from '../../utils';
 import {$bottomSheetContainer} from '../AuthModal/style';
 import {Box} from '../Box';
@@ -10,10 +13,23 @@ import {$container} from './styles';
 
 type SpecialistInfoProps = {
   selectedItem: ISPECIALISTS;
+  bottomSheetModalRef: React.RefObject<BottomSheetModalMethods>;
 };
-export const SpecialistInfo = ({selectedItem}: SpecialistInfoProps) => {
+export const SpecialistInfo = ({
+  selectedItem,
+  bottomSheetModalRef,
+}: SpecialistInfoProps) => {
+  const navigation = useNavigation<StackNavigation>();
+
   const insets = useSafeAreaInsets();
   const PADDING_BOTTOM = isAndroid ? 15 : insets.bottom;
+
+  const onPress = () => {
+    if (bottomSheetModalRef) {
+      bottomSheetModalRef.current?.close();
+      navigation.navigate('SpecialistDoctor', {area: selectedItem.name});
+    }
+  };
   return (
     <BottomSheetView
       style={[
@@ -39,7 +55,7 @@ export const SpecialistInfo = ({selectedItem}: SpecialistInfoProps) => {
           </Text>
         </Box>
       </Box>
-      <Button label={`Explore ${selectedItem?.name}s`} />
+      <Button label={`Explore ${selectedItem?.name}s`} onPress={onPress} />
     </BottomSheetView>
   );
 };

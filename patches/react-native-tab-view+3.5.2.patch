@@ -1,0 +1,36 @@
+diff --git a/node_modules/react-native-tab-view/src/TabBar.tsx b/node_modules/react-native-tab-view/src/TabBar.tsx
+index e8d0b4c..89b7d0b 100644
+--- a/node_modules/react-native-tab-view/src/TabBar.tsx
++++ b/node_modules/react-native-tab-view/src/TabBar.tsx
+@@ -17,7 +17,7 @@ import {
+ import useLatestCallback from 'use-latest-callback';
+ 
+ import { Props as IndicatorProps, TabBarIndicator } from './TabBarIndicator';
+-import { Props as TabBarItemProps, TabBarItem } from './TabBarItem';
++import { TabBarItem, Props as TabBarItemProps } from './TabBarItem';
+ import type {
+   Event,
+   Layout,
+@@ -364,8 +364,8 @@ export function TabBar<T extends Route>({
+ 
+   const renderItem = React.useCallback(
+     ({ item: route, index }: ListRenderItemInfo<T>) => {
+-      const props: TabBarItemProps<T> & { key: string } = {
+-        key: route.key,
++      
++      const props: TabBarItemProps<T> = {   
+         position: position,
+         route: route,
+         navigationState: navigationState,
+@@ -446,9 +446,9 @@ export function TabBar<T extends Route>({
+         <>
+           {gap > 0 && index > 0 ? <Separator width={gap} /> : null}
+           {renderTabBarItem ? (
+-            renderTabBarItem(props)
++            renderTabBarItem({ key: route.key, ...props })
+           ) : (
+-            <TabBarItem {...props} />
++            <TabBarItem key={route.key} {...props} />
+           )}
+         </>
+       );

@@ -46,51 +46,54 @@ import Verified from './verified.svg';
 import Video from './video.svg';
 
 import ArrowLeft from './arrow-left.svg';
-import Lungs from './lungs.svg';
-import Orthopedics from './orthopedics.svg';
 import Gynecology from './gynecology.svg';
-import Ophthalmology from './ophthalmology.svg';
+import Lungs from './lungs.svg';
 import Nephrology from './nephrology.svg';
+import Ophthalmology from './ophthalmology.svg';
+import Orthopedics from './orthopedics.svg';
 
-import Gastrology from './gastrology.svg';
-import Pediatrics from './pediatrics.svg';
-import StethoscopeN from './stethoscope_n.svg';
-import DentistN from './dentist_n.svg';
 import BrainNeuroN from './brainNeuroN.svg';
+import Case from './case.svg';
+import DentistN from './dentist_n.svg';
+import Gastrology from './gastrology.svg';
 import GynecologyN from './gynecologyN.svg';
+import Pediatrics from './pediatrics.svg';
+import ReviewGreen from './reviewGreen.svg';
+import SingleStar from './singleStar.svg';
+import StethoscopeN from './stethoscope_n.svg';
+import UserGroup from './userGroup.svg';
+
 export {
   Apple,
   Appointment,
   Arabic,
-  Nephrology,
-  StethoscopeN,
-  DentistN,
-  Ophthalmology,
-  Gynecology,
   ArrowLeft,
   Back,
-  Gastrology,
   Brain,
-  BrainNeuroN,
   BrainNeuro,
+  BrainNeuroN,
   Calendar,
   CalendarActive,
   Cancel,
+  Case,
   Chat,
   ChatActive,
   CheckMark,
   CheckRound,
   Circle,
-  GynecologyN,
   Dentist,
+  DentistN,
   Doctor,
   Edit,
   English,
   Error,
+  Gastrology,
   GetStartedCircle,
   Google,
   GradientBackground,
   GradientLayer,
+  Gynecology,
+  GynecologyN,
   HeartOrgan,
   Home,
   HomeActive,
@@ -99,22 +102,29 @@ export {
   MapPin,
   Mic,
   MicCircle,
+  Nephrology,
+  Ophthalmology,
   Orthopedics,
   Pediatrics,
   Radio,
   RadioEmpty,
   Restart,
   Review,
+  ReviewGreen,
+  ReviewGreen,
   Schedule,
+  SingleStar,
   Spanish,
   Star,
   Stethoscope,
+  StethoscopeN,
   Stop,
   Telemedicine,
   Time,
   Translate,
   User,
   UserActive,
+  UserGroup,
   Verified,
   Video,
 };

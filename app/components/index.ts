@@ -3,6 +3,9 @@ import {AnimatedBox, Box} from './Box';
 import {Button} from './Button';
 import {OnboardingCarousel} from './Carousel';
 import {Dismiss} from './Dismiss';
+import {DoctorDetailsHeader} from './DoctorDetailsHeader';
+import {DoctorInfoCard} from './DoctorInfoCard';
+import {DoctorList} from './DoctorList';
 import {EditSymptomsContent} from './EditSymptomsContent';
 import {Feedback} from './Feedback';
 import {Greetings} from './Greetings/Index';
@@ -35,6 +38,9 @@ export {
   CirclePie,
   CircularLoader,
   Dismiss,
+  DoctorDetailsHeader,
+  DoctorInfoCard,
+  DoctorList,
   EditSymptomsContent,
   Feedback,
   Greetings,

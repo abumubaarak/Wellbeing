@@ -1,10 +1,13 @@
 import firestore, {
+  addDoc,
   FirebaseFirestoreTypes,
 } from '@react-native-firebase/firestore';
-import { useState } from 'react';
-import { USERS } from '../services';
+import {useState} from 'react';
+import {APPOINTMENTS, USERS} from '../services';
+import {useUser} from './useUser';
 
 export const useFirestore = () => {
+  const {uid} = useUser();
   const [data, setData] = useState<FirebaseFirestoreTypes.DocumentData[]>([]);
 
   const [isLoading, setLoading] = useState<boolean>(false);
@@ -47,5 +50,33 @@ export const useFirestore = () => {
     }
   };
 
-  return {recommendedDoctors, isLoading, data, specialistDoctors};
+  const bookAppointment = async (
+    doctorID: string,
+    appointmentDate: any,
+    appointmentTime: any,
+  ) => {
+    try {
+      setLoading(true);
+      const docRef = await addDoc(firestore().collection(APPOINTMENTS), {
+        patientID: uid,
+        doctorID,
+        bookingDate: new Date(),
+        appointmentDate,
+        appointmentTime,
+      });
+      if (docRef.id) {
+        setLoading(false);
+      }
+    } catch (error) {
+      setLoading(false);
+    }
+  };
+
+  return {
+    recommendedDoctors,
+    isLoading,
+    data,
+    specialistDoctors,
+    bookAppointment,
+  };
 };

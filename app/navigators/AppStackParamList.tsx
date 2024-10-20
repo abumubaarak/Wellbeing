@@ -12,6 +12,16 @@ export type AppStackParamList = {
   DoctorDetails: {doctor: FirebaseFirestoreTypes.DocumentData};
   SpecialistDoctor: {area: string};
   EditSymptoms: {symptoms: string};
+  CalendarRange: {
+    dateRangeType?:
+      | 'custom'
+      | 'Weekdays Only'
+      | 'Weekends Only'
+      | 'Entire Week';
+    range: string;
+    doctorsName: string;
+    selectedDate: (date: string) => void;
+  };
   Analyse: {symptoms: string};
   Analysis: {result: AnalyseResponse};
 };

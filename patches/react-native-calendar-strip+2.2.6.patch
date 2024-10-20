@@ -1,0 +1,285 @@
+diff --git a/node_modules/react-native-calendar-strip/src/Calendar.style.js b/node_modules/react-native-calendar-strip/src/Calendar.style.js
+index a15c0e3..5f78c74 100644
+--- a/node_modules/react-native-calendar-strip/src/Calendar.style.js
++++ b/node_modules/react-native-calendar-strip/src/Calendar.style.js
+@@ -7,16 +7,15 @@ import { StyleSheet } from "react-native";
+ export default StyleSheet.create({
+   //CALENDAR STYLES
+   calendarContainer: {
+-    overflow: "hidden"
+-  },
++    overflow: "hidden",
++   },
+   datesStrip: {
+     flexDirection: "row",
+-    flex: 1,
+-    alignItems: "center",
++     alignItems: "center",
+     justifyContent: "space-between"
+   },
+   calendarDates: {
+-    flex: 1,
++     flex: 1,
+     flexDirection: "row",
+     justifyContent: "center",
+     alignItems: "center"
+@@ -40,6 +39,11 @@ export default StyleSheet.create({
+     flex: 1,
+   },
+   dateContainer: {
++   // flex:1,
++    gap:13,
++    paddingTop:8,
++    paddingBottom:10,
++     borderRadius:4,
+     justifyContent: "center",
+     alignItems: "center",
+     alignSelf: "center"
+diff --git a/node_modules/react-native-calendar-strip/src/CalendarDay.js b/node_modules/react-native-calendar-strip/src/CalendarDay.js
+index 930b0fd..812a02b 100644
+--- a/node_modules/react-native-calendar-strip/src/CalendarDay.js
++++ b/node_modules/react-native-calendar-strip/src/CalendarDay.js
+@@ -2,11 +2,11 @@
+  * Created by bogdanbegovic on 8/20/16.
+  */
+ 
+-import React, { Component } from "react";
+-import PropTypes from "prop-types";
+ import moment from "moment";
++import PropTypes from "prop-types";
++import React, { Component } from "react";
+ 
+-import { Text, View, Animated, Easing, LayoutAnimation, TouchableOpacity } from "react-native";
++import { Animated, Easing, LayoutAnimation, Text, TouchableOpacity, View } from "react-native";
+ import styles from "./Calendar.style.js";
+ 
+ class CalendarDay extends Component {
+@@ -134,15 +134,15 @@ class CalendarDay extends Component {
+       doStateUpdate = true;
+     }
+ 
+-    if ((prevProps.customDatesStyles !== this.props.customDatesStyles) || hasDateChanged) {
+-      newState = { ...newState, customStyle: this.getCustomDateStyle(this.props.date, this.props.customDatesStyles) };
+-      doStateUpdate = true;
+-    }
++    // if ((prevProps.customDatesStyles !== this.props.customDatesStyles) || hasDateChanged) {
++    //   newState = { ...newState, customStyle: this.getCustomDateStyle(this.props.date, this.props.customDatesStyles) };
++    //   doStateUpdate = true;
++    // }
+ 
+-    if ((prevProps.markedDates !== this.props.markedDates) || hasDateChanged) {
+-      newState = { ...newState, marking: this.getDateMarking(this.props.date, this.props.markedDates) };
+-      doStateUpdate = true;
+-    }
++    // if ((prevProps.markedDates !== this.props.markedDates) || hasDateChanged) {
++    //   newState = { ...newState, marking: this.getDateMarking(this.props.date, this.props.markedDates) };
++    //   doStateUpdate = true;
++    // }
+ 
+     if ((prevProps.datesBlacklist !== this.props.datesBlacklist) ||
+         (prevProps.datesWhitelist !== this.props.datesWhitelist) ||
+@@ -153,7 +153,9 @@ class CalendarDay extends Component {
+     }
+ 
+     if (doStateUpdate) {
+-      this.setState(newState);
++      console.log("doStateUpdate",newState)
++
++    this.setState(newState);
+     }
+   }
+ 
+@@ -401,6 +403,7 @@ class CalendarDay extends Component {
+     let _dateViewStyle = enabled
+       ? [{ backgroundColor: "transparent" }]
+       : [{ opacity: disabledDateOpacity }];
++    
+     let _customHighlightDateNameStyle;
+     let _customHighlightDateNumberStyle;
+     let _dateNumberContainerStyle = [];
+@@ -419,7 +422,10 @@ class CalendarDay extends Component {
+       //If it is border, the user has to input color for border animation 
+       switch (daySelectionAnimation.type) {
+         case "background":
+-          _dateViewStyle.push({ backgroundColor: daySelectionAnimation.highlightColor });
++           _dateViewStyle.push({ backgroundColor: daySelectionAnimation.highlightColor });
++       
++           
++
+           break;
+         case "border":
+           _dateViewStyle.push({
+@@ -463,8 +469,8 @@ class CalendarDay extends Component {
+ 
+     let responsiveDateContainerStyle = {
+       width: containerWidth,
+-      height: containerHeight,
+-      borderRadius: containerBorderRadius,
++      height: 70,
++      borderRadius: 9,
+     };
+ 
+     let containerStyle = selected
+@@ -485,8 +491,10 @@ class CalendarDay extends Component {
+             style={[
+               styles.dateContainer,
+               responsiveDateContainerStyle,
+-              _dateViewStyle,
+-              containerStyle
++              containerStyle,
++               _dateViewStyle,
++
++              {borderWidth:1,borderColor:"#C7D8C9"}
+             ]}
+           >
+             {showDayName && (
+diff --git a/node_modules/react-native-calendar-strip/src/CalendarStrip.js b/node_modules/react-native-calendar-strip/src/CalendarStrip.js
+index fe4d62d..f198638 100644
+--- a/node_modules/react-native-calendar-strip/src/CalendarStrip.js
++++ b/node_modules/react-native-calendar-strip/src/CalendarStrip.js
+@@ -2,17 +2,16 @@
+  * Created by bogdanbegovic on 8/20/16.
+  */
+ 
+-import React, { Component } from "react";
+ import PropTypes from "prop-types";
+-import { View, Animated, PixelRatio } from "react-native";
++import React, { Component } from "react";
++import { Animated, PixelRatio, View } from "react-native";
+ 
+ import moment from "moment";
+ 
+-import CalendarHeader from "./CalendarHeader";
++import styles from "./Calendar.style.js";
+ import CalendarDay from "./CalendarDay";
+-import WeekSelector from "./WeekSelector";
++import CalendarHeader from "./CalendarHeader";
+ import Scroller from "./Scroller";
+-import styles from "./Calendar.style.js";
+ 
+ /*
+  * Class CalendarStrip that is representing the whole calendar strip and contains CalendarDay elements
+@@ -54,12 +53,7 @@ class CalendarStrip extends Component {
+     dayComponent: PropTypes.any,
+     leftSelector: PropTypes.any,
+     rightSelector: PropTypes.any,
+-    iconLeft: PropTypes.any,
+-    iconRight: PropTypes.any,
+-    iconStyle: PropTypes.any,
+-    iconLeftStyle: PropTypes.any,
+-    iconRightStyle: PropTypes.any,
+-    iconContainer: PropTypes.any,
++    
+ 
+     maxDayComponentSize: PropTypes.number,
+     minDayComponentSize: PropTypes.number,
+@@ -103,8 +97,6 @@ class CalendarStrip extends Component {
+     showMonth: true,
+     showDate: true,
+     updateWeek: true, 
+-    iconLeft: require("./img/left-arrow-black.png"),
+-    iconRight: require("./img/right-arrow-black.png"),
+     calendarHeaderFormat: "MMMM YYYY",
+     calendarHeaderPosition: "above",
+     datesWhitelist: undefined,
+@@ -163,7 +155,6 @@ class CalendarStrip extends Component {
+ 
+     if (!this.compareDates(prevProps.startingDate, this.props.startingDate) ||
+         !this.compareDates(prevProps.selectedDate, this.props.selectedDate) ||
+-        prevProps.datesBlacklist !== this.props.datesBlacklist ||
+         prevProps.datesWhitelist !== this.props.datesWhitelist ||
+         prevProps.markedDates  !== this.props.markedDates  ||
+         prevProps.customDatesStyles !== this.props.customDatesStyles )
+@@ -328,7 +319,7 @@ class CalendarStrip extends Component {
+       // Scroll to selected date, centered in the week
+       const scrolledDate = moment(mDate);
+       scrolledDate.subtract(Math.floor(this.props.numDaysInWeek / 2), "days");
+-      this.scroller.scrollToDate(scrolledDate);
++   //   this.scroller.scrollToDate(scrolledDate);
+     }
+   }
+ 
+@@ -554,7 +545,7 @@ class CalendarStrip extends Component {
+         <Scroller
+           ref={scroller => this.scroller = scroller}
+           data={this.state.datesList}
+-          pagingEnabled={this.props.scrollerPaging}
++          pagingEnabled={true}
+           renderDay={this.renderDay}
+           renderDayParams={{...this.createDayProps(this.state.selectedDate)}}
+           maxSimultaneousDays={this.numDaysScroll}
+@@ -579,30 +570,14 @@ class CalendarStrip extends Component {
+     return (
+       <View
+         style={[
+-          styles.calendarContainer,
+           { backgroundColor: this.props.calendarColor },
+-          this.props.style
++          this.props.style,
++          styles.calendarContainer,
++
+         ]}
+       >
+         <View style={[this.props.innerStyle, { height: this.state.height }]}>
+-          {this.props.showDate && this.props.calendarHeaderPosition === "above" &&
+-            this.renderHeader()
+-          }
+-
+           <View style={styles.datesStrip}>
+-            <WeekSelector
+-              controlDate={this.props.minDate}
+-              iconComponent={this.props.leftSelector}
+-              iconContainerStyle={this.props.iconContainer}
+-              iconInstanceStyle={this.props.iconLeftStyle}
+-              iconStyle={this.props.iconStyle}
+-              imageSource={this.props.iconLeft}
+-              onPress={this.getPreviousWeek}
+-              weekStartDate={this.state.weekStartDate}
+-              weekEndDate={this.state.weekEndDate}
+-              size={this.state.selectorSize}
+-            />
+-
+             <View onLayout={this.onLayout} style={styles.calendarDates}>
+               {this.props.showDate ? (
+                 this.renderWeekView(this.state.days)
+@@ -610,24 +585,7 @@ class CalendarStrip extends Component {
+                 this.renderHeader()
+               )}
+             </View>
+-
+-            <WeekSelector
+-              controlDate={this.props.maxDate}
+-              iconComponent={this.props.rightSelector}
+-              iconContainerStyle={this.props.iconContainer}
+-              iconInstanceStyle={this.props.iconRightStyle}
+-              iconStyle={this.props.iconStyle}
+-              imageSource={this.props.iconRight}
+-              onPress={this.getNextWeek}
+-              weekStartDate={this.state.weekStartDate}
+-              weekEndDate={this.state.weekEndDate}
+-              size={this.state.selectorSize}
+-            />
+           </View>
+-
+-          {this.props.showDate && this.props.calendarHeaderPosition === "below" &&
+-            this.renderHeader()
+-          }
+         </View>
+       </View>
+     );
+diff --git a/node_modules/react-native-calendar-strip/src/Scroller.js b/node_modules/react-native-calendar-strip/src/Scroller.js
+index a612538..f4b7645 100644
+--- a/node_modules/react-native-calendar-strip/src/Scroller.js
++++ b/node_modules/react-native-calendar-strip/src/Scroller.js
+@@ -39,8 +39,9 @@ export default class CalendarScroller extends Component {
+     this.timeoutResetPositionId = null;
+ 
+     this.updateLayout = renderDayParams => {
+-      const itemHeight = renderDayParams.height;
+-      const itemWidth = renderDayParams.width + renderDayParams.marginHorizontal * 2;
++      //[UPDATE] FOR EACH CELL
++      const itemHeight = 70;
++      const itemWidth = renderDayParams.width + renderDayParams.marginHorizontal * 2.5;
+ 
+       const layoutProvider = new LayoutProvider(
+         index => 0, // only 1 view type

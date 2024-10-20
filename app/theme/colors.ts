@@ -5,6 +5,7 @@ export const colors = {
   primary300: '#C1EFAF',
   primary400: '#E4ECDD',
   primary500: '#39683A',
+  primary600: '#99A794',
   primaryLight: '#E6F9DF',
   line: '#DEE3DF',
   white: '#ffffff',
@@ -16,10 +17,12 @@ export const colors = {
   error: '#D80027',
   tomato: '#FF6347',
   lightTomato: '#D4C590',
+  border: '#C7D8C9',
   blue: '#4682B4',
   lightBlue: '#9CCEB1',
   orange: '#F28C28',
   lightOrange: '#D9BD6C',
+  greenLight: '#E6F8F1',
 };
 
 export type Colors = typeof colors;

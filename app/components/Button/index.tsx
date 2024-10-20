@@ -1,26 +1,80 @@
+import LottieView from 'lottie-react-native';
 import React from 'react';
-import {useTranslation} from 'react-i18next';
-import {RectButton} from 'react-native-gesture-handler';
-import {Translations} from '../../i18n';
+import {
+  Gesture,
+  GestureDetector,
+  RectButton,
+  RectButtonProps,
+} from 'react-native-gesture-handler';
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from 'react-native-reanimated';
+import {Loader} from '../../assets/lottie';
 import {Box} from '../Box';
 import {Text} from '../Text';
-import {$button, $buttonContainer, $label} from './styles';
+import {$button, $buttonContainer, $label, $skottie} from './styles';
 
-type ButtonProps = {
-  onPress: () => void;
-  label: keyof Translations;
+type ButtonProps = RectButtonProps & {
+  onPress?: () => void;
+  label: string;
+  isLoading?: boolean;
 };
+export const AnimatedButton = Animated.createAnimatedComponent(RectButton);
 
-export const Button = ({onPress, label}: ButtonProps) => {
-  const {t} = useTranslation<keyof Translations>();
+export const Button = ({onPress, isLoading, label, ...props}: ButtonProps) => {
+  const scaleDown = useSharedValue<boolean>(false);
 
+  const isButtonEnabled =
+    props.enabled === undefined ? false : props.enabled ? false : true;
+  const longPressGesture = Gesture.LongPress()
+    .onBegin(() => {
+      scaleDown.value = true;
+    })
+    .onFinalize(() => {
+      scaleDown.value = false;
+    });
+  const buttonStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
+        {
+          scale: scaleDown.value
+            ? withTiming(0.9, {duration: 250})
+            : withTiming(1, {duration: 250}),
+        },
+      ],
+      opacity:
+        scaleDown.value || isButtonEnabled
+          ? withTiming(isButtonEnabled ? 0.2 : 0.9, {duration: 250})
+          : withTiming(1, {duration: 250}),
+
+      borderRadius: 100,
+      overflow: 'hidden',
+    };
+  });
   return (
     <Box style={$buttonContainer} overflow="hidden">
-      <RectButton style={$button} onPress={onPress}>
-        <Text style={$label} variant="buttonLabel">
-          {t(label)}
-        </Text>
-      </RectButton>
+      <GestureDetector gesture={longPressGesture}>
+        <AnimatedButton
+          {...props}
+          style={[$button, buttonStyle]}
+          onPress={onPress}>
+          {isLoading ? (
+            <LottieView
+              style={$skottie}
+              resizeMode="cover"
+              source={Loader}
+              autoPlay={true}
+              loop={true}
+            />
+          ) : (
+            <Text style={$label} variant="buttonLabel">
+              {label}
+            </Text>
+          )}
+        </AnimatedButton>
+      </GestureDetector>
     </Box>
   );
 };

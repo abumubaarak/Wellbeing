@@ -1,10 +1,10 @@
 import React from 'react';
-import {Screen, Text} from '../../components';
+import {Screen, Upcoming} from '../../components';
 
 export const Bookings = () => {
   return (
     <Screen useAlignment>
-      <Text>Bookings</Text>
+      <Upcoming />
     </Screen>
   );
 };

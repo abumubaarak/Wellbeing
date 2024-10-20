@@ -6,6 +6,7 @@ export const $container: ViewStyle = {
   marginTop: moderateScale(8),
   backgroundColor: colors.primary300,
   borderRadius: moderateScale(100),
+  borderColor: colors.primary600,
 };
 export const $border: ViewStyle = {
   borderWidth: 1,

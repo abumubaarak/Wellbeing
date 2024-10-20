@@ -5,7 +5,9 @@ import Brain from './brain.svg';
 import BrainNeuro from './brainNeuro.svg';
 import Calendar from './calendar.svg';
 import CalendarActive from './calendarActive.svg';
+import CalendarFill from './calendarFill.svg';
 import Cancel from './cancel.svg';
+import ChatLine from './chat-line.svg';
 import Chat from './chat.svg';
 import ChatActive from './chatActive.svg';
 import CheckRound from './check-round.svg';
@@ -13,9 +15,11 @@ import CheckMark from './check.svg';
 import Circle from './circle.svg';
 import Dentist from './dentist.svg';
 import Doctor from './doctor.svg';
+import Dropdown from './dropdown.svg';
 import Edit from './edit.svg';
 import Error from './error_feedback.svg';
 import Spanish from './es.svg';
+
 import GetStartedCircle from './getStartedCircle.svg';
 import Google from './google.svg';
 import GradientLayer from './gradient-layer.svg';
@@ -74,16 +78,19 @@ export {
   BrainNeuroN,
   Calendar,
   CalendarActive,
+  CalendarFill,
   Cancel,
   Case,
   Chat,
   ChatActive,
+  ChatLine,
   CheckMark,
   CheckRound,
   Circle,
   Dentist,
   DentistN,
   Doctor,
+  Dropdown,
   Edit,
   English,
   Error,
@@ -110,7 +117,6 @@ export {
   RadioEmpty,
   Restart,
   Review,
-  ReviewGreen,
   ReviewGreen,
   Schedule,
   SingleStar,

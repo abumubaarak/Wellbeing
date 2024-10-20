@@ -1,5 +1,5 @@
 import {RouteProp, useRoute} from '@react-navigation/native';
-import React from 'react';
+import React, {useState} from 'react';
 import {useWindowDimensions} from 'react-native';
 import {
   NavigationState,
@@ -15,12 +15,18 @@ import {
   DoctorInfoCard,
   Screen,
 } from '../../components';
+import {useFirestore} from '../../hooks';
 import {AboutTab, ReviewsTab, ScheduleTab, TabHeader} from '../../layouts';
 import {AppStackParamList} from '../../navigators';
 import {spacing} from '../../theme/spacing';
 export const DoctorDetails = () => {
   const layout = useWindowDimensions();
+  const {bookAppointment, isLoading} = useFirestore();
   const [index, setIndex] = React.useState(0);
+  const [appointment, setAppointment] = useState<{
+    date: moment.Moment;
+    time: any;
+  }>();
   const [routes] = React.useState([
     {key: 'about', title: 'About'},
     {key: 'schedules', title: 'Schedules'},
@@ -47,7 +53,7 @@ export const DoctorDetails = () => {
       case 'about':
         return <AboutTab bio={params.doctor.bio} />;
       case 'schedules':
-        return <ScheduleTab />;
+        return <ScheduleTab doctor={params.doctor} scheduleSet={scheduleSet} />;
       case 'reviews':
         return <ReviewsTab />;
       default:
@@ -56,9 +62,23 @@ export const DoctorDetails = () => {
   };
 
   const onPress = () => {
-    if (index === 0) {
-      setIndex(1);
+     if (index === 1) {
+      if (appointment) {
+        bookAppointment(params.doctor.uid, appointment.date.toDate(), appointment?.time);
+        //Later on send them to booking screen after successful booking
+      } else {
+        setIndex(index + 1);
+      }
+    } else if (index !== 2) {
+      setIndex(index + 1);
     }
+  };
+
+  const scheduleSet = (date: moment.Moment, time: any) => {
+    setAppointment({
+      date,
+      time,
+    });
   };
 
   return (
@@ -85,7 +105,12 @@ export const DoctorDetails = () => {
           initialLayout={{width: layout.width}}
         />
       </Box>
-      <Button label="Continue" onPress={onPress} />
+      <Button
+        label={index === 1 && appointment ? 'Book appointment' : 'Continue'}
+        onPress={onPress}
+        isLoading={isLoading}
+        enabled={!isLoading}
+      />
     </Screen>
   );
 };

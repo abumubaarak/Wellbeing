@@ -101,3 +101,4 @@ export const createUser = async (type: string, name?: string) => {
 export const USERS = 'Users';
 export const PATIENT = 'patient';
 export const DOCTOR = 'doctor';
+export const APPOINTMENTS = 'Appointments';

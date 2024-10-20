@@ -29,10 +29,15 @@ import {SymptomsGradientBackground} from './SymptomsGradientBackground';
 import {Text} from './Text';
 import {TypeWriter} from './TypeWriter';
 import {Upcoming} from './Upcoming/Index';
+import {Chip,ChipList} from './TimeChip';
+import { DateRangeInfo } from './DateRangeInfo';
 
 export {
   AnimatedBox,
   AuthModal,
+  Chip,
+  DateRangeInfo,
+  ChipList,
   Box,
   Button,
   CirclePie,

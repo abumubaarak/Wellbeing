@@ -1,18 +1,19 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useCallback} from 'react';
 import {RectButton} from 'react-native-gesture-handler';
-import {ArrowLeft, Back} from '../../assets/svgs';
+import {ArrowLeft, Back, Cancel} from '../../assets/svgs';
 import {StackNavigation} from '../../navigators';
 import {isAndroid, moderateScale} from '../../utils';
 import {Box} from '../Box';
 import {Text} from '../Text';
-import {$border, $button, $container, $widthHeightStyle} from './style';
+import {$button, $container, $widthHeightStyle} from './style';
 
 type DismissProps = {
   wnh?: number;
   title?: string;
+  isModal?: boolean;
 };
-export const Dismiss = ({wnh = 40, title}: DismissProps) => {
+export const Dismiss = ({wnh = 40, title, isModal = false}: DismissProps) => {
   const navigation = useNavigation<StackNavigation>();
 
   const onPress = useCallback(() => {
@@ -21,12 +22,12 @@ export const Dismiss = ({wnh = 40, title}: DismissProps) => {
 
   return (
     <Box flexDirection="row" justifyContent="center" alignItems="center">
-      <Box style={[$container, $widthHeightStyle(wnh), title && $border]}>
+      <Box style={[$container, $widthHeightStyle(wnh)]}>
         <RectButton
           hitSlop={50}
           onPress={onPress}
           style={[$button, $widthHeightStyle(wnh)]}>
-          {!isAndroid ? <ArrowLeft /> : <Back />}
+          {isModal ? <Cancel /> : !isAndroid ? <ArrowLeft /> : <Back />}
         </RectButton>
       </Box>
       <Box flex={1} alignItems="center">

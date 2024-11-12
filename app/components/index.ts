@@ -31,14 +31,19 @@ import {TypeWriter} from './TypeWriter';
 import {Upcoming} from './Upcoming/Index';
 import {Chip,ChipList} from './TimeChip';
 import { DateRangeInfo } from './DateRangeInfo';
+import { Avatar } from './Avatar';
+import { MessageHeader } from './Chat';
+import { IncomingCall } from './VideoCall';
 
 export {
   AnimatedBox,
   AuthModal,
   Chip,
+  IncomingCall,
   DateRangeInfo,
   ChipList,
   Box,
+  MessageHeader,
   Button,
   CirclePie,
   CircularLoader,
@@ -48,6 +53,7 @@ export {
   DoctorList,
   EditSymptomsContent,
   Feedback,
+  Avatar,
   Greetings,
   Header,
   InsightCard,

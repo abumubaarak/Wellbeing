@@ -1,4 +1,5 @@
 import {RouteProp, useRoute} from '@react-navigation/native';
+import moment from 'moment';
 import React, {useState} from 'react';
 import {useWindowDimensions} from 'react-native';
 import {
@@ -62,9 +63,13 @@ export const DoctorDetails = () => {
   };
 
   const onPress = () => {
-     if (index === 1) {
+    if (index === 1) {
       if (appointment) {
-        bookAppointment(params.doctor.uid, appointment.date.toDate(), appointment?.time);
+        bookAppointment(
+          params.doctor.uid,
+          moment(appointment.date).format('YYYY-MM-DD'),
+          appointment?.time,
+        );
         //Later on send them to booking screen after successful booking
       } else {
         setIndex(index + 1);

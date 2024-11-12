@@ -9,16 +9,18 @@ type ScreenProps = {
   useAlignment?: boolean;
   styles?: StyleProp<ViewStyle>;
   useBottomPadding?: boolean;
+  useTopPadding?: boolean;
 };
 export const Screen = ({
   children,
   styles,
   useAlignment,
   useBottomPadding = true,
+  useTopPadding = true,
 }: ScreenProps) => {
   const insets = useSafeAreaInsets();
-  const PADDING_TOP = isAndroid ? 16 : insets.top;
-  const PADDING_BOTTOM = isAndroid ? 16 : insets.bottom;
+  const PADDING_TOP = isAndroid ? 0 : insets.top;
+  const PADDING_BOTTOM = isAndroid ? 10 : insets.bottom;
   const DEFAULT_PADDING_BOTTOM = 0;
   return (
     <Box
@@ -28,7 +30,7 @@ export const Screen = ({
         styles,
         useAlignment && $container,
         {
-          paddingTop: PADDING_TOP,
+          paddingTop: useTopPadding ? PADDING_TOP : DEFAULT_PADDING_BOTTOM,
           paddingBottom: useBottomPadding
             ? PADDING_BOTTOM
             : DEFAULT_PADDING_BOTTOM,

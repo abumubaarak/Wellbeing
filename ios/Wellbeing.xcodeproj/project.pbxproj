@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* WellbeingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WellbeingTests.m */; };
 		26A509D30A764700B95F5F26 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB611A69B7D497D806C7B2F /* WorkSans-Medium.ttf */; };
+		3A3C6997B99C4EEFAF32802E /* MontserratAlternates-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6DA79CD3404EDCA137C477 /* MontserratAlternates-Regular.ttf */; };
 		64A83EBBEA38443B8D0E88AB /* MontserratAlternates-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1787B6F0FA284F879CCE9E79 /* MontserratAlternates-Bold.ttf */; };
 		78DCD6B84C35625FFE211357 /* Pods_Wellbeing_production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BE7EDB578AEB6283EE61A2 /* Pods_Wellbeing_production.framework */; };
 		7FB676878FA34932B69D4641 /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD6E315850894A4DAA611507 /* WorkSans-SemiBold.ttf */; };
@@ -80,6 +81,7 @@
 		91B7041870AA24C24A6E5C06 /* Pods-Wellbeing-production.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wellbeing-production.debug.xcconfig"; path = "Target Support Files/Pods-Wellbeing-production/Pods-Wellbeing-production.debug.xcconfig"; sourceTree = "<group>"; };
 		97BE7EDB578AEB6283EE61A2 /* Pods_Wellbeing_production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wellbeing_production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4E97B5F09C4317986C91A9 /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = Wellbeing/BootSplash.storyboard; sourceTree = "<group>"; };
+		AF6DA79CD3404EDCA137C477 /* MontserratAlternates-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-Regular.ttf"; path = "../app/assets/fonts/MontserratAlternates-Regular.ttf"; sourceTree = "<group>"; };
 		BD6E315850894A4DAA611507 /* WorkSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-SemiBold.ttf"; path = "../app/assets/fonts/WorkSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		D44D4D7088754D21BC7DA585 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Regular.ttf"; path = "../app/assets/fonts/WorkSans-Regular.ttf"; sourceTree = "<group>"; };
 		DEF3D8BEDF344F1F8BAB48AD /* Pods-WellbeingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WellbeingTests.release.xcconfig"; path = "Target Support Files/Pods-WellbeingTests/Pods-WellbeingTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				7AB611A69B7D497D806C7B2F /* WorkSans-Medium.ttf */,
 				D44D4D7088754D21BC7DA585 /* WorkSans-Regular.ttf */,
 				BD6E315850894A4DAA611507 /* WorkSans-SemiBold.ttf */,
+				AF6DA79CD3404EDCA137C477 /* MontserratAlternates-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				26A509D30A764700B95F5F26 /* WorkSans-Medium.ttf in Resources */,
 				B6AA244A36A441C19298402E /* WorkSans-Regular.ttf in Resources */,
 				7FB676878FA34932B69D4641 /* WorkSans-SemiBold.ttf in Resources */,
+				3A3C6997B99C4EEFAF32802E /* MontserratAlternates-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

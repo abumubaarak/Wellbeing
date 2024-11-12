@@ -12,7 +12,7 @@ import {
   UserActive,
 } from '../assets/svgs';
 import {TabIcon} from '../components';
-import {Bookings, Chat, Home, Profile} from '../screens';
+import {Bookings, EnhancedChat, Home, Profile} from '../screens';
 import {colors} from '../theme/colors';
 import {TabParamList} from './TabParamList';
 import {$tabBar, $tabLabel} from './style';
@@ -57,8 +57,9 @@ export const HomeNavigator = () => {
         />
         <Tab.Screen
           name="Chat"
-          component={Chat}
+          component={EnhancedChat}
           options={{
+            lazy: false,
             tabBarIcon: ({focused}) => (
               <TabIcon
                 activeIcon={<ChatActive />}

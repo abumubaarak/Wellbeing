@@ -1191,6 +1191,7 @@ PODS:
   - hermes-engine (0.75.3):
     - hermes-engine/Pre-built (= 0.75.3)
   - hermes-engine/Pre-built (0.75.3)
+  - JitsiWebRTC (124.0.1)
   - leveldb-library (1.22.5)
   - libwebp (1.3.2):
     - libwebp/demux (= 1.3.2)
@@ -2467,27 +2468,6 @@ PODS:
     - react-native-config/App (= 1.5.3)
   - react-native-config/App (1.5.3):
     - React-Core
-  - react-native-live-transcription (0.1.0):
-    - DoubleConversion
-    - glog
-    - hermes-engine
-    - RCT-Folly (= 2024.01.01.00)
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - Yoga
   - react-native-mmkv (3.0.2):
     - DoubleConversion
     - glog
@@ -2509,6 +2489,8 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - react-native-netinfo (11.4.1):
+    - React-Core
   - react-native-pager-view (6.4.1):
     - DoubleConversion
     - glog
@@ -2643,6 +2625,9 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - react-native-webrtc (124.0.4):
+    - JitsiWebRTC (~> 124.0.0)
+    - React-Core
   - React-nativeconfig (0.75.3)
   - React-NativeModulesApple (0.75.3):
     - glog
@@ -2903,6 +2888,8 @@ PODS:
     - React-logger (= 0.75.3)
     - React-perflogger (= 0.75.3)
     - React-utils (= 0.75.3)
+  - ReactNativeIncallManager (4.2.0):
+    - React-Core
   - RecaptchaInterop (100.0.0)
   - RNAppleAuthentication (2.4.0):
     - React-Core
@@ -3194,7 +3181,11 @@ PODS:
   - SDWebImageWebPCoder (0.8.5):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.10)
+  - simdjson (3.1.0-wmelon1)
   - SocketRocket (0.7.0)
+  - WatermelonDB (0.27.1):
+    - React
+    - simdjson
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -3241,12 +3232,13 @@ DEPENDENCIES:
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
   - react-native-config (from `../node_modules/react-native-config`)
-  - react-native-live-transcription (from `../node_modules/react-native-live-transcription`)
   - react-native-mmkv (from `../node_modules/react-native-mmkv`)
+  - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-pager-view (from `../node_modules/react-native-pager-view`)
   - react-native-restart (from `../node_modules/react-native-restart`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-skia (from `../node_modules/@shopify/react-native-skia`)"
+  - react-native-webrtc (from `../node_modules/react-native-webrtc`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -3273,6 +3265,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - ReactNativeIncallManager (from `../node_modules/react-native-incall-manager`)
   - "RNAppleAuthentication (from `../node_modules/@invertase/react-native-apple-authentication`)"
   - RNBootSplash (from `../node_modules/react-native-bootsplash`)
   - RNFastImage (from `../node_modules/react-native-fast-image`)
@@ -3288,6 +3281,8 @@ DEPENDENCIES:
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSound (from `../node_modules/react-native-sound`)
   - RNSVG (from `../node_modules/react-native-svg`)
+  - "simdjson (from `../node_modules/@nozbe/simdjson`)"
+  - "WatermelonDB (from `../node_modules/@nozbe/watermelondb`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -3313,6 +3308,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMAppAuth
     - GTMSessionFetcher
+    - JitsiWebRTC
     - leveldb-library
     - libwebp
     - lottie-ios
@@ -3401,10 +3397,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
   react-native-config:
     :path: "../node_modules/react-native-config"
-  react-native-live-transcription:
-    :path: "../node_modules/react-native-live-transcription"
   react-native-mmkv:
     :path: "../node_modules/react-native-mmkv"
+  react-native-netinfo:
+    :path: "../node_modules/@react-native-community/netinfo"
   react-native-pager-view:
     :path: "../node_modules/react-native-pager-view"
   react-native-restart:
@@ -3413,6 +3409,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-skia:
     :path: "../node_modules/@shopify/react-native-skia"
+  react-native-webrtc:
+    :path: "../node_modules/react-native-webrtc"
   React-nativeconfig:
     :path: "../node_modules/react-native/ReactCommon"
   React-NativeModulesApple:
@@ -3465,6 +3463,8 @@ EXTERNAL SOURCES:
     :path: build/generated/ios
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  ReactNativeIncallManager:
+    :path: "../node_modules/react-native-incall-manager"
   RNAppleAuthentication:
     :path: "../node_modules/@invertase/react-native-apple-authentication"
   RNBootSplash:
@@ -3495,6 +3495,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-sound"
   RNSVG:
     :path: "../node_modules/react-native-svg"
+  simdjson:
+    :path: "../node_modules/@nozbe/simdjson"
+  WatermelonDB:
+    :path: "../node_modules/@nozbe/watermelondb"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -3527,6 +3531,7 @@ SPEC CHECKSUMS:
   GTMAppAuth: f69bd07d68cd3b766125f7e072c45d7340dea0de
   GTMSessionFetcher: 5aea5ba6bd522a239e236100971f10cb71b96ab6
   hermes-engine: 8d2103d6c0176779aea4e25df6bb1410f9946680
+  JitsiWebRTC: d0ae5fd6a81e771bfd82c2ee6c6bb542ebd65ee8
   leveldb-library: e8eadf9008a61f9e1dde3978c086d2b6d9b9dc28
   libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
   lottie-ios: a881093fab623c467d3bce374367755c272bdd59
@@ -3563,12 +3568,13 @@ SPEC CHECKSUMS:
   React-Mapbuffer: a90dc2b770956814f2f2ac4553063c5ce2618fe8
   React-microtasksnativemodule: 0b44bb6d632c420b02ec90a7375c208a0e7896ab
   react-native-config: 8f7283449bbb048902f4e764affbbf24504454af
-  react-native-live-transcription: a08a50658c77c3c39bf020473a9c07e1891ea3e8
   react-native-mmkv: 6a5f027f0d39569e7e12c56799bb6adae17e32cf
+  react-native-netinfo: f0a9899081c185db1de5bb2fdc1c88c202a059ac
   react-native-pager-view: 121798efbc76a84b241a32a919fccc324b1c5c7e
   react-native-restart: 7595693413fe3ca15893702f2c8306c62a708162
   react-native-safe-area-context: 4571abffff5db8a314b849a2c72aae5cba2e4c7a
   react-native-skia: 579b5506783a4e665acfe32dd879f556442aafb6
+  react-native-webrtc: 48295e7228279470c4f5acb38570e170723bd3b2
   React-nativeconfig: cd572c97f64676dcc2a1c88fc644b693b98408bf
   React-NativeModulesApple: 249c7a23d8ad82f13778f4f525a8d19ccf4deb86
   React-perflogger: 3bbb82f18e9ac29a1a6931568e99d6305ef4403b
@@ -3595,6 +3601,7 @@ SPEC CHECKSUMS:
   React-utils: 211020f1a54caa72455ccf55853b064e590f564b
   ReactCodegen: 4291c041b116b97f7203d961a3cc95adf2347064
   ReactCommon: d5e70af52fb05bd546fd7f002c549f57116c59e4
+  ReactNativeIncallManager: bfc9c67358cd524882a7c4116dcb311ac2293d4b
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   RNAppleAuthentication: e00c76acb03351f5544373c78fa7f359bef6d5d3
   RNBootSplash: ce6500d0e017b3db6905bb78dd2757d3272efda1
@@ -3613,9 +3620,11 @@ SPEC CHECKSUMS:
   RNSVG: 2046b471030c6ac19cb800d2428e33ca59df1929
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
+  simdjson: e6bfae9ce4bcdc80452d388d593816f1ca2106f3
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
+  WatermelonDB: 842d22ba555425aa9f3ce551239a001200c539bc
   Yoga: c8810b40c43fa71cc1492f358ad5cd5fc1b505da
 
-PODFILE CHECKSUM: 2a64f80171ff1077353f59d734e58d83404f5c19
+PODFILE CHECKSUM: eff16c4cdc71a068aed9a107ac4f934b82c7a04e
 
 COCOAPODS: 1.15.2

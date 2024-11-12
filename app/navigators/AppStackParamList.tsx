@@ -7,8 +7,17 @@ export type AppStackParamList = {
   ChangeLanguage: undefined;
   HomeTab: undefined;
   Permission: undefined;
+  Messages: {doctorID: string; channelName: string; channelSelfie: string};
   Symptoms: undefined;
   FindDoctor: undefined;
+  VideoCall: {
+    incomingCall: boolean;
+    doctorName: string;
+    doctorID: string;
+    offer?: any;
+    specialty?: string;
+    avatar:string
+  };
   DoctorDetails: {doctor: FirebaseFirestoreTypes.DocumentData};
   SpecialistDoctor: {area: string};
   EditSymptoms: {symptoms: string};

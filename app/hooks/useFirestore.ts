@@ -30,7 +30,10 @@ export const useFirestore = () => {
       setLoading(false);
     }
   };
-
+  const getUser = async (userID: string) => {
+    const user = (await firestore().collection(USERS).doc(userID).get()).data();
+    return user;
+  };
   const specialistDoctors = async (area: string) => {
     setLoading(true);
     try {
@@ -76,6 +79,7 @@ export const useFirestore = () => {
     recommendedDoctors,
     isLoading,
     data,
+    getUser,
     specialistDoctors,
     bookAppointment,
   };

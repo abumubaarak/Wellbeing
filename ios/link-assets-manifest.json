@@ -6,6 +6,10 @@
       "sha1": "ee2c78fd0af8aa895f15a93f9a61e13a960c17f3"
     },
     {
+      "path": "app/assets/fonts/MontserratAlternates-Regular.ttf",
+      "sha1": "8a441a013bb65edb42d747efc85caba6d4149464"
+    },
+    {
       "path": "app/assets/fonts/MontserratAlternates-SemiBold.ttf",
       "sha1": "6127c80406ce668cd1d623c40e79a62de3f5d2e0"
     },

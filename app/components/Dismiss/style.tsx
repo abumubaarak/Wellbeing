@@ -19,7 +19,7 @@ export const $button: ViewStyle = {
   alignItems: 'center',
   borderRadius: moderateScale(100),
 };
-export const $widthHeightStyle = (wnh: number) => ({
+export const $widthHeightStyle = (wnh: number = 40) => ({
   width: moderateScale(wnh),
   height: moderateScale(wnh),
 });

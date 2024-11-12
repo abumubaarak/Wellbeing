@@ -1,5 +1,5 @@
 import {withObservables} from '@nozbe/watermelondb/react';
-import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {
   KeyboardAvoidingView,
   Pressable,
@@ -43,7 +43,7 @@ export const Messages = ({messages, unread}: MessagesProps) => {
   const onLoadListener = useCallback(({elapsedTimeInMs}) => {
     console.log('load time', elapsedTimeInMs);
   }, []);
-  const MessageHeaderMemo = memo(MessageHeader);
+
   const sendStyle = useAnimatedStyle(() => {
     return {
       transform: [
@@ -100,7 +100,7 @@ export const Messages = ({messages, unread}: MessagesProps) => {
   useFocusEffect(
     React.useCallback(() => {
       if (isAndroid) {
-        StatusBar.setBackgroundColor(colors.primary);
+        StatusBar.setBackgroundColor(colors.chatInput);
       }
     }, []),
   );
@@ -111,14 +111,11 @@ export const Messages = ({messages, unread}: MessagesProps) => {
         behavior={!isAndroid ? 'padding' : undefined}>
         <Box flex={1}>
           {/* HEADER */}
-          <MessageHeaderMemo
+          <MessageHeader
             doctorID={doctorID}
             channelName={channelName}
             channelSelfie={channelSelfie}
           />
-
-          {/* Messages */}
-
           <Box flexGrow={6} paddingHorizontal="l">
             <FlashList
               ref={flashListRef}
@@ -141,8 +138,7 @@ export const Messages = ({messages, unread}: MessagesProps) => {
               )}
             />
           </Box>
-          {/* Message Input
-            height: isAndroid ? 57 : 79,*/}
+
           <Box justifyContent="center" flexGrow={0.1}>
             <Box
               alignItems="center"

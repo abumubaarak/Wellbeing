@@ -3,9 +3,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {AppStack} from './AppStack';
 
-export const AppNavigator = () => {
+export const AppNavigator = ({ref}: {ref: any}) => {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={ref}>
       <BottomSheetModalProvider>
         <AppStack />
       </BottomSheetModalProvider>

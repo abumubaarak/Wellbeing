@@ -12,7 +12,7 @@ import {
   UserActive,
 } from '../assets/svgs';
 import {TabIcon} from '../components';
-import {Bookings, Chat, Home, Profile} from '../screens';
+import {Bookings, EnhancedChat, Home, Profile} from '../screens';
 import {colors} from '../theme/colors';
 import {TabParamList} from './TabParamList';
 import {$tabBar, $tabLabel} from './style';
@@ -23,6 +23,7 @@ export const HomeNavigator = () => {
     <>
       <Tab.Navigator
         screenOptions={{
+          unmountOnBlur: true,
           headerShown: false,
           tabBarActiveTintColor: colors.primary500,
           tabBarInactiveTintColor: colors.black,
@@ -57,8 +58,10 @@ export const HomeNavigator = () => {
         />
         <Tab.Screen
           name="Chat"
-          component={Chat}
+          component={EnhancedChat}
           options={{
+            lazy: false,
+            // tabBarBadge: count?.length,
             tabBarIcon: ({focused}) => (
               <TabIcon
                 activeIcon={<ChatActive />}

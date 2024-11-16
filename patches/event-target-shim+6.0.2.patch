@@ -1,0 +1,24 @@
+diff --git a/node_modules/event-target-shim/package.json b/node_modules/event-target-shim/package.json
+index 045cf8b..4505b6b 100644
+--- a/node_modules/event-target-shim/package.json
++++ b/node_modules/event-target-shim/package.json
+@@ -3,18 +3,7 @@
+   "version": "6.0.2",
+   "description": "An implementation of WHATWG EventTarget interface.",
+   "main": "index.js",
+-  "exports": {
+-    ".": {
+-      "import": "./index.mjs",
+-      "require": "./index.js"
+-    },
+-    "./es5": {
+-      "import": "./es5.mjs",
+-      "require": "./es5.js"
+-    },
+-    "./umd": "./umd.js",
+-    "./package.json": "./package.json"
+-  },
++  
+   "files": [
+     "index.*",
+     "es5.*",

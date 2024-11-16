@@ -1,5 +1,6 @@
 import Apple from './apple.svg';
 import Appointment from './appointment.svg';
+import Attachment from './attachment.svg';
 import Back from './back.svg';
 import Brain from './brain.svg';
 import BrainNeuro from './brainNeuro.svg';
@@ -19,6 +20,9 @@ import Dropdown from './dropdown.svg';
 import Edit from './edit.svg';
 import Error from './error_feedback.svg';
 import Spanish from './es.svg';
+import Pending from './pending.svg';
+import Read from './read.svg';
+import Sent from './sent.svg';
 
 import GetStartedCircle from './getStartedCircle.svg';
 import Google from './google.svg';
@@ -55,23 +59,42 @@ import Lungs from './lungs.svg';
 import Nephrology from './nephrology.svg';
 import Ophthalmology from './ophthalmology.svg';
 import Orthopedics from './orthopedics.svg';
+import Send from './sendfill.svg';
 
 import BrainNeuroN from './brainNeuroN.svg';
+import Call from './call.svg';
+import CallDown from './calldown.svg';
+import CamOFF from './camoff.svg';
+import CamOn from './camon.svg';
 import Case from './case.svg';
+import Delivered from './delivered.svg';
 import DentistN from './dentist_n.svg';
 import Gastrology from './gastrology.svg';
 import GynecologyN from './gynecologyN.svg';
+import MicOff from './micoff.svg';
+import MicOn from './micon.svg';
+import SpeakerOff from './speakerOff.svg';
+import SpeakerOn from './speakerOn.svg';
+import VideoOn from './videoon.svg';
+import VideoOff from './videooff.svg';
 import Pediatrics from './pediatrics.svg';
 import ReviewGreen from './reviewGreen.svg';
+import Rotate from './rotate.svg';
 import SingleStar from './singleStar.svg';
 import StethoscopeN from './stethoscope_n.svg';
 import UserGroup from './userGroup.svg';
+import VideoCall from './videocall.svg';
 
 export {
   Apple,
   Appointment,
+  VideoOff,
+  VideoOn,
   Arabic,
   ArrowLeft,
+  Attachment,
+  SpeakerOff,
+  SpeakerOn,
   Back,
   Brain,
   BrainNeuro,
@@ -79,6 +102,10 @@ export {
   Calendar,
   CalendarActive,
   CalendarFill,
+  Call,
+  CallDown,
+  CamOFF,
+  CamOn,
   Cancel,
   Case,
   Chat,
@@ -87,6 +114,7 @@ export {
   CheckMark,
   CheckRound,
   Circle,
+  Delivered,
   Dentist,
   DentistN,
   Doctor,
@@ -109,16 +137,23 @@ export {
   MapPin,
   Mic,
   MicCircle,
+  MicOff,
+  MicOn,
   Nephrology,
   Ophthalmology,
   Orthopedics,
   Pediatrics,
+  Pending,
   Radio,
   RadioEmpty,
+  Read,
   Restart,
   Review,
   ReviewGreen,
+  Rotate,
   Schedule,
+  Send,
+  Sent,
   SingleStar,
   Spanish,
   Star,
@@ -133,4 +168,5 @@ export {
   UserGroup,
   Verified,
   Video,
+  VideoCall,
 };

@@ -6,4 +6,4 @@ export type TabParamList = {
   Chat: undefined;
   Profile: undefined;
 };
-export type StackNavigation = NavigationProp<TabParamList>;
+export type StackTabNavigation = NavigationProp<TabParamList>;

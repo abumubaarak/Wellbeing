@@ -1,6 +1,7 @@
+import {useNetInfo} from '@react-native-community/netinfo';
 import {useNavigation} from '@react-navigation/native';
 import React, {memo} from 'react';
-import {Pressable} from 'react-native';
+import {Alert, Pressable} from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {ArrowLeft, Back, VideoCall} from '../../../assets/svgs';
@@ -22,18 +23,25 @@ export const MessageHeader = memo(
   ({channelName, channelSelfie, doctorID}: MessageHeaderProps) => {
     const navigation = useNavigation<StackTabNavigation>();
     const insets = useSafeAreaInsets();
+    const {isConnected} = useNetInfo();
 
     const mainNavigation = useNavigation<StackNavigation>();
     const onPress = () => {
       navigation.navigate('Chat');
     };
     const videoCallOnPress = () => {
-      mainNavigation.navigate('VideoCall', {
-        doctorName: channelName,
-        doctorID,
-        incomingCall: false,
-        avatar: channelSelfie,
-      });
+      if (isConnected) {
+        mainNavigation.navigate('VideoCall', {
+          doctorName: channelName,
+          doctorID,
+          incomingCall: false,
+          avatar: channelSelfie,
+        });
+      } else {
+        Alert.alert(
+          "We're unable to establish a connection. Please connect to the internet to proceed with the video call.",
+        );
+      }
     };
 
     return (

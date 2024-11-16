@@ -1,33 +1,36 @@
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { Q } from '@nozbe/watermelondb';
+import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import {Q} from '@nozbe/watermelondb';
+import {useNetInfo} from '@react-native-community/netinfo';
 import {
   createNavigationContainerRef,
   NavigationContainer,
 } from '@react-navigation/native';
-import { ThemeProvider } from '@shopify/restyle';
-import React, { useEffect } from 'react';
-import { StatusBar } from 'react-native';
+import {ThemeProvider} from '@shopify/restyle';
+import React, {useEffect} from 'react';
+import {StatusBar} from 'react-native';
 import BootSplash from 'react-native-bootsplash';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { enableFreeze } from 'react-native-screens';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {enableFreeze} from 'react-native-screens';
 import {
   addChannel,
   channelCollection,
+  offlineMessages,
   sendMessage,
   updateAllDeliveryStatus,
   updateDeliveryStatus,
 } from './db/helper';
-import { useFirestore, useUser } from './hooks';
+import {useFirestore, useUser} from './hooks';
 import './i18n';
-import { AppStack } from './navigators/AppStack';
+import {AppStack} from './navigators/AppStack';
 import socket from './services/socket';
-import { colors, theme } from './theme';
+import {colors, theme} from './theme';
 
 function App(): React.JSX.Element {
   enableFreeze(true);
   const {uid: UID} = useUser();
   const {getUser} = useFirestore();
+  const {isConnected} = useNetInfo();
   const navigationRef = createNavigationContainerRef<any>();
 
   //const navigation = useNavigation<StackNavigation>();
@@ -38,17 +41,47 @@ function App(): React.JSX.Element {
   }, []);
 
   useEffect(() => {
+    if (isConnected && !socket.connected) {
+      socket.connect();
+      socket.emit('join', UID);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isConnected]);
+
+  useEffect(() => {
     async function onConnect() {
-      //fetch pending messages
-      //emit them all
-      //update delivery time
+      const messages = await offlineMessages();
+
+      messages.map(item => {
+        socket.emit(
+          'message',
+          {
+            doctor: item.doctor,
+            messageID: item.id,
+            message: item.message,
+            patient: UID,
+            sender: UID,
+            deliveryStatus: 'sent',
+          },
+          async (response: any) => {
+            const {deliveryStatus, messageID} = response;
+            await updateDeliveryStatus(deliveryStatus, messageID);
+          },
+        );
+      });
+
+      socket.emit(
+        'sync',
+        {
+          uid: UID,
+          role: 'patient',
+        },
+        async () => {},
+      );
     }
 
-    function onDisconnect() {
-      console.log('Disconnected');
-    }
+    function onDisconnect() {}
 
-    //Later on the status will be moved to messages screen. New Status by then will be ==>>> [pending,sent,delivered, read]
     async function receiveMessage(data: any, callback) {
       const {doctor, message, sender, patient} = data;
 
@@ -66,16 +99,14 @@ function App(): React.JSX.Element {
             lastMessage: message,
             patient,
             sender,
-          }).catch(e => console.log(e));
+          });
           if (addChannelDetails) {
             callback({
               deliveryStatus: 'delivered',
             });
           }
         });
-        //console.log(findChannel);
       } else {
-        //received message is automatically read
         const sendMsg = await sendMessage({
           deliveryStatus: 'delivered',
           doctor,
@@ -83,6 +114,7 @@ function App(): React.JSX.Element {
           patient,
           sender,
         });
+
         if (sendMsg) {
           callback({
             deliveryStatus: 'delivered',
@@ -92,16 +124,15 @@ function App(): React.JSX.Element {
     }
 
     async function updateStatus(response: any) {
-      const {deliveryStatus: status, doctor, messageID, type} = response;
-      //emit delivered if successful
+      const {deliveryStatus: status, patient, messageID, type} = response;
       if (type === 'single') {
         await updateDeliveryStatus(status, messageID);
       } else {
-        await updateAllDeliveryStatus(status, doctor);
+        await updateAllDeliveryStatus('read', patient, 'sender');
       }
     }
 
-    const handleIncomingCallOffer = async (data, callback) => {
+    const handleIncomingCallOffer = async (data: any, callback: any) => {
       const {offer, doctor, offerType} = data;
 
       if (navigationRef.isReady()) {

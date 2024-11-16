@@ -23,6 +23,7 @@ export const HomeNavigator = () => {
     <>
       <Tab.Navigator
         screenOptions={{
+          unmountOnBlur: true,
           headerShown: false,
           tabBarActiveTintColor: colors.primary500,
           tabBarInactiveTintColor: colors.black,
@@ -60,6 +61,7 @@ export const HomeNavigator = () => {
           component={EnhancedChat}
           options={{
             lazy: false,
+            // tabBarBadge: count?.length,
             tabBarIcon: ({focused}) => (
               <TabIcon
                 activeIcon={<ChatActive />}

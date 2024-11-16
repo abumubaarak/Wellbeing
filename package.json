@@ -54,7 +54,7 @@
     "react-native": "0.75.3",
     "react-native-bootsplash": "^5.5.3",
     "react-native-calendar-strip": "^2.2.6",
-    "react-native-config": "^1.5.1",
+    "react-native-config": "^1.5.3",
     "react-native-fast-image": "^8.6.3",
     "react-native-fs": "^2.20.0",
     "react-native-gesture-handler": "^2.16.2",

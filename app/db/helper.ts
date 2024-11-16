@@ -30,8 +30,8 @@ export const channelCollection =
 //doctor: string
 export const observeMessage = () => messageCollection.query().observe();
 export const observeChannels = () =>
-  channelCollection.query().observeWithColumns(['message', 'delivery_status']);
-
+  channelCollection.query().observeWithColumns(['updated_at']);
+//WithColumns(['message', 'delivery_status']);
 export const observeChannelCount = () =>
   channelCollection
     .query()
@@ -40,7 +40,10 @@ export const observeChannelCount = () =>
 export const observeUnreadCount = (id: string) =>
   messageCollection
     .query(Q.where('delivery_status', 'delivered'), Q.where('sender', id))
-    .observeCount();
+    .observe();
+
+export const unreadCount = () =>
+  messageCollection.query(Q.where('delivery_status', 'delivered')).observe();
 
 export const observeDeliveryStatus = () =>
   messageCollection.query().observeWithColumns(['delivery_status']);
@@ -61,6 +64,7 @@ export const sendMessage = async (message: IMessage) => {
       record.sender = message.sender;
       record.deliveryStatus = message.deliveryStatus;
     });
+
     updateChannel.update(() => {
       updateChannel.lastMessage = message.message;
       updateChannel.deliverStatus = message.deliveryStatus;
@@ -93,16 +97,28 @@ export const updateDeliveryStatus = async (
   return updateChannel;
 };
 
+export const offlineMessages = async () => {
+  const pendingMessages = await messageCollection
+    .query(Q.where('delivery_status', 'pending'))
+    .fetch();
+
+  return pendingMessages;
+};
+
 export const updateAllDeliveryStatus = async (
   deliveryStatus: string,
-  doctor: string,
+  value: string,
+  column: string,
 ) => {
   const findMessage = await messageCollection
-    .query(Q.where('doctor', doctor), Q.where('delivery_status', 'delivered'))
+    .query(
+      Q.where(column, value),
+      Q.where('delivery_status', Q.oneOf(['delivered', 'sent'])),
+    )
     .fetch();
   const findChannel = await channelCollection.query(
-    Q.where('doctor', doctor),
-    Q.where('delivery_status', 'delivered'),
+    Q.where(column, value),
+    Q.where('delivery_status', Q.oneOf(['delivered', 'sent'])),
   );
 
   const updateChannel = findChannel[0];
@@ -135,7 +151,7 @@ export const addChannel = async (channel: Omit<IChannel, 'updatedAt'>) => {
   ).count;
   if (findChannel === 0) {
     const write = await database.write(async () => {
-      await channelCollection.create(record => {
+      const newChannel = await channelCollection.create(record => {
         record.lastMessage = channel.lastMessage;
         record.doctor = channel.doctor;
         record.patient = channel.patient;
@@ -145,7 +161,7 @@ export const addChannel = async (channel: Omit<IChannel, 'updatedAt'>) => {
         record.channelSelfie = channel.channelSelfie;
       });
 
-      const newMessage = await messageCollection.create(record => {
+      await messageCollection.create(record => {
         record.message = channel.lastMessage;
         record.doctor = channel.doctor;
         record.patient = channel.patient;
@@ -153,7 +169,7 @@ export const addChannel = async (channel: Omit<IChannel, 'updatedAt'>) => {
         record.deliveryStatus = channel.deliveryStatus;
       });
 
-      return newMessage;
+      return newChannel;
     });
     return write;
   }

@@ -6,12 +6,12 @@ import {StatusBar} from 'react-native';
 import {Box, Screen, Text} from '../../components';
 import {EnhancedChannelList} from '../../components/Chat';
 import ChannelModel from '../../db/channelModel';
-import {observeChannels} from '../../db/helper';
+import {database} from '../../db/database';
 import {colors} from '../../theme';
 import {isAndroid, moderateScale} from '../../utils';
 
 type ChatProps = {
-  channels: ChannelModel[];
+  channels: any;
 };
 
 export const ChatList = ({channels}: ChatProps) => {
@@ -35,6 +35,7 @@ export const ChatList = ({channels}: ChatProps) => {
       <Box flex={1} mt="ll">
         <FlashList
           data={channels}
+          showsVerticalScrollIndicator={false}
           estimatedItemSize={200}
           renderItem={({item}) => <EnhancedChannelList channel={item} />}
         />
@@ -43,7 +44,11 @@ export const ChatList = ({channels}: ChatProps) => {
   );
 };
 const enhance = withObservables([], () => ({
-  channels: observeChannels(),
+  channels: database.collections
+    .get<ChannelModel>('channels')
+    .query()
+    .observeWithColumns(['updated_at']),
+  //messages: observeMessage(),
 }));
 
 export const EnhancedChat = enhance(ChatList);

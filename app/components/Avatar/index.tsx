@@ -12,7 +12,7 @@ export const Avatar = ({
   wnh?: number;
   doctorID?: string;
 }) => {
-  const [activeUsers, setActiveUser] = useState<string>('');
+  const [activeUsers, _] = useState<string>('');
 
   // const {uid} = useUser();
 

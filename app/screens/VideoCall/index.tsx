@@ -206,7 +206,7 @@ export const VideoCall = () => {
         return;
       }
 
-      socket.emit('candidate', {
+      socket.volatile.emit('candidate', {
         icecandidate: {
           candidate: event.candidate.candidate,
           sdpMLineIndex: event.candidate.sdpMLineIndex,
@@ -264,7 +264,7 @@ export const VideoCall = () => {
     try {
       const answerDescription = await peerConnection.createAnswer();
       await peerConnection.setLocalDescription(answerDescription);
-      socket.emit('answeredOffer', {
+      socket.volatile.emit('answeredOffer', {
         offerDescription: answerDescription,
         doctor: doctorID,
       });
@@ -295,7 +295,7 @@ export const VideoCall = () => {
       );
       await peerConnection.setLocalDescription(offerDescription);
 
-      socket.emit(
+      socket.volatile.emit(
         'offer',
         {
           offer: offerDescription,

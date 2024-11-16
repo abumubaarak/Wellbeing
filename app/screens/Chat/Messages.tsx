@@ -17,6 +17,7 @@ import {
   observeMessage,
   observeUnreadCount,
   sendMessage,
+  updateAllDeliveryStatus,
   updateDeliveryStatus,
 } from '../../db/helper';
 
@@ -32,7 +33,7 @@ import {isAndroid} from '../../utils';
 
 type MessagesProps = {
   messages: MessagesModel[];
-  unread: number;
+  unread: MessagesModel[];
 };
 export const Messages = ({messages, unread}: MessagesProps) => {
   const {uid: UID} = useUser();
@@ -41,6 +42,7 @@ export const Messages = ({messages, unread}: MessagesProps) => {
   const [messageInput, setMessageInput] = useState<string>('');
   const flashListRef = useRef<FlashList<MessagesModel>>(null);
   const onLoadListener = useCallback(({elapsedTimeInMs}) => {
+    // eslint-disable-next-line no-console
     console.log('load time', elapsedTimeInMs);
   }, []);
 
@@ -74,7 +76,7 @@ export const Messages = ({messages, unread}: MessagesProps) => {
   };
 
   const emitMessage = (msgPayload: any, id: string) => {
-    socket.emit(
+    socket.volatile.emit(
       'message',
       {...msgPayload, messageID: id},
       async (response: any) => {
@@ -87,9 +89,12 @@ export const Messages = ({messages, unread}: MessagesProps) => {
   };
 
   useEffect(() => {
-    if (unread > 0) {
+    (async () => {
+      await updateAllDeliveryStatus('read', doctorID, 'doctor');
+    })();
+    if (unread.length > 0) {
       socket.emit('read', {
-        deliveryStatus: 'delivered',
+        deliveryStatus: 'read',
         doctor: doctorID,
         patient: UID,
       });
@@ -116,12 +121,12 @@ export const Messages = ({messages, unread}: MessagesProps) => {
             channelName={channelName}
             channelSelfie={channelSelfie}
           />
-          <Box flexGrow={6} paddingHorizontal="l">
+          <Box flex={1} flexGrow={6} paddingHorizontal="l">
             <FlashList
               ref={flashListRef}
               data={messages}
               showsVerticalScrollIndicator={false}
-              estimatedItemSize={200}
+              estimatedItemSize={messages.length}
               onContentSizeChange={() => {
                 if (messages.length > 10) {
                   flashListRef?.current?.scrollToEnd({animated: true});
@@ -131,8 +136,12 @@ export const Messages = ({messages, unread}: MessagesProps) => {
               //   messages.length > 10 &&
               //   flashListRef?.current?.scrollToEnd({animated: true})
               // }
-              keyExtractor={item => item?.id?.toString()}
+
+              keyExtractor={item => item.id}
               onLoad={onLoadListener}
+              getItemType={item => {
+                return item.sender === UID ? 'patient' : 'doctor';
+              }}
               renderItem={({item}) => (
                 <EnhancedMessageItem item={item} UID={UID} />
               )}

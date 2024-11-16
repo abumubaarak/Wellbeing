@@ -1,9 +1,10 @@
 import {withObservables} from '@nozbe/watermelondb/react';
 import {useNavigation} from '@react-navigation/native';
-import React, {memo} from 'react';
+import React from 'react';
 import {Pressable} from 'react-native';
 import ChannelModel from '../../../db/channelModel';
-import {observeChannelCount, observeUnreadCount} from '../../../db/helper';
+import {observeUnreadCount} from '../../../db/helper';
+import MessagesModel from '../../../db/messagesModel';
 import {useUser} from '../../../hooks';
 import {StackNavigation} from '../../../navigators';
 import {formatAMPM, moderateScale} from '../../../utils';
@@ -14,11 +15,10 @@ import {DeliveryStatus} from '../DeliveryStatus';
 
 type ChannelListItemProps = {
   channel: ChannelModel;
-  count: ChannelModel[];
-  unread: number;
+  unread: MessagesModel[];
 };
 
-const ChannelListItem = memo(({channel, unread}: ChannelListItemProps) => {
+const ChannelListItem = ({channel, unread}: ChannelListItemProps) => {
   const {uid: UID} = useUser();
   const navigation = useNavigation<StackNavigation>();
 
@@ -34,7 +34,7 @@ const ChannelListItem = memo(({channel, unread}: ChannelListItemProps) => {
       <Pressable
         onPress={onPress}
         style={({pressed}) => [pressed ? {opacity: 0.4} : {}]}>
-        <Box flexDirection="row" gap="n">
+        <Box flexDirection="row" gap="n" pb="ll">
           <Avatar
             uri={channel.channelSelfie}
             wnh={50}
@@ -61,7 +61,7 @@ const ChannelListItem = memo(({channel, unread}: ChannelListItemProps) => {
               alignItems="center">
               <Box flex={2}>
                 <Text
-                  variant={unread > 0 ? 'medium' : 'regular'}
+                  variant={unread.length > 0 ? 'medium' : 'regular'}
                   numberOfLines={1}
                   fontSize={moderateScale(14.5)}>
                   {channel.lastMessage}
@@ -73,7 +73,7 @@ const ChannelListItem = memo(({channel, unread}: ChannelListItemProps) => {
                   <DeliveryStatus status={channel.deliverStatus} />
                 ) : (
                   <>
-                    {unread > 0 && (
+                    {unread.length > 0 && (
                       <Box
                         borderRadius={100}
                         height={25}
@@ -85,7 +85,7 @@ const ChannelListItem = memo(({channel, unread}: ChannelListItemProps) => {
                           color="black"
                           variant="mSemiBold"
                           fontSize={moderateScale(12)}>
-                          {unread}
+                          {unread.length}
                         </Text>
                       </Box>
                     )}
@@ -98,9 +98,9 @@ const ChannelListItem = memo(({channel, unread}: ChannelListItemProps) => {
       </Pressable>
     </>
   );
-});
+};
+
 const enhance = withObservables(['channel'], ({channel}) => ({
-  count: observeChannelCount(),
   unread: observeUnreadCount(channel?.doctor),
 }));
 

@@ -34,11 +34,13 @@ import { DateRangeInfo } from './DateRangeInfo';
 import { Avatar } from './Avatar';
 import { MessageHeader } from './Chat';
 import { IncomingCall } from './VideoCall';
+import { ProfileItem } from './Profile';
 
 export {
   AnimatedBox,
   AuthModal,
   Chip,
+  ProfileItem,
   IncomingCall,
   DateRangeInfo,
   ChipList,

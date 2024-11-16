@@ -70,14 +70,14 @@ export const AppStack = () => {
       ) : (
         <>
           <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-          <Stack.Group
-            screenOptions={{
-              presentation: 'fullScreenModal',
-            }}>
-            <Stack.Screen name="ChangeLanguage" component={ChangeLanguage} />
-          </Stack.Group>
         </>
       )}
+      <Stack.Group
+        screenOptions={{
+          presentation: 'fullScreenModal',
+        }}>
+        <Stack.Screen name="ChangeLanguage" component={ChangeLanguage} />
+      </Stack.Group>
     </Stack.Navigator>
   );
 };

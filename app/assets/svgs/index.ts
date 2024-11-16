@@ -10,6 +10,7 @@ import CalendarFill from './calendarFill.svg';
 import Cancel from './cancel.svg';
 import ChatLine from './chat-line.svg';
 import Chat from './chat.svg';
+import ArrowRight from './arrow-right.svg';
 import ChatActive from './chatActive.svg';
 import CheckRound from './check-round.svg';
 import CheckMark from './check.svg';
@@ -23,6 +24,11 @@ import Spanish from './es.svg';
 import Pending from './pending.svg';
 import Read from './read.svg';
 import Sent from './sent.svg';
+import Logout from './logout.svg';
+import Trash from './trash.svg';
+import Basic from './basic.svg';
+import Lock from './lock.svg';
+import Language from './lng.svg';
 
 import GetStartedCircle from './getStartedCircle.svg';
 import Google from './google.svg';
@@ -95,6 +101,11 @@ export {
   Attachment,
   SpeakerOff,
   SpeakerOn,
+  ArrowRight,
+  Language,
+  Lock,
+  Logout,
+  Trash,
   Back,
   Brain,
   BrainNeuro,
@@ -120,6 +131,8 @@ export {
   Doctor,
   Dropdown,
   Edit,
+  Basic,
+
   English,
   Error,
   Gastrology,

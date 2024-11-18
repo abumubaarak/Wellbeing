@@ -4,16 +4,17 @@ import firestore, {
 } from '@react-native-firebase/firestore';
 import {useState} from 'react';
 import {APPOINTMENTS, USERS} from '../services';
+import {delay} from '../utils';
 import {useUser} from './useUser';
 
 export const useFirestore = () => {
   const {uid} = useUser();
   const [data, setData] = useState<FirebaseFirestoreTypes.DocumentData[]>([]);
 
-  const [isLoading, setLoading] = useState<boolean>(false);
+  const [isLoading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>();
 
   const recommendedDoctors = async () => {
-    setLoading(true);
     try {
       //true :just for testing
       const collection = await firestore()
@@ -26,7 +27,7 @@ export const useFirestore = () => {
       const newData = collection.docs.map(doc => ({...doc.data()}));
       setData(newData);
       setLoading(false);
-    } catch (error) {
+    } catch {
       setLoading(false);
     }
   };
@@ -35,7 +36,6 @@ export const useFirestore = () => {
     return user;
   };
   const specialistDoctors = async (area: string) => {
-    setLoading(true);
     try {
       //true :just for testing
 
@@ -48,7 +48,7 @@ export const useFirestore = () => {
       const newData = collection.docs.map(doc => ({...doc.data()}));
       setData(newData);
       setLoading(false);
-    } catch (error) {
+    } catch {
       setLoading(false);
     }
   };
@@ -59,7 +59,6 @@ export const useFirestore = () => {
     appointmentTime: any,
   ) => {
     try {
-      setLoading(true);
       const docRef = await addDoc(firestore().collection(APPOINTMENTS), {
         patientID: uid,
         doctorID,
@@ -70,8 +69,25 @@ export const useFirestore = () => {
       if (docRef.id) {
         setLoading(false);
       }
-    } catch (error) {
+    } catch {
       setLoading(false);
+    }
+  };
+  const appointmentTiming = async (appointmentDate: string) => {
+    try {
+      const collection = await firestore()
+        .collection(APPOINTMENTS)
+        .where('patientID', '==', uid)
+        .where('appointmentDate', '==', appointmentDate)
+        .get();
+
+      const newData = collection.docs.map(doc => ({...doc.data()}));
+      setData(newData);
+      await delay(2500);
+      setLoading(false);
+    } catch {
+      setLoading(false);
+      setError(true);
     }
   };
 
@@ -79,6 +95,8 @@ export const useFirestore = () => {
     recommendedDoctors,
     isLoading,
     data,
+    appointmentTiming,
+    error,
     getUser,
     specialistDoctors,
     bookAppointment,

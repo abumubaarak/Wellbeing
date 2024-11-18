@@ -1,5 +1,6 @@
 export const colors = {
   primary: '#F8FBF2',
+  primary50: '#e6f9df',
   primary100: '#D8E8CD',
   primary200: '#D1DECD',
   primary300: '#C1EFAF',
@@ -20,7 +21,7 @@ export const colors = {
   blueLight: '#0F68F0',
   error: '#D80027',
   tomato: '#FF6347',
-tomatoLight: '#EF8E65',
+  tomatoLight: '#EF8E65',
   lightTomato: '#D4C590',
   border: '#C7D8C9',
   blue: '#4682B4',

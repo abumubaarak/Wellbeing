@@ -3,9 +3,9 @@ import {colors} from '../../theme';
 import {fonts} from '../../theme/typography';
 
 export const $dateNameStyle: TextStyle = {
-  color: colors.black,
+  color: colors.grey,
   fontFamily: fonts.workSans.medium,
-  fontSize: 13,
+  fontSize: 12,
 };
 export const $dateNumberStyle: TextStyle = {
   color: colors.black,

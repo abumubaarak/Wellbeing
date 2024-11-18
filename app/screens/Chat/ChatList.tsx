@@ -3,12 +3,12 @@ import {useFocusEffect} from '@react-navigation/native';
 import {FlashList} from '@shopify/flash-list';
 import React from 'react';
 import {StatusBar} from 'react-native';
-import {Box, Screen, Text} from '../../components';
+import {Box, Header, Screen} from '../../components';
 import {EnhancedChannelList} from '../../components/Chat';
 import ChannelModel from '../../db/channelModel';
 import {database} from '../../db/database';
 import {colors} from '../../theme';
-import {isAndroid, moderateScale} from '../../utils';
+import {isAndroid} from '../../utils';
 
 type ChatProps = {
   channels: any;
@@ -25,13 +25,10 @@ export const ChatList = ({channels}: ChatProps) => {
   );
   return (
     <Screen useAlignment>
-      <Text
-        pt="l"
-        color="black"
-        variant="mSemiBold"
-        fontSize={moderateScale(27)}>
-        Chats
-      </Text>
+      <Box mt="l">
+        <Header useDefault={false} summaryKey={'Chats'} titleKey={''} />
+      </Box>
+
       <Box flex={1} mt="ll">
         <FlashList
           data={channels}

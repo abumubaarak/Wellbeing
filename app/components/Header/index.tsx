@@ -8,12 +8,17 @@ import {$lower} from './style';
 type HeaderProps = {
   titleKey: string;
   summaryKey: string;
+  useDefault: boolean;
 };
-export const Header = ({summaryKey, titleKey}: HeaderProps) => {
+export const Header = ({
+  summaryKey,
+  titleKey,
+  useDefault = true,
+}: HeaderProps) => {
   const {t} = useTranslation();
 
   return (
-    <Box style={$lower}>
+    <Box style={useDefault && $lower}>
       <Text variant="header" fontSize={moderateScale(32)}>
         {t(summaryKey)}
       </Text>

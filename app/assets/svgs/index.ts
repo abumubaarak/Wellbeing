@@ -73,6 +73,7 @@ import CallDown from './calldown.svg';
 import CamOFF from './camoff.svg';
 import CamOn from './camon.svg';
 import Case from './case.svg';
+import Clipboard from './clipboard.svg';
 import Delivered from './delivered.svg';
 import DentistN from './dentist_n.svg';
 import Gastrology from './gastrology.svg';
@@ -118,6 +119,7 @@ export {
   CamOFF,
   CamOn,
   Cancel,
+  Clipboard,
   Case,
   Chat,
   ChatActive,

@@ -10,7 +10,25 @@ export const isRTL = I18nManager.isRTL ? true : false;
 export const UUID = () => {
   return Math.floor(Math.random() * Date.now());
 };
+export const DAYS = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
+export const formatDate = (dob: Date) => {
+  if (!dob || (dob instanceof Date && isNaN(dob.getTime()))) {
+    return ' ';
+  }
+  const dateObj = new Date(dob);
 
+  return `${
+    MONTH_NAMES[dateObj.getMonth()]
+  } ${dateObj.getDate()}, ${dateObj.getFullYear()}`;
+};
 export const doctorReview = (review: number) => {
   if (review === 0 || !review) return '0 Review';
   if (review > 1) return `${review} Reviews`;
@@ -56,8 +74,12 @@ export const formatTiming = (start: any, end: any) => {
   const startTime = new Date(start);
   const endTime = new Date(end);
 
-  return `${formatAMPM(startTime)} to ${formatAMPM(endTime)}`;
+  return `${formatAMPM(startTime)} - ${formatAMPM(endTime)}`;
 };
+
+export function delay(duration: number) {
+  return new Promise(resolve => setTimeout(resolve, duration));
+}
 export function availabilityInfo(type: string, doctorsName: string) {
   //DAYS ==> WEEKDAYS ONLY
   //ENDS ==> WEEKENDS ONLY

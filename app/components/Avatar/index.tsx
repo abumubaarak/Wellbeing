@@ -30,7 +30,7 @@ export const Avatar = ({
   //   setActiveUser(data);
   // });
   return (
-    <Box backgroundColor="primary300" borderRadius={100}>
+    <Box borderRadius={100}>
       <FastImage
         style={[$widthHeightStyle(wnh)]}
         source={{

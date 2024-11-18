@@ -35,6 +35,7 @@ import { Avatar } from './Avatar';
 import { MessageHeader } from './Chat';
 import { IncomingCall } from './VideoCall';
 import { ProfileItem } from './Profile';
+import { NoAppointment } from './Booking';
 
 export {
   AnimatedBox,
@@ -43,6 +44,7 @@ export {
   ProfileItem,
   IncomingCall,
   DateRangeInfo,
+  NoAppointment,
   ChipList,
   Box,
   MessageHeader,

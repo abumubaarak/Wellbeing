@@ -36,7 +36,7 @@ index a15c0e3..5f78c74 100644
      alignItems: "center",
      alignSelf: "center"
 diff --git a/node_modules/react-native-calendar-strip/src/CalendarDay.js b/node_modules/react-native-calendar-strip/src/CalendarDay.js
-index 930b0fd..812a02b 100644
+index 930b0fd..e3857e7 100644
 --- a/node_modules/react-native-calendar-strip/src/CalendarDay.js
 +++ b/node_modules/react-native-calendar-strip/src/CalendarDay.js
 @@ -2,11 +2,11 @@
@@ -78,18 +78,16 @@ index 930b0fd..812a02b 100644
  
      if ((prevProps.datesBlacklist !== this.props.datesBlacklist) ||
          (prevProps.datesWhitelist !== this.props.datesWhitelist) ||
-@@ -153,7 +153,9 @@ class CalendarDay extends Component {
+@@ -153,7 +153,7 @@ class CalendarDay extends Component {
      }
  
      if (doStateUpdate) {
 -      this.setState(newState);
-+      console.log("doStateUpdate",newState)
-+
 +    this.setState(newState);
      }
    }
  
-@@ -401,6 +403,7 @@ class CalendarDay extends Component {
+@@ -401,6 +401,7 @@ class CalendarDay extends Component {
      let _dateViewStyle = enabled
        ? [{ backgroundColor: "transparent" }]
        : [{ opacity: disabledDateOpacity }];
@@ -97,7 +95,7 @@ index 930b0fd..812a02b 100644
      let _customHighlightDateNameStyle;
      let _customHighlightDateNumberStyle;
      let _dateNumberContainerStyle = [];
-@@ -419,7 +422,10 @@ class CalendarDay extends Component {
+@@ -419,7 +420,10 @@ class CalendarDay extends Component {
        //If it is border, the user has to input color for border animation 
        switch (daySelectionAnimation.type) {
          case "background":
@@ -109,7 +107,7 @@ index 930b0fd..812a02b 100644
            break;
          case "border":
            _dateViewStyle.push({
-@@ -463,8 +469,8 @@ class CalendarDay extends Component {
+@@ -463,8 +467,8 @@ class CalendarDay extends Component {
  
      let responsiveDateContainerStyle = {
        width: containerWidth,
@@ -120,7 +118,7 @@ index 930b0fd..812a02b 100644
      };
  
      let containerStyle = selected
-@@ -485,8 +491,10 @@ class CalendarDay extends Component {
+@@ -485,8 +489,9 @@ class CalendarDay extends Component {
              style={[
                styles.dateContainer,
                responsiveDateContainerStyle,
@@ -129,7 +127,6 @@ index 930b0fd..812a02b 100644
 +              containerStyle,
 +               _dateViewStyle,
 +
-+              {borderWidth:1,borderColor:"#C7D8C9"}
              ]}
            >
              {showDayName && (

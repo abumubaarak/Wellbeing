@@ -8,7 +8,7 @@ import {$lower} from './style';
 type HeaderProps = {
   titleKey: string;
   summaryKey: string;
-  useDefault: boolean;
+  useDefault?: boolean;
 };
 export const Header = ({
   summaryKey,
@@ -19,7 +19,7 @@ export const Header = ({
 
   return (
     <Box style={useDefault && $lower}>
-      <Text variant="header" fontSize={moderateScale(32)}>
+      <Text lineHeight={42} variant="header" fontSize={moderateScale(32)}>
         {t(summaryKey)}
       </Text>
       <Text variant="regular" paddingTop="s">

@@ -10,6 +10,7 @@ export const spacing = {
   l: 20,
   ml: 25,
   ll: 30,
+  llm: 30,
   xl: 40,
   xll: 50,
 

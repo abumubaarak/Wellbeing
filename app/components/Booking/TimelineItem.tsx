@@ -1,14 +1,21 @@
 import React from 'react';
 import {Pressable} from 'react-native';
 import {spacing} from '../../theme/spacing';
-import {formatTiming, moderateScale} from '../../utils';
+import {moderateScale, timelineTiming} from '../../utils';
 import {Avatar} from '../Avatar';
 import {Box} from '../Box';
 import {Text} from '../Text';
 import {$item} from './styles';
 
 type TimelineItemProps = {
-  onPress: (selfie: string, patientID: string, patientName: string) => void;
+  onPress: (
+    selfie: string,
+    doctorID: string,
+    doctorName: string,
+    specialty: string,
+    appointmentTime: string,
+    appointmentDate: string,
+  ) => void;
   item: any;
 };
 
@@ -19,11 +26,11 @@ export const TimelineItem = ({onPress, item}: TimelineItemProps) => {
         {item?.time}
       </Text>
       {item?.data?.map(
-        ({appointmentTime, doctorName, selfie, doctorID, specialty}) => (
+        ({appointmentTime, doctorName, selfie, doctorID, specialty,appointmentDate}) => (
           <Pressable
             key={item}
             style={$item}
-            onPress={() => onPress(selfie, doctorID, doctorName)}>
+            onPress={() => onPress(selfie, doctorID, doctorName, specialty,appointmentTime,appointmentDate)}>
             <Box>
               <Box height={1} backgroundColor="greyLight2" />
               <Box
@@ -31,8 +38,6 @@ export const TimelineItem = ({onPress, item}: TimelineItemProps) => {
                 paddingVertical="m"
                 mt="n"
                 gap="n"
-                borderLeftWidth={3}
-                borderColor="primary500"
                 flexDirection="row"
                 backgroundColor="primary50"
                 borderRadius={spacing.n}>
@@ -43,16 +48,14 @@ export const TimelineItem = ({onPress, item}: TimelineItemProps) => {
                     <Text
                       adjustsFontSizeToFit
                       numberOfLines={1}
-                      variant="mSemiBold"
+                      variant="medium"
                       fontSize={moderateScale(13)}>
                       {doctorName}
                     </Text>
                     <Text color="grey">{specialty}</Text>
 
-                    <Text
-                      color="black"
-                      fontSize={moderateScale(14)}>
-                      {formatTiming(
+                    <Text color="black" fontSize={moderateScale(14)}>
+                      {timelineTiming(
                         appointmentTime[0].startTime,
                         appointmentTime[0].endTime,
                       )}

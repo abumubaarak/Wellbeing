@@ -1,5 +1,5 @@
 import LottieView from 'lottie-react-native';
-import React from 'react';
+import React, {ReactNode} from 'react';
 import {
   Gesture,
   GestureDetector,
@@ -12,6 +12,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import {Loader} from '../../assets/lottie';
+import {colors} from '../../theme';
 import {Box} from '../Box';
 import {Text} from '../Text';
 import {$button, $buttonContainer, $label, $skottie} from './styles';
@@ -20,10 +21,19 @@ type ButtonProps = RectButtonProps & {
   onPress?: () => void;
   label: string;
   isLoading?: boolean;
+  useSecondary?: boolean;
+  leftIcon?: ReactNode;
 };
 export const AnimatedButton = Animated.createAnimatedComponent(RectButton);
 
-export const Button = ({onPress, isLoading, label, ...props}: ButtonProps) => {
+export const Button = ({
+  onPress,
+  useSecondary = false,
+  isLoading,
+  leftIcon,
+  label,
+  ...props
+}: ButtonProps) => {
   const scaleDown = useSharedValue<boolean>(false);
 
   const isButtonEnabled =
@@ -54,11 +64,15 @@ export const Button = ({onPress, isLoading, label, ...props}: ButtonProps) => {
     };
   });
   return (
-    <Box style={$buttonContainer} overflow="hidden">
+    <Box flex={1} style={$buttonContainer} overflow="hidden">
       <GestureDetector gesture={longPressGesture}>
         <AnimatedButton
           {...props}
-          style={[$button, buttonStyle]}
+          style={[
+            $button,
+            buttonStyle,
+            useSecondary && {backgroundColor: colors.blueLight},
+          ]}
           onPress={onPress}>
           {isLoading ? (
             <LottieView
@@ -69,9 +83,14 @@ export const Button = ({onPress, isLoading, label, ...props}: ButtonProps) => {
               loop={true}
             />
           ) : (
-            <Text style={$label} variant="buttonLabel">
-              {label}
-            </Text>
+            <Box flexDirection="row" gap="n" alignItems="center">
+              {leftIcon}
+              <Text
+                style={[$label, useSecondary && {color: colors.white}]}
+                variant="buttonLabel">
+                {label}
+              </Text>
+            </Box>
           )}
         </AnimatedButton>
       </GestureDetector>

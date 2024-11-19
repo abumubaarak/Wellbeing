@@ -12,8 +12,14 @@ type DismissProps = {
   wnh?: number;
   title?: string;
   isModal?: boolean;
+  modalOnPress?: () => void;
 };
-export const Dismiss = ({wnh = 40, title, isModal = false}: DismissProps) => {
+export const Dismiss = ({
+  wnh = 40,
+  title,
+  isModal = false,
+  modalOnPress,
+}: DismissProps) => {
   const navigation = useNavigation<StackNavigation>();
 
   const onPress = useCallback(() => {
@@ -25,7 +31,7 @@ export const Dismiss = ({wnh = 40, title, isModal = false}: DismissProps) => {
       <Box style={[$container, $widthHeightStyle(wnh)]}>
         <RectButton
           hitSlop={50}
-          onPress={onPress}
+          onPress={isModal ? modalOnPress : onPress}
           style={[$button, $widthHeightStyle(wnh)]}>
           {isModal ? <Cancel /> : !isAndroid ? <ArrowLeft /> : <Back />}
         </RectButton>

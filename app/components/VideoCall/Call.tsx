@@ -73,9 +73,9 @@ export const Call = ({
           streamURL={remoteStreamVideo?.toURL()}
         />
       </Box>
-      <Pressable  onPress={toggleFullScreen} style={$toggleContainer} />
+      <Pressable onPress={toggleFullScreen} style={$toggleContainer} />
 
-      <Box  position="absolute" width={'100%'} height={'100%'}>
+      <Box position="absolute" width={'100%'} height={'100%'}>
         <Box flex={1} marginVertical="xl">
           <Box flex={1}>
             <AnimatedBox style={headerScreenStyle} alignItems="center">
@@ -177,7 +177,7 @@ export const Call = ({
                 justifyContent="center"
                 alignItems="center"
                 backgroundColor="white">
-                {isCamOn ? <VideoOn /> : <VideoOff />}
+                {isCamOn ? <VideoOn fill="#000" /> : <VideoOff />}
               </Box>
             </Pressable>
             <Pressable onPress={handleMic}>

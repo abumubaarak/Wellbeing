@@ -2,7 +2,7 @@ import auth from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Basic, Language, Lock, Logout, Trash} from '../../assets/svgs';
-import {Avatar, Box, ProfileItem, Screen, Text} from '../../components';
+import {Avatar, Box, Header, ProfileItem, Screen, Text} from '../../components';
 import {useUser} from '../../hooks';
 import {StackNavigation} from '../../navigators';
 import {moderateScale} from '../../utils';
@@ -17,15 +17,11 @@ export const Profile = () => {
   };
   return (
     <Screen useAlignment>
-      <Text
-        pt="l"
-        color="black"
-        variant="mSemiBold"
-        fontSize={moderateScale(27)}>
-        Profile
-      </Text>
+      <Box mt="l">
+        <Header useDefault={false} summaryKey={'Profile'} titleKey={''} />
+      </Box>
 
-      <Box mt="ll">
+      <Box mt="s">
         <Box gap="n" flexDirection="row" alignItems="center">
           <Avatar wnh={65} />
           <Box gap="nn">

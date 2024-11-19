@@ -10,7 +10,25 @@ export const isRTL = I18nManager.isRTL ? true : false;
 export const UUID = () => {
   return Math.floor(Math.random() * Date.now());
 };
+export const DAYS = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
+export const formatDate = (dob: Date) => {
+  if (!dob || (dob instanceof Date && isNaN(dob.getTime()))) {
+    return ' ';
+  }
+  const dateObj = new Date(dob);
 
+  return `${
+    MONTH_NAMES[dateObj.getMonth()]
+  } ${dateObj.getDate()}, ${dateObj.getFullYear()}`;
+};
 export const doctorReview = (review: number) => {
   if (review === 0 || !review) return '0 Review';
   if (review > 1) return `${review} Reviews`;
@@ -21,7 +39,7 @@ export const isDateValid = (dob: Date) => {
   return !isValid;
 };
 
-export const formatAMPM = (date: Date) => {
+export const formatAMPM = (date: Date, withABV: boolean = true) => {
   if (date !== undefined && isDateValid(date) && date !== null) {
     let hours = date?.getHours();
     let minutes = date.getMinutes();
@@ -30,9 +48,9 @@ export const formatAMPM = (date: Date) => {
     hours %= 12;
     hours = hours || 12;
 
-    const strTime = `${hours}:${
-      minutes < 10 ? `0${minutes}` : minutes
-    } ${ampm}`;
+    const strTime = `${hours}:${minutes < 10 ? `0${minutes}` : minutes}${
+      withABV ? ' ' + ampm : ''
+    }`;
     return strTime;
   }
 };
@@ -56,8 +74,20 @@ export const formatTiming = (start: any, end: any) => {
   const startTime = new Date(start);
   const endTime = new Date(end);
 
-  return `${formatAMPM(startTime)} to ${formatAMPM(endTime)}`;
+  return `${formatAMPM(startTime)} - ${formatAMPM(endTime)}`;
 };
+
+export const timelineTiming = (start: any, end: any) => {
+  // const startTime = new Date(start.seconds * 1000);
+  // const endTime = new Date(end.seconds * 1000);
+  const startTime = new Date(start);
+  const endTime = new Date(end);
+
+  return `${formatAMPM(startTime, false)} - ${formatAMPM(endTime, false)}`;
+};
+export function delay(duration: number) {
+  return new Promise(resolve => setTimeout(resolve, duration));
+}
 export function availabilityInfo(type: string, doctorsName: string) {
   //DAYS ==> WEEKDAYS ONLY
   //ENDS ==> WEEKENDS ONLY

@@ -73,6 +73,7 @@ import CallDown from './calldown.svg';
 import CamOFF from './camoff.svg';
 import CamOn from './camon.svg';
 import Case from './case.svg';
+import Clipboard from './clipboard.svg';
 import Delivered from './delivered.svg';
 import DentistN from './dentist_n.svg';
 import Gastrology from './gastrology.svg';
@@ -82,22 +83,32 @@ import MicOn from './micon.svg';
 import SpeakerOff from './speakerOff.svg';
 import SpeakerOn from './speakerOn.svg';
 import VideoOn from './videoon.svg';
+import ChatRight from './chatRight.svg';
 import VideoOff from './videooff.svg';
 import Pediatrics from './pediatrics.svg';
 import ReviewGreen from './reviewGreen.svg';
 import Rotate from './rotate.svg';
+import TimeFill from './timefill.svg';
 import SingleStar from './singleStar.svg';
 import StethoscopeN from './stethoscope_n.svg';
 import UserGroup from './userGroup.svg';
 import VideoCall from './videocall.svg';
+import calendarFill from './cfill.svg';
+import Users from './users.svg';
+import CFill from './cfill.svg';
 
 export {
   Apple,
   Appointment,
+  calendarFill,
+  CFill,
+  Users,
   VideoOff,
   VideoOn,
   Arabic,
   ArrowLeft,
+  ChatRight,
+  TimeFill,
   Attachment,
   SpeakerOff,
   SpeakerOn,
@@ -118,6 +129,7 @@ export {
   CamOFF,
   CamOn,
   Cancel,
+  Clipboard,
   Case,
   Chat,
   ChatActive,

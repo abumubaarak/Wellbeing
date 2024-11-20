@@ -80,7 +80,7 @@ export const SymptomsFooter = ({
 
         <Pressable onPress={startRecording}>
           <Box flexDirection="row" justifyContent="center">
-            <Circle width={70} height={70} onPress={startRecording} />
+            <Circle width={65} height={65} onPress={startRecording} />
             <Box alignSelf="center" style={$circle}>
               {symptoms.length > 0 && !isRecording ? (
                 <>

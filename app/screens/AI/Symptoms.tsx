@@ -1,11 +1,11 @@
 import {useIsFocused} from '@react-navigation/native';
-import React, {useState} from 'react';
-// import {
-//   cleanup,
-//   eventListener,
-//   startTranscription,
-//   stopTranscription,
-// } from 'react-native-live-transcription';
+import React, {useEffect, useState} from 'react';
+import {
+  cleanup,
+  eventListener,
+  startTranscription,
+  stopTranscription,
+} from 'react-native-live-transcription';
 import {useMMKVString} from 'react-native-mmkv';
 import {useSharedValue} from 'react-native-reanimated';
 import {
@@ -28,44 +28,44 @@ export const Symptoms = () => {
   const [typingEffect, setTypingEffect] = useState<boolean>(true);
   const isFocus = useIsFocused();
 
-  // useEffect(() => {
-  //   if (isFocus && symptomsPref?.length !== 0) {
-  //     setSymptoms([symptomsPref!]);
-  //     setTypingEffect(false);
-  //   }
-  // }, [isFocus, symptomsPref]);
+  useEffect(() => {
+    if (isFocus && symptomsPref?.length !== 0) {
+      setSymptoms([symptomsPref!]);
+      setTypingEffect(false);
+    }
+  }, [isFocus, symptomsPref]);
 
-  // eventListener('onMessage', data => {
-  //   if (symptoms.length === 0) {
-  //     setPreviousLength(0);
-  //   } else {
-  //     setPreviousLength(symptoms.join('').length - 1);
-  //   }
-  //   setTypingEffect(true);
-  //   setSymptoms([...symptoms, data]);
-  // });
+  eventListener('onMessage', data => {
+    if (symptoms.length === 0) {
+      setPreviousLength(0);
+    } else {
+      setPreviousLength(symptoms.join('').length - 1);
+    }
+    setTypingEffect(true);
+    setSymptoms([...symptoms, data]);
+  });
 
-  // eventListener('silenceTimeout', data => {
-  //   setIsRecording(!data);
-  //   options.value = !data;
-  //   setSymptoms([]);
-  // });
+  eventListener('silenceTimeout', data => {
+    setIsRecording(!data);
+    options.value = !data;
+    setSymptoms([]);
+  });
 
-  // useEffect(() => {
-  //   return () => {
-  //     cleanup('onMessage');
-  //     cleanup('silenceTimeout');
-  //   };
-  // }, []);
+  useEffect(() => {
+    return () => {
+      cleanup('onMessage');
+      cleanup('silenceTimeout');
+    };
+  }, []);
 
   const startRecording = async () => {
-    // setIsRecording(!isRecording);
-    // options.value = !isRecording;
-    // if (isRecording) {
-    //   stopTranscription();
-    // } else {
-    //   startTranscription();
-    // }
+    setIsRecording(!isRecording);
+    options.value = !isRecording;
+    if (isRecording) {
+      stopTranscription();
+    } else {
+      startTranscription();
+    }
   };
 
   const clearSymptoms = () => {

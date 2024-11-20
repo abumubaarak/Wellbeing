@@ -12,7 +12,7 @@ export const PermissionHeader = ({i18nKey}: PermissionHeaderProps) => {
   const {t} = useTranslation<keyof Translations>();
 
   return (
-    <Text variant="header" fontSize={moderateScale(25)} style={$header}>
+    <Text variant="header" lineHeight={32} fontSize={moderateScale(25)} style={$header}>
       {t(i18nKey)}
     </Text>
   );

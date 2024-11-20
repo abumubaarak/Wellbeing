@@ -3299,6 +3299,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-firebase/database@npm:^21.5.0":
+  version: 21.5.0
+  resolution: "@react-native-firebase/database@npm:21.5.0"
+  peerDependencies:
+    "@react-native-firebase/app": 21.5.0
+  checksum: f684384904a46ed2bc93ac0c53fd5098d411504c29638ece1442f80d62d25c3606d3c618f7f0cc09213a9c80fd0e8cbc7b14b5e8af5f553bfa29b1b029f0f64c
+  languageName: node
+  linkType: hard
+
 "@react-native-firebase/firestore@npm:^20.1.0":
   version: 20.5.0
   resolution: "@react-native-firebase/firestore@npm:20.5.0"
@@ -4303,6 +4312,7 @@ __metadata:
     "@react-native-community/netinfo": ^11.4.1
     "@react-native-firebase/app": ^20.1.0
     "@react-native-firebase/auth": ^20.1.0
+    "@react-native-firebase/database": ^21.5.0
     "@react-native-firebase/firestore": ^20.1.0
     "@react-native-google-signin/google-signin": latest
     "@react-native/babel-preset": 0.75.3
@@ -4342,6 +4352,7 @@ __metadata:
     react-native-incall-manager: ^4.2.0
     react-native-keyboard-aware-scroll-view: ^0.9.5
     react-native-linear-gradient: ^2.8.3
+    react-native-live-transcription: "git@github.com:abumubaarak/react-native-live-transcription.git"
     react-native-mmkv: ^3.0.2
     react-native-pager-view: ^6.4.1
     react-native-permissions: ^4.1.5
@@ -10578,6 +10589,16 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: f980d324e551bbc475c6406bdc5250a08242020cbe653412fa169bbdf51e28a502e225de105b4d696d6a1a1b733d44782469020f4936d8b3ce0e2c78e51cf58f
+  languageName: node
+  linkType: hard
+
+"react-native-live-transcription@git@github.com:abumubaarak/react-native-live-transcription.git":
+  version: 0.1.0
+  resolution: "react-native-live-transcription@git@github.com:abumubaarak/react-native-live-transcription.git#commit=3111bda2fbe851bcd9291a76a53b334a9959d458"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 72a9bd7568d59dab75c6ab80a06fbffa7ee4ce3a5eb587adb0f57a2ac986a90aa82e7ee6abc16efb834403bfefc0a24f0e4a7621e7db81df98793300277c73af
   languageName: node
   linkType: hard
 

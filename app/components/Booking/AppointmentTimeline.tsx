@@ -35,7 +35,7 @@ export const AppointmentTimeline = ({appointments}: AppointmentTimeline) => {
     bottomSheetModalRef.current?.close();
   };
   const NOW = new Date().toString();
-  //I observe some issue with moment()
+  //I observed some issue with moment()
   const Today = moment(NOW);
   const timelineItemPress = (
     selfie: string,

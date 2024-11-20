@@ -1,5 +1,6 @@
 import LottieView from 'lottie-react-native';
 import React, {ReactNode} from 'react';
+import {StyleProp, TextStyle, ViewStyle} from 'react-native';
 import {
   Gesture,
   GestureDetector,
@@ -23,6 +24,9 @@ type ButtonProps = RectButtonProps & {
   isLoading?: boolean;
   useSecondary?: boolean;
   leftIcon?: ReactNode;
+  buttonLabelStyle?: StyleProp<TextStyle>;
+  buttonCustomStyle?: StyleProp<ViewStyle>;
+
 };
 export const AnimatedButton = Animated.createAnimatedComponent(RectButton);
 
@@ -31,7 +35,9 @@ export const Button = ({
   useSecondary = false,
   isLoading,
   leftIcon,
+  buttonCustomStyle,
   label,
+  buttonLabelStyle,
   ...props
 }: ButtonProps) => {
   const scaleDown = useSharedValue<boolean>(false);
@@ -71,6 +77,7 @@ export const Button = ({
           style={[
             $button,
             buttonStyle,
+            buttonCustomStyle,
             useSecondary && {backgroundColor: colors.blueLight},
           ]}
           onPress={onPress}>
@@ -86,7 +93,11 @@ export const Button = ({
             <Box flexDirection="row" gap="n" alignItems="center">
               {leftIcon}
               <Text
-                style={[$label, useSecondary && {color: colors.white}]}
+                style={[
+                  $label,
+                  buttonLabelStyle,
+                  useSecondary && {color: colors.white},
+                ]}
                 variant="buttonLabel">
                 {label}
               </Text>

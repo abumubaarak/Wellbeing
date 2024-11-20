@@ -26,11 +26,27 @@ export const TimelineItem = ({onPress, item}: TimelineItemProps) => {
         {item?.time}
       </Text>
       {item?.data?.map(
-        ({appointmentTime, doctorName, selfie, doctorID, specialty,appointmentDate}) => (
+        ({
+          appointmentTime,
+          doctorName,
+          selfie,
+          doctorID,
+          specialty,
+          appointmentDate,
+        }) => (
           <Pressable
             key={item}
             style={$item}
-            onPress={() => onPress(selfie, doctorID, doctorName, specialty,appointmentTime,appointmentDate)}>
+            onPress={() =>
+              onPress(
+                selfie,
+                doctorID,
+                doctorName,
+                specialty,
+                appointmentTime,
+                appointmentDate,
+              )
+            }>
             <Box>
               <Box height={1} backgroundColor="greyLight2" />
               <Box

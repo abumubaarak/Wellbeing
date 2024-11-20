@@ -90,12 +90,30 @@ export const useFirestore = () => {
       setError(true);
     }
   };
+  const upcoming = async () => {
+    try {
+      const collection = await firestore()
+        .collection(APPOINTMENTS)
+        .where('patientID', '==', uid)
+        .get();
+      const newData = collection.docs
+        .map(doc => ({...doc.data()}))
+        .filter(d => new Date(d.appointmentTime[0].startTime) <= new Date())[0];
+
+      setData([newData]);
+      setLoading(false);
+    } catch {
+      setLoading(false);
+      setError(true);
+    }
+  };
 
   return {
     recommendedDoctors,
     isLoading,
     data,
     appointmentTiming,
+    upcoming,
     error,
     getUser,
     specialistDoctors,

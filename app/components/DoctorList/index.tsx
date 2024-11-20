@@ -2,14 +2,13 @@ import {FirebaseFirestoreTypes} from '@react-native-firebase/firestore';
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Pressable} from 'react-native';
-import FastImage from 'react-native-fast-image';
-import {MapPin, Review, Star, Verified} from '../../assets/svgs';
+import {MapPin, RatingN, Review, Star, Verified} from '../../assets/svgs';
 import {StackNavigation} from '../../navigators';
 import {doctorReview, moderateScale} from '../../utils';
+import {Avatar} from '../Avatar';
 import {Box} from '../Box';
 import {CircularLoader} from '../Loader';
 import {Text} from '../Text';
-import {$image} from './styles';
 
 type DoctorListProps = {
   data: FirebaseFirestoreTypes.DocumentData[];
@@ -28,14 +27,7 @@ export const DoctorList = ({data, isLoading}: DoctorListProps) => {
           <Pressable key={index} onPress={() => onPress(index)}>
             <Box mt="m">
               <Box flexDirection="row" gap="n" alignItems="center">
-                <FastImage
-                  style={$image}
-                  source={{
-                    uri: item?.selfie,
-                    priority: FastImage.priority.normal,
-                  }}
-                  resizeMode={FastImage.resizeMode.center}
-                />
+                <Avatar uri={item?.selfie} wnh={50} />
 
                 {/* Right Content Info */}
                 <Box>
@@ -43,7 +35,9 @@ export const DoctorList = ({data, isLoading}: DoctorListProps) => {
                     {item?.specialty}
                   </Text>
                   <Box gap="s" flexDirection="row" alignItems="center">
-                    <Text variant="buttonLabel">{item?.fullName}</Text>
+                    <Text variant="buttonLabel" fontSize={moderateScale(13)}>
+                      {item?.fullName}
+                    </Text>
                     <Verified />
                   </Box>
 
@@ -57,8 +51,9 @@ export const DoctorList = ({data, isLoading}: DoctorListProps) => {
                     </Box>
                     <Text>|</Text>
                     <Box flexDirection="row" alignItems="center" gap="s">
-                      <Star />
-                      <Text>{item?.rating}</Text>
+                      {!item?.rating ? <RatingN /> : <Star />}
+
+                      <Text>{item?.rating ?? 0}</Text>
                     </Box>
                     <Text>|</Text>
                     <Box flexDirection="row" alignItems="center" gap="s">

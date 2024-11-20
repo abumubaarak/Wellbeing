@@ -46,6 +46,7 @@ export const HomeNavigator = () => {
           name="Bookings"
           component={Bookings}
           options={{
+            lazy: false,
             tabBarIcon: ({focused}) => (
               <TabIcon
                 activeIcon={<CalendarActive />}
@@ -74,6 +75,8 @@ export const HomeNavigator = () => {
           name="Profile"
           component={Profile}
           options={{
+            lazy: false,
+
             tabBarIcon: ({focused}) => (
               <TabIcon
                 activeIcon={<UserActive />}

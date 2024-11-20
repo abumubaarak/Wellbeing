@@ -17,7 +17,7 @@ import {Text} from '../Text';
 export const Upcoming = () => {
   const navigation = useNavigation<StackTabNavigation>();
   const {upcoming, data, getUser, isLoading} = useFirestore();
-  const Today = new Date().toString();
+  // const Today = new Date().toString();
   const upcomingAppointment = data[0];
   const {fullName} = useUser();
   const bottomSheetModalRef = useRef<BottomSheetModalMethods>(null);
@@ -29,10 +29,12 @@ export const Upcoming = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
+    if (data.length === 0) {return;}
     (async () => {
       const user = await getUser(upcomingAppointment.doctorID);
       setDoctorInfo(user);
     })();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
   const openModal = () => {
     bottomSheetModalRef.current?.present();
@@ -82,8 +84,7 @@ export const Upcoming = () => {
                     fontSize={moderateScale(13)}
                     color="black">
                     {formatDate(data[0]?.appointmentDate)}
-                    {/* Monday, 7 October */}
-                  </Text>
+                   </Text>
                 </Box>
                 <Box gap="s" flexDirection="row" alignItems="center">
                   <Time />
@@ -95,8 +96,7 @@ export const Upcoming = () => {
                       data[0]?.appointmentTime[0].startTime,
                       data[0]?.appointmentTime[0].endTime,
                     ).toUpperCase()}
-                    {/* 09:30 AM - 10:30 AM */}
-                  </Text>
+                   </Text>
                 </Box>
               </Box>
               <Box height={0.5} backgroundColor="greyLight2" />

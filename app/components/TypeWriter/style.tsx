@@ -8,3 +8,8 @@ export const $content: TextStyle = {
   fontSize: moderateScale(17),
   fontFamily: 'WorkSans-Regular',
 };
+export const $lottie: TextStyle = {
+  width: 40,
+  height: 40,
+  marginLeft: -10,
+};

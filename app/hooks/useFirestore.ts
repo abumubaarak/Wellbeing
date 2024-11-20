@@ -98,9 +98,12 @@ export const useFirestore = () => {
         .get();
       const newData = collection.docs
         .map(doc => ({...doc.data()}))
-        .filter(d => new Date(d.appointmentTime[0].startTime) <= new Date())[0];
-
-      setData([newData]);
+        .filter(d => new Date(d.appointmentTime[0].startTime) >= new Date())[0];
+      if (newData.length === 0) {
+        setData([]);
+      } else {
+        setData([newData]);
+      }
       setLoading(false);
     } catch {
       setLoading(false);

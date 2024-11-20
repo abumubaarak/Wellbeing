@@ -73,10 +73,9 @@ export const Symptoms = () => {
   };
 
   return (
-    <Screen>
-      <Box paddingHorizontal="l">
-        <Dismiss />
-      </Box>
+    <Screen useAlignment>
+      <Dismiss />
+
       <SymptomsGradientBackground
         opacity={isRecording || symptoms.length > 0 ? 1 : 0}
         dynamic={isRecording}
@@ -84,8 +83,9 @@ export const Symptoms = () => {
       <PermissionHeader i18nKey="symptoms" />
 
       {symptoms && (
-        <Box marginTop="l" paddingHorizontal="l">
+        <Box marginTop="l">
           <TypeWriter
+            loading={isRecording}
             addEffect={typingEffect}
             previousLength={previousLength}
             content={symptoms?.join('')}

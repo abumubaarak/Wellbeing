@@ -5,6 +5,7 @@ import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {Config} from 'react-native-config';
+import {storage} from '../data';
 import {UUID, isAndroid} from '../utils';
 export async function googleSignIn() {
   await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
@@ -84,6 +85,7 @@ export const createUser = async (type: string, name?: string) => {
   const {currentUser} = auth();
   const document = firestore().collection(USERS).doc(currentUser?.uid);
   const user = await document.get();
+  storage.set('user', JSON.stringify(user.data()));
   if (!user.exists) {
     document.set({
       fullName: type === 'google' ? currentUser?.displayName : name,

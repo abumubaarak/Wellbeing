@@ -5,6 +5,7 @@ import {Box, Button, Screen, Text} from '../../components';
 import {AppStackParamList, StackNavigation} from '../../navigators';
 import {spacing} from '../../theme/spacing';
 import {moderateScale} from '../../utils';
+import {$bookingCircle} from '../styles';
 
 export const BookingStatus = () => {
   const {params} = useRoute<RouteProp<AppStackParamList, 'BookingStatus'>>();
@@ -16,7 +17,7 @@ export const BookingStatus = () => {
     <Screen useAlignment>
       <Box gap="ll" flex={1} justifyContent="center" alignItems="center">
         <Box
-          style={{marginTop: -120}}
+          style={$bookingCircle}
           borderRadius={spacing.borderRadius}
           backgroundColor="primary300"
           width={160}

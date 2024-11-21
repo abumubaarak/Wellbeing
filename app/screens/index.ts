@@ -10,3 +10,4 @@ export * from './DoctorDetails';
 export * from './Calendar';
 export * from './VideoCall';
 export * from './BookingStatus';
+export * from './CompleteProfile';

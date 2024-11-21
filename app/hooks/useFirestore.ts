@@ -3,6 +3,7 @@ import firestore, {
   FirebaseFirestoreTypes,
 } from '@react-native-firebase/firestore';
 import {useState} from 'react';
+import {storage} from '../data';
 import {APPOINTMENTS, USERS} from '../services';
 import {delay} from '../utils';
 import {useUser} from './useUser';
@@ -114,8 +115,27 @@ export const useFirestore = (loading: boolean = true) => {
     }
   };
 
+  const updateProfile = async (patientID: string, profileObj: any) => {
+    setLoading(true);
+
+    const collection = firestore().collection(USERS).doc(patientID);
+
+    await collection
+      .update({...profileObj})
+      .then(() => {
+        setLoading(false);
+        storage.set('user', JSON.stringify(profileObj));
+        setData([{updateStatus: true}]);
+      })
+      .catch(() => {
+        setLoading(false);
+        setError(true);
+      });
+  };
+
   return {
     recommendedDoctors,
+    updateProfile,
     isLoading,
     data,
     appointmentTiming,

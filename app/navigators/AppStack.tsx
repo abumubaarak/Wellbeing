@@ -1,10 +1,12 @@
 import auth from '@react-native-firebase/auth';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect, useState} from 'react';
+import {useMMKVString} from 'react-native-mmkv';
 import {
   BookingStatus,
   CalendarRange,
   ChangeLanguage,
+  CompleteProfile,
   DoctorDetails,
   EnhancedMessages,
   OnboardingScreen,
@@ -22,11 +24,14 @@ import {AppStackParamList} from './AppStackParamList';
 import {HomeNavigator} from './HomeNavigator';
 export const AppStack = () => {
   const Stack = createNativeStackNavigator<AppStackParamList>();
-  const [user, setUser] = useState();
+  const [__, setAuthUser] = useState();
   const [initializing, setInitializing] = useState(true);
+  const [user, _] = useMMKVString('user');
+
+  const userObject = user && JSON.parse(user!);
 
   function onAuthStateChanged(users: any) {
-    setUser(users);
+    setAuthUser(users);
     if (initializing) {
       setInitializing(false);
     }
@@ -39,7 +44,6 @@ export const AppStack = () => {
 
   // eslint-disable-next-line curly
   if (initializing) return <></>;
-
   return (
     <Stack.Navigator
       initialRouteName="Onboarding"
@@ -47,27 +51,41 @@ export const AppStack = () => {
         headerShown: false,
         animation: isAndroid ? 'none' : 'ios',
       }}>
-      {user ? (
+      {userObject ? (
         <>
-          <Stack.Screen name="HomeTab" component={HomeNavigator} />
-          <Stack.Screen name="Messages" component={EnhancedMessages} />
-          <Stack.Screen name="Symptoms" component={Symptoms} />
-          <Stack.Screen name="Analyse" component={Analyse} />
-          <Stack.Screen name="Analysis" component={Analysis} />
-          <Stack.Screen name="BookingStatus" component={BookingStatus} />
-          <Stack.Screen name="FindDoctor" component={FindDoctor} />
-          <Stack.Screen name="SpecialistDoctor" component={SpecialistDoctor} />
-          <Stack.Screen name="DoctorDetails" component={DoctorDetails} />
-          <Stack.Screen name="VideoCall" component={VideoCall} />
+          {userObject?.verify ? (
+            <>
+              <Stack.Screen name="HomeTab" component={HomeNavigator} />
+              <Stack.Screen name="Messages" component={EnhancedMessages} />
+              <Stack.Screen name="Symptoms" component={Symptoms} />
+              <Stack.Screen name="Analyse" component={Analyse} />
+              <Stack.Screen name="Analysis" component={Analysis} />
+              <Stack.Screen name="BookingStatus" component={BookingStatus} />
+              <Stack.Screen name="FindDoctor" component={FindDoctor} />
+              <Stack.Screen
+                name="SpecialistDoctor"
+                component={SpecialistDoctor}
+              />
+              <Stack.Screen name="DoctorDetails" component={DoctorDetails} />
+              <Stack.Screen name="VideoCall" component={VideoCall} />
 
-          <Stack.Group
-            screenOptions={{
-              presentation: 'fullScreenModal',
-            }}>
-            <Stack.Screen name="Permission" component={Permission} />
-            <Stack.Screen name="EditSymptoms" component={EditSymptoms} />
-            <Stack.Screen name="CalendarRange" component={CalendarRange} />
-          </Stack.Group>
+              <Stack.Group
+                screenOptions={{
+                  presentation: 'fullScreenModal',
+                }}>
+                <Stack.Screen name="Permission" component={Permission} />
+                <Stack.Screen name="EditSymptoms" component={EditSymptoms} />
+                <Stack.Screen name="CalendarRange" component={CalendarRange} />
+              </Stack.Group>
+            </>
+          ) : (
+            <>
+              <Stack.Screen
+                name="CompleteProfile"
+                component={CompleteProfile}
+              />
+            </>
+          )}
         </>
       ) : (
         <>

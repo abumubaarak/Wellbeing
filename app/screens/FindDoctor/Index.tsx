@@ -12,8 +12,9 @@ import {
 } from '../../utils';
 
 export const FindDoctor = () => {
-  const snapPoints = useMemo(() => ['1', '85%'], []);
-  const width = Dimensions.get('screen').width;
+  const {width} = Dimensions.get('screen');
+  const snapPoints = useMemo(() => ['1', '90%'], []);
+
   const [selectedItem, setSelectedItem] = useState<ISPECIALISTS>();
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
@@ -30,14 +31,26 @@ export const FindDoctor = () => {
           pt="l"
           flexDirection="row"
           mt="l"
-          style={{columnGap: width / 8.3}}
+          // style={{columnGap: width / 10}}
           alignItems="flex-start"
+          justifyContent="space-between"
           rowGap="xl"
           flexWrap="wrap">
           {SPECIALISTS.map(({icon, name}, index) => (
-            <Pressable key={name} onPress={() => openModel(index)}>
-              <SpecialistCard icon={icon} title={name} wnh={80} />
-            </Pressable>
+            <>
+              <Pressable
+                key={index}
+                onPress={() => {
+                  index !== 11 && openModel(index);
+                }}>
+                <SpecialistCard
+                  index={index}
+                  icon={icon}
+                  title={name}
+                  wnh={width / 4.3}
+                />
+              </Pressable>
+            </>
           ))}
         </Box>
       </Screen>

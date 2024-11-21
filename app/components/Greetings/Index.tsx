@@ -14,9 +14,7 @@ export const Greetings = () => {
       justifyContent="space-between"
       alignItems="center">
       <Box>
-        <Text variant="medium" color="grey">
-          Hello 👋🏼,
-        </Text>
+        <Text color="grey">Hello 👋🏼,</Text>
         <Text pt="s" variant="mSemiBold" fontSize={moderateScale(15)}>
           {fullName}
         </Text>

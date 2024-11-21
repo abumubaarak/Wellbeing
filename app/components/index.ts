@@ -1,7 +1,15 @@
 import {AuthModal} from './AuthModal';
+import {Avatar} from './Avatar';
+import {
+  AppointmentDetails,
+  AppointmentTimeline,
+  NoAppointment,
+} from './Booking';
 import {AnimatedBox, Box} from './Box';
 import {Button} from './Button';
 import {OnboardingCarousel} from './Carousel';
+import {MessageHeader} from './Chat';
+import {DateRangeInfo} from './DateRangeInfo';
 import {Dismiss} from './Dismiss';
 import {DoctorDetailsHeader} from './DoctorDetailsHeader';
 import {DoctorInfoCard} from './DoctorInfoCard';
@@ -20,6 +28,7 @@ import {OnboardingHeader} from './OnboardingHeader';
 import {PermissionContent} from './PermissionContent';
 import {PermissionHeader} from './PermissionContent/PermissionHeader';
 import {CirclePie} from './Pie';
+import {ProfileItem} from './Profile';
 import {ProgressBar} from './ProgressBar';
 import {Recommended} from './Recommended/Index';
 import {Screen} from './Screen';
@@ -27,47 +36,44 @@ import {SpecialistCard, SpecialistCategory} from './Specialist';
 import {SymptomsFooter} from './SymptomsFooter';
 import {SymptomsGradientBackground} from './SymptomsGradientBackground';
 import {Text} from './Text';
+import {Chip, ChipList} from './TimeChip';
 import {TypeWriter} from './TypeWriter';
 import {Upcoming} from './Upcoming/Index';
-import {Chip,ChipList} from './TimeChip';
-import { DateRangeInfo } from './DateRangeInfo';
-import { Avatar } from './Avatar';
-import { MessageHeader } from './Chat';
-import { IncomingCall } from './VideoCall';
-import { ProfileItem } from './Profile';
-import { NoAppointment } from './Booking';
+import {IncomingCall} from './VideoCall';
 
 export {
   AnimatedBox,
+  AppointmentDetails,
+  AppointmentTimeline,
   AuthModal,
-  Chip,
-  ProfileItem,
-  IncomingCall,
-  DateRangeInfo,
-  NoAppointment,
-  ChipList,
+  Avatar,
   Box,
-  MessageHeader,
   Button,
+  Chip,
+  ChipList,
   CirclePie,
   CircularLoader,
+  DateRangeInfo,
   Dismiss,
   DoctorDetailsHeader,
   DoctorInfoCard,
   DoctorList,
   EditSymptomsContent,
   Feedback,
-  Avatar,
   Greetings,
   Header,
+  IncomingCall,
   InsightCard,
   Language,
   Line,
+  MessageHeader,
+  NoAppointment,
   OnboardingCarousel,
   OnboardingFooter,
   OnboardingHeader,
   PermissionContent,
   PermissionHeader,
+  ProfileItem,
   ProgressBar,
   Recommended,
   Screen,

@@ -1,7 +1,9 @@
 import Apple from './apple.svg';
 import Appointment from './appointment.svg';
+import ArrowRight from './arrow-right.svg';
 import Attachment from './attachment.svg';
 import Back from './back.svg';
+import Basic from './basic.svg';
 import Brain from './brain.svg';
 import BrainNeuro from './brainNeuro.svg';
 import Calendar from './calendar.svg';
@@ -10,7 +12,6 @@ import CalendarFill from './calendarFill.svg';
 import Cancel from './cancel.svg';
 import ChatLine from './chat-line.svg';
 import Chat from './chat.svg';
-import ArrowRight from './arrow-right.svg';
 import ChatActive from './chatActive.svg';
 import CheckRound from './check-round.svg';
 import CheckMark from './check.svg';
@@ -19,16 +20,16 @@ import Dentist from './dentist.svg';
 import Doctor from './doctor.svg';
 import Dropdown from './dropdown.svg';
 import Edit from './edit.svg';
+import Empty from './empty.svg';
 import Error from './error_feedback.svg';
 import Spanish from './es.svg';
+import Language from './lng.svg';
+import Lock from './lock.svg';
+import Logout from './logout.svg';
 import Pending from './pending.svg';
 import Read from './read.svg';
 import Sent from './sent.svg';
-import Logout from './logout.svg';
 import Trash from './trash.svg';
-import Basic from './basic.svg';
-import Lock from './lock.svg';
-import Language from './lng.svg';
 
 import GetStartedCircle from './getStartedCircle.svg';
 import Google from './google.svg';
@@ -73,6 +74,8 @@ import CallDown from './calldown.svg';
 import CamOFF from './camoff.svg';
 import CamOn from './camon.svg';
 import Case from './case.svg';
+import {default as calendarFill, default as CFill} from './cfill.svg';
+import ChatRight from './chatRight.svg';
 import Clipboard from './clipboard.svg';
 import Delivered from './delivered.svg';
 import DentistN from './dentist_n.svg';
@@ -80,71 +83,59 @@ import Gastrology from './gastrology.svg';
 import GynecologyN from './gynecologyN.svg';
 import MicOff from './micoff.svg';
 import MicOn from './micon.svg';
-import SpeakerOff from './speakerOff.svg';
-import SpeakerOn from './speakerOn.svg';
-import VideoOn from './videoon.svg';
-import ChatRight from './chatRight.svg';
-import VideoOff from './videooff.svg';
 import Pediatrics from './pediatrics.svg';
+import RatingN from './rating.svg';
 import ReviewGreen from './reviewGreen.svg';
 import Rotate from './rotate.svg';
-import TimeFill from './timefill.svg';
 import SingleStar from './singleStar.svg';
+import SpeakerOff from './speakerOff.svg';
+import SpeakerOn from './speakerOn.svg';
 import StethoscopeN from './stethoscope_n.svg';
+import TimeFill from './timefill.svg';
 import UserGroup from './userGroup.svg';
-import VideoCall from './videocall.svg';
-import calendarFill from './cfill.svg';
 import Users from './users.svg';
-import CFill from './cfill.svg';
+import VideoCall from './videocall.svg';
+import VideoOff from './videooff.svg';
+import VideoOn from './videoon.svg';
 
 export {
   Apple,
   Appointment,
-  calendarFill,
-  CFill,
-  Users,
-  VideoOff,
-  VideoOn,
   Arabic,
   ArrowLeft,
-  ChatRight,
-  TimeFill,
-  Attachment,
-  SpeakerOff,
-  SpeakerOn,
   ArrowRight,
-  Language,
-  Lock,
-  Logout,
-  Trash,
+  Attachment,
   Back,
+  Basic,
   Brain,
   BrainNeuro,
   BrainNeuroN,
   Calendar,
   CalendarActive,
   CalendarFill,
+  calendarFill,
+  Empty,
   Call,
   CallDown,
   CamOFF,
   CamOn,
   Cancel,
-  Clipboard,
   Case,
+  CFill,
   Chat,
   ChatActive,
   ChatLine,
+  ChatRight,
   CheckMark,
   CheckRound,
   Circle,
+  Clipboard,
   Delivered,
   Dentist,
   DentistN,
   Doctor,
   Dropdown,
   Edit,
-  Basic,
-
   English,
   Error,
   Gastrology,
@@ -157,7 +148,10 @@ export {
   HeartOrgan,
   Home,
   HomeActive,
+  Language,
+  Lock,
   LoginCircle,
+  Logout,
   Lungs,
   MapPin,
   Mic,
@@ -171,6 +165,7 @@ export {
   Pending,
   Radio,
   RadioEmpty,
+  RatingN,
   Read,
   Restart,
   Review,
@@ -181,17 +176,24 @@ export {
   Sent,
   SingleStar,
   Spanish,
+  SpeakerOff,
+  SpeakerOn,
   Star,
   Stethoscope,
   StethoscopeN,
   Stop,
   Telemedicine,
   Time,
+  TimeFill,
   Translate,
+  Trash,
   User,
   UserActive,
   UserGroup,
+  Users,
   Verified,
   Video,
   VideoCall,
+  VideoOff,
+  VideoOn,
 };

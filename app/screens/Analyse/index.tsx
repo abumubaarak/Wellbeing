@@ -16,7 +16,7 @@ import {AppStackParamList, StackNavigation} from '../../navigators';
 export const Analyse = () => {
   const {t} = useTranslation<keyof Translations>();
   const {params} = useRoute<RouteProp<AppStackParamList, 'Analyse'>>();
-  const {analyseSymptoms, isLoading, analysis} = useApi();
+  const {analyseSymptoms, analysis} = useApi();
   const navigation = useNavigation<StackNavigation>();
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export const Analyse = () => {
       <Box flex={1}>
         <PermissionHeader i18nKey="analysing" />
         <Box flexGrow={1} justifyContent="center" alignItems="center">
-          <CircularLoader isLoading={isLoading} />
+          <CircularLoader isLoading={true} />
         </Box>
         <Box flexGrow={0.1} justifyContent="center">
           <Feedback type="CAUTION!" message={t('advice')} />

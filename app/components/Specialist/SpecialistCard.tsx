@@ -7,12 +7,13 @@ type ISpecialistCard = {
   icon: ReactNode;
   title: string;
   wnh: number;
+  index?: number;
 };
-export const SpecialistCard = ({icon, title, wnh}: ISpecialistCard) => {
+export const SpecialistCard = ({icon, title, wnh, index}: ISpecialistCard) => {
   return (
     <Box alignItems="center">
       <Box
-        backgroundColor="primaryLight"
+        backgroundColor={index !== 11 ? 'primaryLight' : 'primary'}
         width={moderateScale(wnh)}
         justifyContent="center"
         alignItems="center"

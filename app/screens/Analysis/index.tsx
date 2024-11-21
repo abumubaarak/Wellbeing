@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   CirclePie,
-  Dismiss,
   ProgressBar,
   Screen,
   Text,
@@ -30,8 +29,6 @@ export const Analysis = () => {
   const {diagnosis, illness, medication} = params.result;
   return (
     <Screen useAlignment>
-      <Dismiss />
-
       <ScrollView showsVerticalScrollIndicator={false}>
         <Box marginTop="l">
           <Text variant="mSemiBold">Top potential illnesses</Text>

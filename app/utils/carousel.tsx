@@ -7,6 +7,7 @@ import {
   DentistN,
   Doctor,
   Gastrology,
+  Gynecology,
   GynecologyN,
   HeartOrgan,
   Lungs,
@@ -150,7 +151,7 @@ export const SPECIALISTS = [
   },
   {
     name: 'Gynecology',
-    icon: <GynecologyN />,
+    icon: <Gynecology/>,
   },
   {
     name: 'Cardiology',
@@ -181,6 +182,10 @@ export const SPECIALISTS = [
   {
     name: 'Ophthalmology',
     icon: <Ophthalmology />,
+  },
+  {
+    name: '',
+    icon: null,
   },
 ];
 

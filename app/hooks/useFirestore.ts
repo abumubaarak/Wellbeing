@@ -7,11 +7,11 @@ import {APPOINTMENTS, USERS} from '../services';
 import {delay} from '../utils';
 import {useUser} from './useUser';
 
-export const useFirestore = () => {
+export const useFirestore = (loading: boolean = true) => {
   const {uid} = useUser();
   const [data, setData] = useState<FirebaseFirestoreTypes.DocumentData[]>([]);
 
-  const [isLoading, setLoading] = useState<boolean>(true);
+  const [isLoading, setLoading] = useState<boolean>(loading);
   const [error, setError] = useState<boolean>();
 
   const recommendedDoctors = async () => {
@@ -58,6 +58,7 @@ export const useFirestore = () => {
     appointmentDate: any,
     appointmentTime: any,
   ) => {
+    setLoading(true);
     try {
       const docRef = await addDoc(firestore().collection(APPOINTMENTS), {
         patientID: uid,
@@ -67,7 +68,9 @@ export const useFirestore = () => {
         appointmentTime,
       });
       if (docRef.id) {
+        await delay(2000);
         setLoading(false);
+        setData([{bookingStatus: true}]);
       }
     } catch {
       setLoading(false);

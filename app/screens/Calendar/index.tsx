@@ -39,7 +39,7 @@ export const CalendarRange = () => {
   }, [selectedDate]);
   return (
     <Screen useAlignment>
-      <Dismiss isModal={true} />
+      <Dismiss isModal={true} modalOnPress={() => navigation.goBack()} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <Box mb="m">
           <DateRangeInfo dateRange={range} doctorsName={params.doctorsName} />

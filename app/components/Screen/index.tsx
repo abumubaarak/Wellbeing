@@ -3,10 +3,12 @@ import {StyleProp, ViewStyle} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {isAndroid} from '../../utils';
 import {Box} from '../Box';
+import {CircularLoader} from '../Loader';
 import {$container} from './style';
 type ScreenProps = {
   children: ReactNode;
   useAlignment?: boolean;
+  isLoading?: boolean;
   styles?: StyleProp<ViewStyle>;
   useBottomPadding?: boolean;
   useTopPadding?: boolean;
@@ -14,6 +16,7 @@ type ScreenProps = {
 export const Screen = ({
   children,
   styles,
+  isLoading = false,
   useAlignment,
   useBottomPadding = true,
   useTopPadding = true,
@@ -36,7 +39,13 @@ export const Screen = ({
             : DEFAULT_PADDING_BOTTOM,
         },
       ]}>
-      {children}
+      {isLoading ? (
+        <Box flex={1} alignItems="center" justifyContent="center">
+          <CircularLoader isLoading={isLoading} />
+        </Box>
+      ) : (
+        children
+      )}
     </Box>
   );
 };

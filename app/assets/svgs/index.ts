@@ -20,6 +20,7 @@ import Dentist from './dentist.svg';
 import Doctor from './doctor.svg';
 import Dropdown from './dropdown.svg';
 import Edit from './edit.svg';
+import Empty from './empty.svg';
 import Error from './error_feedback.svg';
 import Spanish from './es.svg';
 import Language from './lng.svg';
@@ -109,16 +110,18 @@ export {
   Brain,
   BrainNeuro,
   BrainNeuroN,
-  CFill,
   Calendar,
   CalendarActive,
   CalendarFill,
+  calendarFill,
+  Empty,
   Call,
   CallDown,
   CamOFF,
   CamOn,
   Cancel,
   Case,
+  CFill,
   Chat,
   ChatActive,
   ChatLine,
@@ -193,5 +196,4 @@ export {
   VideoCall,
   VideoOff,
   VideoOn,
-  calendarFill,
 };

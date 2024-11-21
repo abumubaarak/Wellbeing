@@ -1,6 +1,5 @@
 import {RouteProp, useRoute} from '@react-navigation/native';
-import moment from 'moment';
-import React, {useState} from 'react';
+import React from 'react';
 import {useWindowDimensions} from 'react-native';
 import {
   NavigationState,
@@ -10,24 +9,19 @@ import {
 import {Case, ReviewGreen, SingleStar, UserGroup} from '../../assets/svgs';
 import {
   Box,
-  Button,
   Dismiss,
   DoctorDetailsHeader,
   DoctorInfoCard,
   Screen,
 } from '../../components';
-import {useFirestore} from '../../hooks';
 import {AboutTab, ReviewsTab, ScheduleTab, TabHeader} from '../../layouts';
 import {AppStackParamList} from '../../navigators';
+import {colors} from '../../theme';
 import {spacing} from '../../theme/spacing';
 export const DoctorDetails = () => {
   const layout = useWindowDimensions();
-  const {bookAppointment, isLoading} = useFirestore();
   const [index, setIndex] = React.useState(0);
-  const [appointment, setAppointment] = useState<{
-    date: moment.Moment;
-    time: any;
-  }>();
+
   const [routes] = React.useState([
     {key: 'about', title: 'About'},
     {key: 'schedules', title: 'Schedules'},
@@ -54,36 +48,12 @@ export const DoctorDetails = () => {
       case 'about':
         return <AboutTab bio={params.doctor.bio} />;
       case 'schedules':
-        return <ScheduleTab doctor={params.doctor} scheduleSet={scheduleSet} />;
+        return <ScheduleTab doctor={params.doctor} />;
       case 'reviews':
         return <ReviewsTab />;
       default:
         return null;
     }
-  };
-
-  const onPress = () => {
-    if (index === 1) {
-      if (appointment) {
-        bookAppointment(
-          params.doctor.uid,
-          moment(appointment.date).format('YYYY-MM-DD'),
-          appointment?.time,
-        );
-        //Later on send them to booking screen after successful booking
-      } else {
-        setIndex(index + 1);
-      }
-    } else if (index !== 2) {
-      setIndex(index + 1);
-    }
-  };
-
-  const scheduleSet = (date: moment.Moment, time: any) => {
-    setAppointment({
-      date,
-      time,
-    });
   };
 
   return (
@@ -99,10 +69,11 @@ export const DoctorDetails = () => {
         </Box>
 
         <TabView
+          lazy={true}
           style={{
             marginTop: spacing.ll,
-            marginBottom: spacing.ll,
           }}
+          sceneContainerStyle={{backgroundColor: colors.primary}}
           renderTabBar={renderTabHeader}
           navigationState={{index, routes}}
           renderScene={renderScene}
@@ -110,12 +81,6 @@ export const DoctorDetails = () => {
           initialLayout={{width: layout.width}}
         />
       </Box>
-      <Button
-        label={index === 1 && appointment ? 'Book appointment' : 'Continue'}
-        onPress={onPress}
-        isLoading={isLoading}
-        enabled={!isLoading}
-      />
     </Screen>
   );
 };

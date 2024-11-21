@@ -2521,7 +2521,7 @@ PODS:
     - Yoga
   - react-native-netinfo (11.4.1):
     - React-Core
-  - react-native-pager-view (6.4.1):
+  - react-native-pager-view (6.5.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2534,7 +2534,7 @@ PODS:
     - React-featureflags
     - React-graphics
     - React-ImageManager
-    - react-native-pager-view/common (= 6.4.1)
+    - react-native-pager-view/common (= 6.5.1)
     - React-NativeModulesApple
     - React-RCTFabric
     - React-rendererdebug
@@ -2543,7 +2543,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-pager-view/common (6.4.1):
+  - react-native-pager-view/common (6.5.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -3613,7 +3613,7 @@ SPEC CHECKSUMS:
   react-native-live-transcription: a08a50658c77c3c39bf020473a9c07e1891ea3e8
   react-native-mmkv: 6a5f027f0d39569e7e12c56799bb6adae17e32cf
   react-native-netinfo: f0a9899081c185db1de5bb2fdc1c88c202a059ac
-  react-native-pager-view: 121798efbc76a84b241a32a919fccc324b1c5c7e
+  react-native-pager-view: 90bde7996adffa8af7ce5d1b2255b45880bd1091
   react-native-restart: 7595693413fe3ca15893702f2c8306c62a708162
   react-native-safe-area-context: 4571abffff5db8a314b849a2c72aae5cba2e4c7a
   react-native-skia: 579b5506783a4e665acfe32dd879f556442aafb6

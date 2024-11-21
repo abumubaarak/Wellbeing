@@ -23,11 +23,11 @@ export const ChipList = ({availableTime, onTimeSelected}: ChipListProps) => {
     if (active) {
       onTimeSelected(activeItem);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
   return (
-    <Box mt="n" flexDirection="row" flexWrap="wrap">
+    <Box gap="m" mt="n" flexDirection="row" flexWrap="wrap">
       {availableTime.map((item: any, index: React.Key | null | undefined) => (
         <Pressable key={index} onPress={() => onPress(index, item)}>
           <Chip

@@ -1,6 +1,7 @@
 import {RouteProp, useRoute} from '@react-navigation/native';
 import React, {useEffect} from 'react';
-import {Dismiss, DoctorList, Screen} from '../../components';
+import {Empty} from '../../assets/svgs';
+import {Dismiss, DoctorList, NoAppointment, Screen} from '../../components';
 import {useFirestore} from '../../hooks';
 import {AppStackParamList} from '../../navigators';
 
@@ -14,9 +15,16 @@ export const SpecialistDoctor = () => {
     })();
   }, [specialistDoctors, params.area]);
   return (
-    <Screen useAlignment>
+    <Screen useAlignment isLoading={isLoading}>
       <Dismiss title={params.area} />
-      <DoctorList data={data} isLoading={isLoading} />
+      {data.length !== 0 ? (
+        <DoctorList data={data} isLoading={isLoading} />
+      ) : (
+        <NoAppointment
+          icon={<Empty />}
+          title="We're sorry, no specialties are available at the moment."
+        />
+      )}
     </Screen>
   );
 };

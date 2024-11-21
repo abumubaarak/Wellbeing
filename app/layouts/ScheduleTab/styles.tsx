@@ -14,3 +14,4 @@ export const $dateNumberStyle: TextStyle = {
 };
 
 export const $calendarStrip: ViewStyle = {height: 71, marginBottom: 15};
+export const $container: ViewStyle = {flex: 1};

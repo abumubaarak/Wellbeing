@@ -4354,7 +4354,7 @@ __metadata:
     react-native-linear-gradient: ^2.8.3
     react-native-live-transcription: "git@github.com:abumubaarak/react-native-live-transcription.git"
     react-native-mmkv: ^3.0.2
-    react-native-pager-view: ^6.4.1
+    react-native-pager-view: ^6.5.1
     react-native-permissions: ^4.1.5
     react-native-reanimated: ^3.15.3
     react-native-reanimated-carousel: ^3.5.1
@@ -10612,13 +10612,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-pager-view@npm:^6.4.1":
-  version: 6.4.1
-  resolution: "react-native-pager-view@npm:6.4.1"
+"react-native-pager-view@npm:^6.5.1":
+  version: 6.5.1
+  resolution: "react-native-pager-view@npm:6.5.1"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 558f08efccf748eed91a2a88be4f90e49e2b63a28c1b9db5de9711eb324a75e9565a3dbf92c523a623a2c7d5a7e0d8a0db88599bc85d33158544a7d0e724319e
+  checksum: 9c8a9bb5f69d0dbc4dcf4826b2d319c0fd926fa60dd7c0dddc765aeb775c070d516b189fab575773f902c924ecb6db6ae8fdb67d6e879890ac82e094a4d2b930
   languageName: node
   linkType: hard
 

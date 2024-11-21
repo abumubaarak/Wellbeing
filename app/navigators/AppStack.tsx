@@ -2,6 +2,7 @@ import auth from '@react-native-firebase/auth';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect, useState} from 'react';
 import {
+  BookingStatus,
   CalendarRange,
   ChangeLanguage,
   DoctorDetails,
@@ -53,6 +54,7 @@ export const AppStack = () => {
           <Stack.Screen name="Symptoms" component={Symptoms} />
           <Stack.Screen name="Analyse" component={Analyse} />
           <Stack.Screen name="Analysis" component={Analysis} />
+          <Stack.Screen name="BookingStatus" component={BookingStatus} />
           <Stack.Screen name="FindDoctor" component={FindDoctor} />
           <Stack.Screen name="SpecialistDoctor" component={SpecialistDoctor} />
           <Stack.Screen name="DoctorDetails" component={DoctorDetails} />

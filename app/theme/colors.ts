@@ -20,6 +20,8 @@ export const colors = {
   greyLight2: '#EEEEEE',
   blueLight: '#0F68F0',
   error: '#D80027',
+  inputStroke: '#D6DDE5',
+
   tomato: '#FF6347',
   tomatoLight: '#EF8E65',
   lightTomato: '#D4C590',

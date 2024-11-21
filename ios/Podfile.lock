@@ -979,6 +979,9 @@ PODS:
   - Firebase/Firestore (10.29.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 10.29.0)
+  - Firebase/Storage (10.29.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 10.29.0)
   - FirebaseAnalytics (10.29.0):
     - FirebaseAnalytics/AdIdSupport (= 10.29.0)
     - FirebaseCore (~> 10.0)
@@ -1005,6 +1008,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.8)
     - GTMSessionFetcher/Core (< 4.0, >= 2.1)
     - RecaptchaInterop (~> 100.0)
+  - FirebaseAuthInterop (10.29.0)
   - FirebaseCore (10.29.0):
     - FirebaseCoreInternal (~> 10.0)
     - GoogleUtilities/Environment (~> 7.12)
@@ -1045,6 +1049,13 @@ PODS:
     - GoogleUtilities/UserDefaults (~> 7.8)
     - PromisesObjC (~> 2.1)
   - FirebaseSharedSwift (10.29.0)
+  - FirebaseStorage (10.29.0):
+    - FirebaseAppCheckInterop (~> 10.0)
+    - FirebaseAuthInterop (~> 10.25)
+    - FirebaseCore (~> 10.0)
+    - FirebaseCoreExtension (~> 10.0)
+    - GoogleUtilities/Environment (~> 7.12)
+    - GTMSessionFetcher/Core (< 4.0, >= 2.1)
   - fmt (9.1.0)
   - glog (0.3.5)
   - GoogleAppMeasurement (10.29.0):
@@ -2477,6 +2488,48 @@ PODS:
     - react-native-config/App (= 1.5.3)
   - react-native-config/App (1.5.3):
     - React-Core
+  - react-native-date-picker (5.0.7):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - react-native-image-picker (7.1.2):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - react-native-live-transcription (0.1.0):
     - DoubleConversion
     - glog
@@ -2964,6 +3017,10 @@ PODS:
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - React-Core
     - RNFBApp
+  - RNFBStorage (21.6.0):
+    - Firebase/Storage (= 10.29.0)
+    - React-Core
+    - RNFBApp
   - RNFlashList (1.7.1):
     - DoubleConversion
     - glog
@@ -3266,6 +3323,8 @@ DEPENDENCIES:
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
   - react-native-config (from `../node_modules/react-native-config`)
+  - react-native-date-picker (from `../node_modules/react-native-date-picker`)
+  - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - react-native-live-transcription (from `../node_modules/react-native-live-transcription`)
   - react-native-mmkv (from `../node_modules/react-native-mmkv`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
@@ -3308,6 +3367,7 @@ DEPENDENCIES:
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBDatabase (from `../node_modules/@react-native-firebase/database`)"
   - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
+  - "RNFBStorage (from `../node_modules/@react-native-firebase/storage`)"
   - "RNFlashList (from `../node_modules/@shopify/flash-list`)"
   - RNFS (from `../node_modules/react-native-fs`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
@@ -3330,6 +3390,7 @@ SPEC REPOS:
     - FirebaseAnalytics
     - FirebaseAppCheckInterop
     - FirebaseAuth
+    - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseCoreExtension
     - FirebaseCoreInternal
@@ -3338,6 +3399,7 @@ SPEC REPOS:
     - FirebaseFirestoreInternal
     - FirebaseInstallations
     - FirebaseSharedSwift
+    - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleSignIn
     - GoogleUtilities
@@ -3434,6 +3496,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
   react-native-config:
     :path: "../node_modules/react-native-config"
+  react-native-date-picker:
+    :path: "../node_modules/react-native-date-picker"
+  react-native-image-picker:
+    :path: "../node_modules/react-native-image-picker"
   react-native-live-transcription:
     :path: "../node_modules/react-native-live-transcription"
   react-native-mmkv:
@@ -3518,6 +3584,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/database"
   RNFBFirestore:
     :path: "../node_modules/@react-native-firebase/firestore"
+  RNFBStorage:
+    :path: "../node_modules/@react-native-firebase/storage"
   RNFlashList:
     :path: "../node_modules/@shopify/flash-list"
   RNFS:
@@ -3555,6 +3623,7 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: 23717de130b779aa506e757edb9713d24b6ffeda
   FirebaseAppCheckInterop: 6a1757cfd4067d8e00fccd14fcc1b8fd78cfac07
   FirebaseAuth: e2ebfaf9fb4638a1c9a3b0efd17d1b90943987cd
+  FirebaseAuthInterop: 17db81e9b198afb0f95ce48c133825727eed55d3
   FirebaseCore: 30e9c1cbe3d38f5f5e75f48bfcea87d7c358ec16
   FirebaseCoreExtension: 705ca5b14bf71d2564a0ddc677df1fc86ffa600f
   FirebaseCoreInternal: df84dd300b561c27d5571684f389bf60b0a5c934
@@ -3563,6 +3632,7 @@ SPEC CHECKSUMS:
   FirebaseFirestoreInternal: f43d25cc04835ec3aa1885f4fc946a1a4f9e1c56
   FirebaseInstallations: 913cf60d0400ebd5d6b63a28b290372ab44590dd
   FirebaseSharedSwift: 20530f495084b8d840f78a100d8c5ee613375f6e
+  FirebaseStorage: 436c30aa46f2177ba152f268fe4452118b8a4856
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
   glog: 69ef571f3de08433d766d614c73a9838a06bf7eb
   GoogleAppMeasurement: f9de05ee17401e3355f68e8fc8b5064d429f5918
@@ -3610,6 +3680,8 @@ SPEC CHECKSUMS:
   React-Mapbuffer: a90dc2b770956814f2f2ac4553063c5ce2618fe8
   React-microtasksnativemodule: 0b44bb6d632c420b02ec90a7375c208a0e7896ab
   react-native-config: 8f7283449bbb048902f4e764affbbf24504454af
+  react-native-date-picker: d249919c84b9bafa2756e7028a500a71d399ff89
+  react-native-image-picker: df6597d4b1878a443796be11eb2b7286ed10ece6
   react-native-live-transcription: a08a50658c77c3c39bf020473a9c07e1891ea3e8
   react-native-mmkv: 6a5f027f0d39569e7e12c56799bb6adae17e32cf
   react-native-netinfo: f0a9899081c185db1de5bb2fdc1c88c202a059ac
@@ -3653,6 +3725,7 @@ SPEC CHECKSUMS:
   RNFBAuth: 97633be48cc4e539d954270a218785d2e3f9fde7
   RNFBDatabase: ac51f470cc9c853a809e19511a3e923c3768296f
   RNFBFirestore: 5250af3b06d1fe90b75c905d8b29d155e603d040
+  RNFBStorage: 311178636a8a68886308745e3f5536d99cd647dd
   RNFlashList: b85e7b9e77c3b6d9169f88d60ed6dca0a479a822
   RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
   RNGestureHandler: 4d51801ffb13efc643a7093da8b4daded7959b6a

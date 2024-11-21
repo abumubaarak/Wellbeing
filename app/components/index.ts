@@ -40,11 +40,16 @@ import {Chip, ChipList} from './TimeChip';
 import {TypeWriter} from './TypeWriter';
 import {Upcoming} from './Upcoming/Index';
 import {IncomingCall} from './VideoCall';
+import {Dropdown,InputField} from './Form';
+import {Option} from './Options';
 
 export {
   AnimatedBox,
+  Option,
   AppointmentDetails,
   AppointmentTimeline,
+  Dropdown,
+  InputField,
   AuthModal,
   Avatar,
   Box,

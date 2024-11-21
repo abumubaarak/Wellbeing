@@ -5,6 +5,7 @@ import {AnalyseResponse} from '../services/api';
 export type AppStackParamList = {
   Onboarding: undefined;
   ChangeLanguage: undefined;
+  CompleteProfile: undefined;
   HomeTab: undefined;
   Permission: undefined;
   BookingStatus: {doctorName: string};

@@ -1,22 +1,26 @@
 import auth from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
-import React from 'react';
+import React, {useState} from 'react';
 import {Basic, Language, Lock, Logout, Trash} from '../../assets/svgs';
 import {Avatar, Box, Header, ProfileItem, Screen, Text} from '../../components';
+import {storage} from '../../data';
 import {useUser} from '../../hooks';
 import {StackNavigation} from '../../navigators';
 import {moderateScale} from '../../utils';
 export const Profile = () => {
   const navigation = useNavigation<StackNavigation>();
   const {fullName} = useUser();
+  const [loading, setLoading] = useState<boolean>(false);
   const signOut = async () => {
+    setLoading(true);
+    storage.set('user', '');
     await auth().signOut();
   };
   const changeLanguage = () => {
     navigation.navigate('ChangeLanguage');
   };
   return (
-    <Screen useAlignment>
+    <Screen useAlignment isLoading={loading}>
       <Box mt="l">
         <Header useDefault={false} summaryKey={'Profile'} titleKey={''} />
       </Box>

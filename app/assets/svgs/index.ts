@@ -97,9 +97,14 @@ import Users from './users.svg';
 import VideoCall from './videocall.svg';
 import VideoOff from './videooff.svg';
 import VideoOn from './videoon.svg';
+import Upload from './upload.svg';
+import UserFill from './userfill.svg';
+import CalendarOutline from './calendarOutline.svg';
 
 export {
   Apple,
+  Upload,
+  UserFill,
   Appointment,
   Arabic,
   ArrowLeft,
@@ -107,6 +112,7 @@ export {
   Attachment,
   Back,
   Basic,
+  CalendarOutline,
   Brain,
   BrainNeuro,
   BrainNeuroN,

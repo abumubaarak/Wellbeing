@@ -9,7 +9,7 @@ import moment from 'moment';
 import React, {useMemo, useRef, useState} from 'react';
 import {CFill, ChatRight, TimeFill, Users, VideoOn} from '../../assets/svgs';
 import {useUser} from '../../hooks';
-import {formatDate, formatTiming, moderateScale} from '../../utils';
+import {formatDate, moderateScale, startEndTime} from '../../utils';
 import {$indicator} from '../AuthModal/style';
 import {Avatar} from '../Avatar';
 import {Box} from '../Box';
@@ -109,10 +109,11 @@ export const AppointmentTimeline = ({appointments}: AppointmentTimeline) => {
                     fontSize={moderateScale(13)}
                     variant="medium"
                     color="black">
-                    {formatTiming(
-                      doctor?.appointmentTime[0].startTime,
-                      doctor?.appointmentTime[0].endTime,
-                    ).toUpperCase()}
+                    {doctor?.appointmentTime[0].startTime &&
+                      startEndTime(
+                        doctor?.appointmentTime[0].startTime,
+                        doctor?.appointmentTime[0].endTime,
+                      ).toUpperCase()}
                     {/* 9:30 AM - 10:30 AM */}
                   </Text>
                 </Box>

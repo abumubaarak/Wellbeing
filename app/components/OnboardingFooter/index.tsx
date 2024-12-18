@@ -24,7 +24,7 @@ export const OnboardingFooter = () => {
 
   return (
     <>
-      <Box style={$container} flexGrow={0.05} overflow="hidden">
+      <Box style={$container}  overflow="hidden">
         <Button onPress={openGetStartedModal} label="getStarted" />
         <BorderlessButton rippleRadius={0} onPress={loginModal}>
           <Text variant="buttonLabel" style={[$label, $labelLogin]}>

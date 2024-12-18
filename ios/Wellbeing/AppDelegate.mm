@@ -13,12 +13,12 @@
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
   [FIRApp configure];
-
+ 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
-
--(void)customizeRootView:(RCTRootView *)rootView {
- [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView]; // ⬅️ initialize the splash screen
+- (void)customizeRootView:(RCTRootView *)rootView {
+  [super customizeRootView:rootView];
+  [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView];
 }
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {

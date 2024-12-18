@@ -22,6 +22,7 @@ import {FindDoctor} from '../screens/FindDoctor/Index';
 import {isAndroid} from '../utils';
 import {AppStackParamList} from './AppStackParamList';
 import {HomeNavigator} from './HomeNavigator';
+// import SplashScreen from 'react-native-splash-screen';
 export const AppStack = () => {
   const Stack = createNativeStackNavigator<AppStackParamList>();
   const [__, setAuthUser] = useState();

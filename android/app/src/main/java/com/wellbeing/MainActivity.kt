@@ -15,7 +15,8 @@ class MainActivity : ReactActivity() {
   override fun getMainComponentName(): String = "Wellbeing"
 
     override fun onCreate(savedInstanceState: Bundle?) {
-       RNBootSplash.init(this, R.style.BootTheme) // ⬅️ initialize the splash screen
+        RNBootSplash.init(this, R.style.BootTheme) // ⬅️ initialize the splash screen
+
         super.onCreate(null) // super.onCreate(null) with react-native-screens
     }
   /**

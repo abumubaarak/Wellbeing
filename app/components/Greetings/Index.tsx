@@ -1,12 +1,12 @@
 import React from 'react';
-import {useUser} from '../../hooks';
+import {useMMKVString} from 'react-native-mmkv';
 import {moderateScale} from '../../utils';
 import {Box} from '../Box';
 import {Text} from '../Text';
 
 export const Greetings = () => {
-  const {fullName} = useUser();
-
+  const [userObject, _] = useMMKVString('user');
+  const user = userObject && JSON.parse(userObject!);
   return (
     <Box
       mt="n"
@@ -16,7 +16,7 @@ export const Greetings = () => {
       <Box>
         <Text color="grey">Hello 👋🏼,</Text>
         <Text pt="s" variant="mSemiBold" fontSize={moderateScale(15)}>
-          {fullName}
+          {user.fullName}
         </Text>
       </Box>
     </Box>

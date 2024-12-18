@@ -85,18 +85,21 @@ export const createUser = async (type: string, name?: string) => {
   const {currentUser} = auth();
   const document = firestore().collection(USERS).doc(currentUser?.uid);
   const user = await document.get();
-  storage.set('user', JSON.stringify(user.data()));
+  const userInfo = {
+    fullName: type === 'google' ? currentUser?.displayName : name,
+    email: currentUser?.email,
+    uid: currentUser?.uid,
+    userType: PATIENT,
+    dob: null,
+    authProvider: type,
+    gender: '',
+    deviceID: '',
+  };
   if (!user.exists) {
-    document.set({
-      fullName: type === 'google' ? currentUser?.displayName : name,
-      email: currentUser?.email,
-      uid: currentUser?.uid,
-      userType: PATIENT,
-      dob: null,
-      authProvider: type,
-      gender: '',
-      deviceID: '',
-    });
+    document.set(userInfo);
+    storage.set('user', JSON.stringify(userInfo));
+  } else {
+    storage.set('user', JSON.stringify(user.data()));
   }
 };
 

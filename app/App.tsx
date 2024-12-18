@@ -1,13 +1,14 @@
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import {Q} from '@nozbe/watermelondb';
 import {useNetInfo} from '@react-native-community/netinfo';
+
 import {
   createNavigationContainerRef,
   NavigationContainer,
 } from '@react-navigation/native';
 import {ThemeProvider} from '@shopify/restyle';
 import React, {useEffect} from 'react';
-import {StatusBar} from 'react-native';
+import {LogBox, StatusBar} from 'react-native';
 import BootSplash from 'react-native-bootsplash';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
@@ -20,25 +21,32 @@ import {
   updateAllDeliveryStatus,
   updateDeliveryStatus,
 } from './db/helper';
+
 import {useFirestore, useUser} from './hooks';
 import './i18n';
 import {AppStack} from './navigators/AppStack';
 import socket from './services/socket';
 import {colors, theme} from './theme';
-
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs(); //Ignore all log notifications
 function App(): React.JSX.Element {
   enableFreeze(true);
+
   const {uid: UID} = useUser();
   const {getUser} = useFirestore();
   const {isConnected} = useNetInfo();
   const navigationRef = createNavigationContainerRef<any>();
 
-  //const navigation = useNavigation<StackNavigation>();
   useEffect(() => {
-    (async () => {})().finally(async () => {
-      await BootSplash.hide();
+    const init = async () => {
+      // …do multiple sync or async tasks
+    };
+
+    init().finally(async () => {
+      await BootSplash.hide({fade: true});
     });
   }, []);
+  //const navigation = useNavigation<StackNavigation>();
 
   useEffect(() => {
     if (isConnected && !socket.connected) {

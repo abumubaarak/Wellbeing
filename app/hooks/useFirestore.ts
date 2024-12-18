@@ -3,13 +3,16 @@ import firestore, {
   FirebaseFirestoreTypes,
 } from '@react-native-firebase/firestore';
 import {useState} from 'react';
+import {useMMKVString} from 'react-native-mmkv';
 import {storage} from '../data';
 import {APPOINTMENTS, USERS} from '../services';
 import {delay} from '../utils';
-import {useUser} from './useUser';
 
 export const useFirestore = (loading: boolean = true) => {
-  const {uid} = useUser();
+  const [userObject, _] = useMMKVString('user');
+  const user = userObject && JSON.parse(userObject!);
+
+  const {uid} = user ? user : {uid: ''};
   const [data, setData] = useState<FirebaseFirestoreTypes.DocumentData[]>([]);
 
   const [isLoading, setLoading] = useState<boolean>(loading);
@@ -43,7 +46,7 @@ export const useFirestore = (loading: boolean = true) => {
       const collection = await firestore()
         .collection(USERS)
         .where('userType', '==', 'doctor')
-        .where('verified', '==', false)
+        .where('verified', '==', true)
         .where('specialty', '==', area)
         .get();
       const newData = collection.docs.map(doc => ({...doc.data()}));
@@ -73,7 +76,7 @@ export const useFirestore = (loading: boolean = true) => {
         setLoading(false);
         setData([{bookingStatus: true}]);
       }
-    } catch {
+    } catch (e) {
       setLoading(false);
     }
   };

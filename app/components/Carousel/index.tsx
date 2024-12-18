@@ -45,7 +45,7 @@ export const OnboardingCarousel = ({onSnapToItem}: OnboardingCarouselProps) => {
           width={width}>
           <Box
             style={$card}
-            backgroundColor="white"
+            backgroundColor="primary800"
             height="66%"
             alignItems="center"
             justifyContent="center">

@@ -1,15 +1,17 @@
 import auth from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
+import {useMMKVString} from 'react-native-mmkv';
 import {Basic, Language, Lock, Logout, Trash} from '../../assets/svgs';
 import {Avatar, Box, Header, ProfileItem, Screen, Text} from '../../components';
 import {storage} from '../../data';
-import {useUser} from '../../hooks';
 import {StackNavigation} from '../../navigators';
 import {moderateScale} from '../../utils';
 export const Profile = () => {
   const navigation = useNavigation<StackNavigation>();
-  const {fullName} = useUser();
+  const [userObject, _] = useMMKVString('user');
+  const user = userObject && JSON.parse(userObject!);
+
   const [loading, setLoading] = useState<boolean>(false);
   const signOut = async () => {
     setLoading(true);
@@ -27,14 +29,14 @@ export const Profile = () => {
 
       <Box mt="s">
         <Box gap="n" flexDirection="row" alignItems="center">
-          <Avatar wnh={65} />
+          <Avatar wnh={65} uri={user.pic} />
           <Box gap="nn">
             <Text
               variant="mSemiBold"
               letterSpacing={0.2}
               fontSize={moderateScale(15)}
               adjustsFontSizeToFit>
-              {fullName}
+              {user.fullName}
             </Text>
             <Text color="grey">Patient</Text>
           </Box>

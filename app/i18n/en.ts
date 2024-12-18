@@ -13,7 +13,7 @@ const en = {
     {
       title: 'Seamless\nAppointment',
       summary:
-        'Book appointments directly with your doctor,\nsay goodbye to phone tag.',
+        'Book appointments directly with your doctor, say goodbye to phone tag.',
     },
     {
       title: 'Virtual\nConsultation',
@@ -22,7 +22,7 @@ const en = {
     },
   ],
   login: 'Login',
-  getStarted: 'Get started',
+  getStarted: 'Get Started',
   arabic: 'Arabic',
   selectLng: 'Select Language',
   lngTip: 'Tip: You can change this later in settings.',

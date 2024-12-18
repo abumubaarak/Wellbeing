@@ -13,7 +13,6 @@ import {
 
 export const Home = () => {
   const [_, setSymptomsPref] = useMMKVString('symptoms');
-
   useEffect(() => {
     setSymptomsPref('');
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -2976,7 +2976,7 @@ PODS:
   - RecaptchaInterop (100.0.0)
   - RNAppleAuthentication (2.4.0):
     - React-Core
-  - RNBootSplash (5.5.3):
+  - RNBootSplash (6.3.2):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -3719,7 +3719,7 @@ SPEC CHECKSUMS:
   ReactNativeIncallManager: bfc9c67358cd524882a7c4116dcb311ac2293d4b
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   RNAppleAuthentication: e00c76acb03351f5544373c78fa7f359bef6d5d3
-  RNBootSplash: ce6500d0e017b3db6905bb78dd2757d3272efda1
+  RNBootSplash: 0ea38725fdeed2f4536711ddf5f699f0be3ef4f7
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
   RNFBApp: 017499cd7ea340963bfac43b4fcb28d2b0b21a09
   RNFBAuth: 97633be48cc4e539d954270a218785d2e3f9fde7

@@ -4,7 +4,7 @@ import {horizontalScale, verticalScale} from '../../utils';
 
 export const $container: ViewStyle = {
   marginHorizontal: horizontalScale(25),
-  paddingTop: verticalScale(10),
+  marginBottom: verticalScale(10),
 };
 
 export const $button: ViewStyle = {

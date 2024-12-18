@@ -15,7 +15,7 @@ type ProfileItemProps = {
 export const ProfileItem = ({bg, icon, title, onPress}: ProfileItemProps) => {
   return (
     <Pressable
-      onPress={onPress}
+    onPress={onPress}
       style={({pressed}) => [
         pressed
           ? {

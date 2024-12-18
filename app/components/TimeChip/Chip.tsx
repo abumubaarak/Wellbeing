@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Text} from '..';
-import {formatTiming, moderateScale} from '../../utils';
+import {moderateScale, startEndTime} from '../../utils';
 
 type ChipProps = {
   item: any;
@@ -20,7 +20,7 @@ export const Chip = ({item, active}: ChipProps) => {
         variant={active ? 'mSemiBold' : 'medium'}
         color="black"
         fontSize={moderateScale(14)}>
-        {formatTiming(item?.startTime, item.endTime)}
+        {startEndTime(item?.startTime, item.endTime)}
       </Text>
     </Box>
   );

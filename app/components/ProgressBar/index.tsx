@@ -1,10 +1,12 @@
 import React from 'react';
+import {DimensionValue} from 'react-native';
 import {useAnimatedStyle, withTiming} from 'react-native-reanimated';
 import {Colors} from '../../theme';
 import {AnimatedBox, Box} from '../Box';
 
 type ProgressBarProps = {
   widthSize: number;
+  containerWidth?: DimensionValue;
   containerHeight: number;
   containerBackgroundColor: keyof Colors;
   backgroundColor: keyof Colors;
@@ -14,6 +16,7 @@ export const ProgressBar = ({
   widthSize,
   containerBackgroundColor,
   backgroundColor,
+  containerWidth = '100%',
   containerHeight,
 }: ProgressBarProps) => {
   const widthStyle = useAnimatedStyle(() => {
@@ -26,7 +29,7 @@ export const ProgressBar = ({
     <Box
       backgroundColor={containerBackgroundColor}
       height={containerHeight}
-      width={'100%'}
+      width={containerWidth}
       borderRadius={100}>
       <AnimatedBox
         backgroundColor={backgroundColor}

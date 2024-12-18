@@ -7,6 +7,7 @@ export const colors = {
   primary400: '#E4ECDD',
   primary500: '#39683A',
   primary700: '#484E44',
+  primary800: '#E1EDE0',
   header: '#F1F4E9',
   chatInput: '#EFF2E9',
   primary600: '#99A794',

@@ -17,14 +17,23 @@ export const OnboardingHeader = ({width}: OnboardingHeader) => {
     navigation.navigate('ChangeLanguage');
   };
   return (
-    <Box flexGrow={0.03} style={$container}>
-      <ProgressBar
-        containerHeight={5}
-        widthSize={width}
-        backgroundColor={'primary500'}
-        containerBackgroundColor={'primary200'}
-      />
-      <Box alignItems="flex-end" style={$icon}>
+    <Box
+      pt="m"
+      justifyContent="space-between"
+      flexDirection="row"
+      mb="xl"
+      alignItems="center"
+      style={$container}>
+      <Box flex={1} alignItems="center">
+        <ProgressBar
+          containerHeight={7}
+          widthSize={width}
+          containerWidth={'40%'}
+          backgroundColor={'primary600'}
+          containerBackgroundColor={'primary800'}
+        />
+      </Box>
+      <Box style={$icon}>
         <BorderlessButton hitSlop={50} onPress={onPress}>
           <Translate />
         </BorderlessButton>

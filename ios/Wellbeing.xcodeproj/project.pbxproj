@@ -55,6 +55,7 @@
 		FCA0C8802C1C7E0A006769AA /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB611A69B7D497D806C7B2F /* WorkSans-Medium.ttf */; };
 		FCA0C8812C1C7E0A006769AA /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D44D4D7088754D21BC7DA585 /* WorkSans-Regular.ttf */; };
 		FCA0C8822C1C7E0A006769AA /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD6E315850894A4DAA611507 /* WorkSans-SemiBold.ttf */; };
+		1B6F66AF7DDA49D09E8CB1CF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1648EF04CE004CFC9EBA43ED /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		FCBAF8F52C29E650003F3740 /* Wellbeing-development.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wellbeing-development.entitlements"; sourceTree = "<group>"; };
 		FCBAF8F62C29E665003F3740 /* Wellbeing-staging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Wellbeing-staging.entitlements"; path = "Wellbeing-staging/Wellbeing-staging.entitlements"; sourceTree = "<group>"; };
 		FCBAF8F72C29E66A003F3740 /* Wellbeing-production.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wellbeing-production.entitlements"; sourceTree = "<group>"; };
+		1648EF04CE004CFC9EBA43ED /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "Wellbeing/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				E4759D1069D6F10A4CE58CAE /* PrivacyInfo.xcprivacy */,
 				9A4E97B5F09C4317986C91A9 /* BootSplash.storyboard */,
 				FC5ECE202CA28E2000DAA206 /* GoogleService-Info.plist */,
+				1648EF04CE004CFC9EBA43ED /* Colors.xcassets */,
 			);
 			name = Wellbeing;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				FC5ECE212CA28E2000DAA206 /* GoogleService-Info.plist in Resources */,
 				FCA0C83F2C1A3656006769AA /* PrivacyInfo.xcprivacy in Resources */,
 				FCA0C8402C1A3656006769AA /* BootSplash.storyboard in Resources */,
+				1B6F66AF7DDA49D09E8CB1CF /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

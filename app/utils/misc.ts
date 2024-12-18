@@ -76,6 +76,12 @@ export const formatTiming = (start: any, end: any) => {
 
   return `${formatAMPM(startTime)} - ${formatAMPM(endTime)}`;
 };
+export const startEndTime = (start: any, end: any) => {
+  const startTime = new Date(start.seconds * 1000);
+  const endTime = new Date(end.seconds * 1000);
+
+  return `${formatAMPM(startTime)} - ${formatAMPM(endTime)}`;
+};
 
 export const timelineTiming = (start: any, end: any) => {
   // const startTime = new Date(start.seconds * 1000);

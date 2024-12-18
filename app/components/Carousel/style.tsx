@@ -15,7 +15,7 @@ export const $labelSummary: TextStyle = {
 };
 
 export const $labelContainer: ViewStyle = {
-  paddingTop: verticalScale(20),
+  paddingTop: verticalScale(25),
 };
 export const $card: ViewStyle = {
   marginHorizontal: horizontalScale(50),

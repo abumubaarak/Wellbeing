@@ -41,8 +41,6 @@
 
 
  ## Screenshot 📸
- 
- <img  src="https://github.com/user-attachments/assets/3b3bc65c-00e0-434c-bdd6-142281222f63" width="100%"  > 
- <img  src="https://github.com/user-attachments/assets/21938758-8508-47af-a761-d8cfc20c7204" width="65.5%"  > 
-
+ <img  src="https://github.com/user-attachments/assets/1c1a2170-a201-48c8-81cc-6802a0661901" width="100%"  > 
+ <img  src="https://github.com/user-attachments/assets/794ced0b-b3b1-453a-80c5-50af7dfde1e3" width="100%"  > 
 

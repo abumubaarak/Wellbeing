@@ -42,7 +42,7 @@
 
  ## Screenshot 📸
  
- <img   src="https://github.com/user-attachments/assets/67f5c3ca-1f33-409a-b162-211d11e7ba1d" width="100%"> 
-
+ <img  src="https://github.com/user-attachments/assets/3b3bc65c-00e0-434c-bdd6-142281222f63" width="100%"  > 
+ <img  src="https://github.com/user-attachments/assets/21938758-8508-47af-a761-d8cfc20c7204" width="65.5%"  > 
 
 

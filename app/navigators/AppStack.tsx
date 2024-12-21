@@ -18,7 +18,7 @@ import {Symptoms} from '../screens/AI';
 import {Analyse} from '../screens/Analyse';
 import {Analysis} from '../screens/Analysis';
 import {EditSymptoms} from '../screens/EditSymptoms';
-import {FindDoctor} from '../screens/FindDoctor/Index';
+import {FindDoctor} from '../screens/FindDoctor';
 import {isAndroid} from '../utils';
 import {AppStackParamList} from './AppStackParamList';
 import {HomeNavigator} from './HomeNavigator';

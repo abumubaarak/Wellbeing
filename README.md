@@ -39,8 +39,8 @@
    - InCall Manager
    - Socket.IO
 
-
  ## Screenshot 📸
- <img  src="https://github.com/user-attachments/assets/1c1a2170-a201-48c8-81cc-6802a0661901" width="100%"  > 
- <img  src="https://github.com/user-attachments/assets/794ced0b-b3b1-453a-80c5-50af7dfde1e3" width="100%"  > 
+ <img  src="https://github.com/user-attachments/assets/84661066-a92b-4d9e-bc4a-2ef96080cd19" > 
+ <img  src="https://github.com/user-attachments/assets/33652974-2ad5-4309-bc7e-3244e53e7d08"  > 
+ <img  src="https://github.com/user-attachments/assets/60328405-b68a-4d1c-8fb2-94252252d117"  > 
 

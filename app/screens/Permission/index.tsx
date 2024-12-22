@@ -13,6 +13,7 @@ export const Permission = () => {
     request(MICROPHONE_PERMISSION).then((result: PermissionStatus) => {
       //handle other case later.Insha Allah
       if (result === 'granted') {
+        navigation.goBack();
         navigation.navigate('Symptoms');
       }
     });

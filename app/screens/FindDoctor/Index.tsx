@@ -1,10 +1,9 @@
 import {BottomSheetBackdrop, BottomSheetModal} from '@gorhom/bottom-sheet';
 import React, {useMemo, useRef, useState} from 'react';
 import {Dimensions, Pressable} from 'react-native';
-import {Box, Dismiss, Screen, SpecialistCard} from '../../components';
+import {Box, Dismiss, Screen, SpecialistCard, SpecialistInfo} from '../../components';
 import {$indicator} from '../../components/AuthModal/style';
-import {SpecialistInfo} from '../../components/Specialist';
-import {
+ import {
   ISPECIALISTS,
   SPECIALISTS,
   SPECIALISTS_INFO,

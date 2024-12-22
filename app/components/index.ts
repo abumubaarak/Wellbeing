@@ -32,7 +32,7 @@ import {ProfileItem} from './Profile';
 import {ProgressBar} from './ProgressBar';
 import {Recommended} from './Recommended/Index';
 import {Screen} from './Screen';
-import {SpecialistCard, SpecialistCategory} from './Specialist';
+import {SpecialistCard, SpecialistCategory,SpecialistInfo} from './Specialist';
 import {SymptomsFooter} from './SymptomsFooter';
 import {SymptomsGradientBackground} from './SymptomsGradientBackground';
 import {Text} from './Text';
@@ -57,6 +57,7 @@ export {
   Chip,
   ChipList,
   CirclePie,
+  SpecialistInfo,
   CircularLoader,
   DateRangeInfo,
   Dismiss,

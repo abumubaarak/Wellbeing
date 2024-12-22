@@ -7,7 +7,7 @@
 * **Virtual Consultation**: Skip the wait and get expert healthcare consultations with a quick video visit.
 
 ## AI-powered symptom analysis Demo ▶️ 
-<img src="https://github.com/user-attachments/assets/ac1072fb-c28d-4db1-83a4-efea1b2d9c4d"  >
+[<img src="https://github.com/user-attachments/assets/ac1072fb-c28d-4db1-83a4-efea1b2d9c4d" >](https://www.loom.com/share/70b0ed7332c648ff9c9276eed158cc6f?sid=01a734af-2412-427b-8eb2-1f8827852b45)
 
  ## Tech Stack 🔨
  - React Native(New Architecture)

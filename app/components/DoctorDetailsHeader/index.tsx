@@ -13,6 +13,7 @@ type DoctorDetailsHeaderProps = {
 export const DoctorDetailsHeader = ({
   doctorDetails,
 }: DoctorDetailsHeaderProps) => {
+  const country = doctorDetails?.country;
   return (
     <>
       <Box flexDirection="row" gap="m">
@@ -24,7 +25,7 @@ export const DoctorDetailsHeader = ({
               uri: doctorDetails?.selfie,
               priority: FastImage.priority.normal,
             }}
-            resizeMode={FastImage.resizeMode.center}
+            resizeMode={FastImage.resizeMode.cover}
           />
           <Verified height={25} width={22} style={$verify} />
         </Box>
@@ -38,9 +39,7 @@ export const DoctorDetailsHeader = ({
           </Text>
           <Box flexDirection="row" alignItems="center" gap="s">
             <MapPin />
-            {/* To be remove */}
-            {/*<Text fontSize={moderateScale(12)}>{doctorDetails?.country}</Text> */}
-            <Text fontSize={moderateScale(12)}>Tashkent, Uzbekistan</Text>
+            <Text fontSize={moderateScale(12)}>{country}</Text>
           </Box>
         </Box>
       </Box>

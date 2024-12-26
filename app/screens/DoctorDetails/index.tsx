@@ -28,7 +28,7 @@ export const DoctorDetails = () => {
     {key: 'reviews', title: 'Reviews'},
   ]);
   const {params} = useRoute<RouteProp<AppStackParamList, 'DoctorDetails'>>();
-
+  const {patients, yoe, rating, review} = params.doctor;
   const onTabItemPress = (item: number) => {
     setIndex(item);
   };
@@ -62,10 +62,26 @@ export const DoctorDetails = () => {
       <Box mt="ll" flex={1}>
         <DoctorDetailsHeader doctorDetails={params.doctor} />
         <Box flexDirection="row" justifyContent="space-between">
-          <DoctorInfoCard icon={<UserGroup />} title="40" summary="Patients" />
-          <DoctorInfoCard icon={<Case />} title="40" summary="Career Exp." />
-          <DoctorInfoCard icon={<SingleStar />} title="40" summary="Rating" />
-          <DoctorInfoCard icon={<ReviewGreen />} title="40" summary="Review" />
+          <DoctorInfoCard
+            icon={<UserGroup />}
+            title={patients ?? 0}
+            summary="Patients"
+          />
+          <DoctorInfoCard
+            icon={<Case />}
+            title={yoe ?? 0}
+            summary="Career Exp."
+          />
+          <DoctorInfoCard
+            icon={<SingleStar />}
+            title={rating ?? 0}
+            summary="Rating"
+          />
+          <DoctorInfoCard
+            icon={<ReviewGreen />}
+            title={review ?? 0}
+            summary="Review"
+          />
         </Box>
 
         <TabView
